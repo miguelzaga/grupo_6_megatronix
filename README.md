@@ -1,4 +1,5 @@
-# grupo_6_megatronix
+# Megatronix
+*grupo_6_megatronix*
 
 ## Temática del Market Place
 
@@ -9,3 +10,7 @@ Ofrecemos *dispositivos y componentes electrónicos* para *profesionales y afici
 
 **Miguel Zapata**
 Economista apasionado por el deporte y los números.
+
+### Links
+- GitHub: https://github.com/miguezaga/grupo_6_megatronix
+- Trello: https://trello.com/b/jYJd8F6o/sprint-1
