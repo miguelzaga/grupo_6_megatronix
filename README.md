@@ -10,6 +10,8 @@ Ofrecemos *dispositivos y componentes electrónicos* para *profesionales y afici
 
 **Harol Preciado** - Ingeniero Mecatrónico de profesión, aficionado por la tecnología y la educación.
 
+**Javier Zapata** - Ingeniero Mecatrónico de profesión, apasionado por la física, el deporte y la tecnologia.
+
 ### Links
 - GitHub: https://github.com/miguezaga/grupo_6_megatronix
 - Trello: https://trello.com/b/jYJd8F6o/sprint-1
