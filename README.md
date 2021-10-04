@@ -7,15 +7,15 @@ Ofrecemos *dispositivos y componentes electrónicos* para *profesionales y afici
 
 ### Sitios de referencia
 - Electrónica Plug And Play: https://www.electronicaplugandplay.com
-    Es una compañia dedicada a la comercialización e importación de componentes electrónicos en el campo de la Ingeniería Electrónica.
+    Esta página dedicada a la comercialización de productos electrónicos tiene una plataforma muy completa en cuanto a estructura y partes de la página.
 - Dynamo Electronics S.A.S.: https://dynamoelectronics.com
-    Es una empresa Colombiana enfocada en el mejoramiento social por medio del desarrollo científico y tecnológico, ofrece productos electrónicos y cursos sobre tecnologías.
+    En esta página implementan interacciones dinámicas atractivas que permiten al usuario ver mas información sin colapsar la página. 
 - Sigma Electrónica: https://www.sigmaelectronica.net
-    Empresa dedicada a la  importación y distribución de componentes electrónicos.
+    Empresa dedicada a la  importación y distribución de componentes electrónicos, hace una buena distribución del espacio en pantalla y los colores para hacerla más completa.
 - SUCONEL S.A.: https://suconel.com
-    Es una empresa de tecnología especializada en el suministro, capacitación y soporte de líneas de electrónica.
+    En esta plataforma utilizan visualizaciones interesantes como mantener el header incluso cuando se desplaza en la pantalla y pop-up de publicidad propia.
 - Vistrónica: https://www.vistronica.com
-    Empresa dedicada a la venta de componentes electrónicos en todo el territorio Colombiano a través de internet.
+    En esta pagina utilizan un diseño atractivo, con imagenes en movimiento en la página de inicio y mantiene el header superpuesto mientras se desplaza la pantalla de fondo.
 
 ## Links
 - GitHub: https://github.com/miguezaga/grupo_6_megatronix
