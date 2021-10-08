@@ -19,7 +19,9 @@ Ofrecemos *dispositivos y componentes electrónicos* para *profesionales y afici
 
 ## Links
 - GitHub: https://github.com/miguezaga/grupo_6_megatronix
-- Trello: https://trello.com/b/jYJd8F6o/sprint-1
+- Trello: 
+	- Sprint 1: https://trello.com/b/jYJd8F6o/sprint-1
+	- Sprint 2: https://trello.com/b/cBNLkg02/sprint-2
 
 ## Integrantes del equipo
 **Miguel Zapata** - Economista apasionado por el deporte y los números.
