@@ -1,0 +1,23 @@
+{
+  "name": "grupo_6_megatronix",
+  "version": "1.0.0",
+  "description": "Ofrecemos *dispositivos y componentes electrónicos* para *profesionales y aficionados* interesados en implementar sus ideas en los campos de electrónica, robótica, hardware o software.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/miguezaga/grupo_6_megatronix.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/miguezaga/grupo_6_megatronix/issues"
+  },
+  "homepage": "https://github.com/miguezaga/grupo_6_megatronix#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
