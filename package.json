@@ -1,10 +1,11 @@
 {
   "name": "grupo_6_megatronix",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Ofrecemos *dispositivos y componentes electrónicos* para *profesionales y aficionados* interesados en implementar sus ideas en los campos de electrónica, robótica, hardware o software.",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
