@@ -1,0 +1,35 @@
+=== COLORES ===
+Blanco: #F5F7F7;
+Amarillo: #EDB518;
+Vino tinto: #79031D;
+Negro: #000407;
+
+=== TIPOGRAFÍAS ===
+Familia: 'Oswald', sans-serif
+Versiones: 300, 400, 700
+
+
+=== HEADER - TEXTOS ===
+Registrarse
+Iniciar sesión
+
+
+=== NAVBAR - TEXTOS ===
+Inicio
+Productos
+Cómo comprar
+Contáctenos
+
+
+=== FOOTER - TEXTOS ===
+Información
+Quiénes somos
+Cómo comprar
+Envíos y devoluciones
+Términos y condiciones
+------------------------
+Contáctenos
+Dirección
+Ciudad, País
+Email
+Teléfono
