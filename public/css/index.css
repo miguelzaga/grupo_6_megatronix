@@ -1,0 +1,173 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Oswald', sans-serif;
+}
+
+/* --> HEADER <-- */
+header{
+    background-color: #79031D;
+    padding-bottom: 5px;
+}
+
+.logotipo{
+    display: block;
+    width: 50%;
+    margin: auto;
+    padding-top: 5px;
+}
+
+.busqueda{
+    display: flex;
+    justify-content: center;
+    margin:auto;
+    margin-top: 8px;
+}
+
+.cuadroBuscar{
+    background-color: white;
+    border: rgb(56, 56, 56);
+    width: 80%;
+    height: 30px;
+    padding: 5px;
+    font-size: 18px;
+    color: gray;
+    overflow: hidden;
+    border: 1px solid black;
+    border-radius: 50px 0 0 50px;
+}
+.iconoBuscar{
+    background-color: rgb(255, 255, 255);
+    display: block;
+    width: 40px;
+    height: 30px;
+    padding: 5px 5px 0 0;
+    margin-left: 5px;
+    text-align: center;
+    font-size: 18px;
+    border: 1px solid black;
+    border-radius: 0 50px 50px 0;
+}
+
+/* -> BARRA DE NAVEGACIÓN <- */
+.iconoHamburguesa{
+    background-color: rgb(53, 53, 53);
+    color: rgb(0, 0, 0);
+    display: block;
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 18px;
+    margin: auto;
+    margin-top: 5px;
+}
+
+.barraNavegacion{
+    display:none;
+}
+
+
+/* --> MAIN <-- */
+/*  ->TRANSICIÓN DE IMAGENES<-  */
+
+main{
+    background-color: #79031D;
+    padding-bottom: 20px;
+}
+
+.banner{
+    width: 100vw;
+    height: 30vh;
+}
+
+/*  ->PRODUCTOS DESTACADOS<- */
+#destacados, #ofertas{
+    background-color: #EDB518;
+    border-radius: 5px;
+    width: 95%;
+    margin: auto;
+    margin-bottom: 10px;
+}
+
+.articulos{
+    width: 80%;
+    margin: auto;
+    margin-top: 10px;
+}
+
+h3{
+    font-size: 20px;
+    text-align: left;
+    color: #000407;
+}
+
+.precio{
+    font-size: 18px;
+    margin:0%;
+}
+
+.nombre{
+    font-size: 16px;
+    font-weight: normal;
+    margin:0%;
+}
+
+.productImg{
+    background-color: #fff;
+    border-radius: 5px;
+    width: 100%;
+    position: relative;
+}
+
+main section article{
+    padding-bottom: 10px;
+    position: relative;
+}
+
+main section article i{
+    background-color: white;
+    color: #39b54a;
+    width: 30px;
+    height: 30px;
+    border-radius: 150px;
+    border: 1px solid rgb(180, 180, 180);
+    padding: 5px 0 0 5px;
+    position: absolute;
+    left: 85%;
+    bottom: 60px;
+}
+
+/* --> FOOTER <-- */
+footer{
+    background-color: #000407;
+    padding-bottom: 5px;
+}
+.logotipoFooter{
+    display: block;
+    width: 40%;
+    margin: auto;
+    padding-top: 5px;
+}
+
+#redes{
+    color: white;
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 30px;
+}
+
+#contacto{
+    color: white;
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 15px;
+}
+
+#contacto p{
+    margin-top: 5px;
+}
