@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
 }
 
 /* --> HEADER <-- */
@@ -31,7 +32,7 @@ header {
     border: rgb(56, 56, 56);
     width: 80%;
     height: 35px;
-    padding: 7px;
+    padding: 3px 10px;
     font-size: 18px;
     color: gray;
     overflow: hidden;
@@ -44,7 +45,7 @@ header {
     display: block;
     width: 40px;
     height: 35px;
-    padding: 5px 5px 0 0;
+    padding: 0px 5px 0 0;
     margin-left: 5px;
     text-align: center;
     font-size: 20px;
@@ -60,11 +61,10 @@ header {
 
 .iconoHamburguesa {
     background-color: rgb(53, 53, 53);
-    color: rgb(0, 0, 0);
+    color: #F5F7F7;
     display: block;
     width: 30px;
     height: 30px;
-    padding: 5px;
     border-radius: 5px;
     text-align: center;
     font-size: 18px;
@@ -153,7 +153,7 @@ main section article i {
     padding: 5px 0 0 3px;
     position: absolute;
     left: 85%;
-    bottom: 50px;
+    bottom: 60px;
     box-shadow: 0px 0px 11px 1px #000407;
 }
 
@@ -184,7 +184,7 @@ footer {
     text-align: center;
     margin-top: 5px;
     margin-bottom: 5px;
-    font-size: 15px;
+    font-size: 20px;
     margin-top: 5px;
 }
 
@@ -278,7 +278,7 @@ footer {
     /*  ->TRANSICIÓN DE IMAGENES<-  */
     .banner {
         width: 100vw;
-        height: 45vh;
+        height: 50vh;
         padding-bottom: 10px;
     }
 
@@ -288,8 +288,9 @@ footer {
         width: 100%;
         justify-content: space-around;
     }
-    .articulos article{
+    article{
         width: 22%;
+        height: 300px;
     }
 
     main section article i {
