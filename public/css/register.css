@@ -1,0 +1,31 @@
+/* Formulario de registro */
+
+hr {
+    border: #000407 thin solid;
+}
+
+#register-form {
+    max-width: 600px;
+    padding: 20px;
+}
+
+#register-form .field-group {
+    margin: 10px 0;
+}
+
+.field-group div {
+    display: flex;
+    flex-direction: column;
+    padding: 5px 0px;
+}
+
+#personal-data, #establish-password {
+    margin: 50px;
+}
+
+#send-register {
+    border-radius: 5px;
+    padding: 5px 10px;
+    background-color: #F5F7F7;
+    align-self: flex-end;
+}

@@ -91,8 +91,12 @@ main {
 }
 
 /*  ->PRODUCTOS <- */
+/* agregué la clase main-section y así,
+   queda más fácil agregarlo a la sección
+   principal de cada página. Se lo puse al
+   formulario de register. */
 
-#destacados, #ofertas {
+#destacados, #ofertas, .main-section {
     background-color: #EDB518;
     border-radius: 5px;
     width: 95%;
