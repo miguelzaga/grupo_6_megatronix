@@ -1,0 +1,59 @@
+hr {
+    border: #000407 thin solid;
+}
+
+#register-form {
+    max-width: 600px;
+    padding: 20px;
+}
+
+
+
+.data-ingress div {
+    display: flex;
+    flex-direction: column;
+    padding: 5px 0px;
+}
+
+#personal-data {
+    margin: 50px;
+}
+
+#ingresar{
+    border-radius: 5px;
+    padding: 5px 20px;
+    background-color: #F5F7F7;  
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.olvidar{
+    margin-top: 20px;
+}
+
+#olvidar{
+    text-decoration: none;
+    color:blue ;
+}
+
+.olvidar{
+    text-align: center;
+    margin-top: 20px;
+}
+
+#login{
+    color: #79031D;
+    padding-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+
+
+.data-ingress img{
+    display: block;
+    margin-left: auto; 
+    margin-right: auto;
+    margin-bottom: 30px;
+    width: 30%;
+    margin-top: 30px;
+}

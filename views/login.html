@@ -47,27 +47,28 @@
             </ul>
         </nav>
     </header>
-    <main>
+    <main>  
         <form class="main-section" id="register-form" action="" method="get">
-            <h2>Login </h2>
+            <section id="data-personal" class="data-ingress">
+                <div ><h3 id="login"> LOGIN</h3></div>
+                <img src="/images/perfil.png" alt="Imagen de perfil">
                 <div>
                     <label for="email">Correo electrónico</label>
                     <input required type="email" name="email" id="email" placeholder="Correo electrónico">
                 </div>
-            </section>
-            <section id="establish-password" class="field-group">
-                <h3>Contraseña</h3>
                 <div>
                     <label for="password">Contraseña</label>
                     <input minlength="5" required type="password" name="password" id="password"
                         placeholder="Contraseña">
                 </div>
             </section>
-            <button id="Ingresar" type="submit">Ingresar</button>
-            <div>
-            <button id="Olvidar" type="submit">Olvidaste tu contraseña?</button>
-        </div>
+            <div class="olvidar"><button id="ingresar" type="submit">Entrar</button></div>
+            <div class="olvidar">
+                <a  id="olvidar" href="#">Olvidaste tu contraseña?</a>
+            </div>
+
         </form>
+ 
     </main>
     <footer>
         <section id="centro">
