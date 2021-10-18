@@ -1,14 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>MEGATRONIX - Login</title>
     <link rel="stylesheet" href="/css/index.css">
     <link rel="stylesheet" href="/css/productDetail.css">
+    <link rel="shortcut icon" href="/images/icono.ico">
+    <script src="https://kit.fontawesome.com/8f0026c7cf.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    
+    <header>
+        <div class="headerMain">
+            <img src="/images/logoTopMegatronix.png" width="200" alt="Logo Megatronix" class="logotipo">
+            <div class="busqueda">
+                <div class="cuadroBuscar">
+                    Buscar productos, marcas y más
+                </div>
+                <div class="iconoBuscar">
+                    <i class="fa fa-search"></i>
+                </div>
+            </div>
+            <div class="sesion">
+                <div class="carrito"><i class="fas fa-shopping-cart"></i></div>
+                <ul>
+                    <li><a href="./register">Registrarse</a></li>
+                    <li><a href="./login">Iniciar Sesión</a></li>
+                </ul>
+            </div>
+        </div>
+        <a href="#" class="iconoHamburguesa">
+            <i class="fas fa-bars"></i>
+        </a>
+        <nav class="barraNavegacion">
+            <ul>
+                <li class="inicial"><a href="#"><i class="far fa-id-card"></i>INICIO</a></li>
+                <li><a href="#"><i class="fas fa-home"></i>PRODUCTOS</a></li>
+                <li><a href="#"><i class="fas fa-money-check-alt"></i>¿CÓMO COMPRAR?</a></li>
+                <li class="final"><a href="#"><i class="fas fa-id-card"></i>CONTÁCTENOS</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+
+        <section>
+            <h3>Detalles del Producto</h3>
+        </section>
+        <section class="detail">
+            <div>
+                <img src="./images/raspberryPi4.jpg">
+            </div>
+            <div>
+                <p>raspberryPi 4 </p>
+                <p>Raspberry Pi 4 Modelo B 2019 Quad Core 64 Bit WiFi Bluetooth (4GB), ofrece incrementos innovadores en
+                    la velocidad del procesador, el rendimiento multimedia, la memoria y la conectividad en paración con
+                    el Raspberry Pi 3</p>
+                </p>
+                <p for="number">Cantidad</p>
+                <p>
+                    <input required type="number" name="number" id="number" placeholder="1">
+                </p>
+                <p id="car">
+                    <a href="./productCart.html">Añadir al carrito</a>
+                </p>
+
+            </div>
+        </section>
+        <section>
+            <nav class="barraNavegacion">
+                <ul>
+                    <li><a href="#">Descripción</a></li>
+                    <li><a href="#">Destalles</a></li>
+                    <li><a href="#">Comentarios</a></li>
+                </ul>
+            </nav>
+        </section>
+        <section>
+            
+        </section>
+        <section>
+            <p>
+                El Raspberry Pi 4 Modelo B es la computadora Raspberry Pi más nueva que se ha fabricado, y la Fundación Pi sabe que siempre se puede mejorar algo. ¿Y qué podría hacer que el Pi 4 sea mejor que el Pi 3? ¿Qué tal un procesador más rápido, puertos USB 3.0 y un chip Gigabit Ethernet actualizado con capacidad PoE? Buena suposición: ¡eso es lo que exactamente hicieron!
+
+El Raspberry Pi 4 es el último producto de la gama Raspberry Pi, que cuenta con un procesador de cuatro núcleos actualizado de 64 bits que funciona a 1,5 GHz con disipador térmico de metal incorporado, puertos USB 3,0, LAN inalámbrica de banda dual de 2,4 GHz y 5 GHz, puerto Ethernet de un Gigabit más rápido y capacidad PoE a través de un PoE HAT separado.
+
+Esta versión viene con 4 GB de RAM, pero también tenemos versiones con 1 y 2 GB si lo desea.
+            </p>
+        </section>
+
+
+        <section id="destacados">
+            <h3>PRODUCTOS DESTACADOS</h3>
+            <div class="articulos">
+                <article>
+                    <img src="./images/arduinoUno.jpg" class="productImg">
+                    <i class="fas fa-shopping-cart"></i>
+                    <p class="nombre">ARDUINO UNO</p>
+                    <p class="precio">$ 37.000</p>
+                </article>
+                <article>
+                    <img src="./images/displayOled.jpg" class="productImg">
+                    <i class="fas fa-shopping-cart"></i>
+                    <p class="nombre">Display Oled</p>
+                    <p class="precio">$ 15.000</p>
+                </article>
+                <article>
+                    <img src="./images/sensorUltrasonico.jpg" class="productImg">
+                    <i class="fas fa-shopping-cart"></i>
+                    <p class="nombre">SENSOR ULTRASONICO</p>
+                    <p class="precio">$ 12.000</p>
+                </article>
+                <article>
+                    <img src="./images/servomotor.jpg" class="productImg">
+                    <i class="fas fa-shopping-cart"></i>
+                    <p class="nombre">SERVOMOTOR</p>
+                    <p class="precio">$ 25.000</p>
+                </article>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <section id="centro">
+            <section>
+                <img src="images/logoBottomMegatronix.png" width="200" alt="Logo Megatronix" class="logotipoFooter">
+            </section>
+
+            <section id="redes">
+                <i class="fab fa-facebook-square"></i>
+                <i class="fab fa-whatsapp"></i>
+                <i class="fab fa-youtube"></i>
+            </section>
+        </section>
+        <section id="informacion">
+            <p>INFORMACIÓN</p>
+            <ul>
+                <li><a href="#">QUIENES SOMOS</a></li>
+                <li><a href="#">¿CÓMO COMPRAR?</a></li>
+                <li><a href="#">ENVÍOS Y DEVOLUCIONES</a></li>
+                <li><a href="#">TÉRMINOS Y CONDICIONES</a></li>
+            </ul>
+        </section>
+        <section id="contacto">
+            <p>CONTÁCTENOS</p>
+            <ul>
+                <li><a href="#">DIRECCIÓN</a></li>
+                <li><a href="#">CIUDAD, PAÍS</a></li>
+                <li><a href="#">EMAIL</a></li>
+                <li><a href="#">TELÉFONO</a></li>
+            </ul>
+        </section>
+
+    </footer>
 </body>
+
 </html>
