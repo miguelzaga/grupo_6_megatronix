@@ -129,9 +129,9 @@ button{
     #descipcionCarrito{
         display: flex;
         flex-direction: row;
-        justify-content: flex-start;
-        width: 80%;
-        margin-left: 0px;
+        justify-content: flex-end;
+        width: 78.8%;
+        margin-left: 18px;
         align-items: center;
     }
     article .nombre{
