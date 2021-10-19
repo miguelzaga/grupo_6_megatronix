@@ -208,10 +208,12 @@ footer {
         padding: 0;
         align-items: center;
     }
-    .carrito {
+    .carrito i {
         color: #F5F7F7;
         font-size: 30px;
         margin-right: 5px;
+        text-decoration: none;
+        background-color: none;
     }
     .sesion {
         display: flex;
