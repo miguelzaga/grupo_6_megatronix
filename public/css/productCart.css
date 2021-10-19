@@ -1,0 +1,173 @@
+h3{
+    padding: 5px 0 10px 10px;
+}
+#barraCompras{
+    display: none;
+}
+
+body main .compras section{
+    margin: 10px 10px;
+}
+.productosCarrito{
+    box-shadow: 0px 0px 11px 1px #000407;
+    padding-top: 5px;
+}
+
+body main section section article{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.productImg{
+    width: 40vw;
+    height: 40vw;
+}
+
+#descipcionCarrito{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin-left: 10px;
+    justify-content: center;
+}
+article .nombre{
+    font-size: 20px;
+}
+article .modelo{
+    color: rgb(59, 59, 59);
+    margin-top: 5px;
+}
+
+article .cantidadCarrito{
+    display: flex;
+    margin-top: 20%;
+    justify-content: space-between;
+}
+
+article .precio{
+    font-size: 25px;
+}
+
+article .numeroCantidad{
+    text-align: center;
+    width: 50px;
+    border: none;
+    border-radius: 10px;
+}
+
+
+button{
+    width: 90%;
+    height: 50px;
+    background-color: rgb(53, 53, 53);
+    color: #F5F7F7;
+    font-size: 25px;
+    margin: 20px 5% 20px 5%;
+    border-radius: 30px;
+}
+
+#total h2 p{
+    display: block;
+}
+#total h2{
+    display: flex;
+    margin: 20px 5px 0 20%;
+    justify-content: space-between;
+}
+
+#total h2 .precioTotal{
+    font-size: 25px;
+}
+
+/* ---> VERSIÓN 768px */
+
+@media (min-width: 768px){
+
+    #barraCompras{
+        display: flex;
+        justify-content: space-evenly;
+        margin: 10px 10px;
+        padding: 0;
+        list-style: none;
+    }
+    #barraCompras li{
+        text-align: center;  
+        border: 1px solid #000407;
+    }
+    #barraCompras .tituloImg{
+        width: 20%;
+    }
+    #barraCompras .tituloNombre{
+        width: 30%;
+    }
+    #barraCompras .tituloModelo{
+        width: 23%;
+    }
+    #barraCompras .tituloCantidad{
+        width: 10%;
+    }
+    #barraCompras .tituloPrecio{
+        width: 17%;
+    }
+
+    body main section section article{
+        justify-content: flex-start;
+        height: min-content;
+        padding-bottom: 3px;
+    }
+    .productosCarrito{
+        box-shadow: 0px 0px 3px 1px #000407;
+        padding-top: 5px;
+    }
+    .productImg{
+        width: 17vw;
+        height: 17vw;
+        margin-left: 3px;
+    }
+    
+    #descipcionCarrito{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        width: 80%;
+        margin-left: 0px;
+        align-items: center;
+    }
+    article .nombre{
+        font-size: 18px;
+        width: 27vw;
+    }
+    .nombreCarrito{
+        display: flex;
+        flex-direction: row;
+        margin-left: 15px;
+        height: min-content;
+    }
+    article .modelo{
+        color: rgb(0, 0, 0);
+        margin-top: 0px;
+        font-size: 18px;
+        width: 22vw;
+        margin-left: 10px;
+    }
+    
+    article .cantidadCarrito{
+        margin-top: 0;
+        width: 27vw;
+        height: min-content;
+        align-items: center;
+    }
+    
+    article .numeroCantidad{
+        width: 6vw;
+        height: 30px;
+    }   
+    
+    article .precio{
+        text-align: end;
+        font-size: 25px;
+        width: 17vw;
+        height: min-content;
+    } 
+}

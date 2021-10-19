@@ -96,7 +96,7 @@ main {
    principal de cada página. Se lo puse al
    formulario de register. */
 
-#destacados, #ofertas, .main-section {
+#destacados, #ofertas, .main-section, .compras {
     background-color: #EDB518;
     border-radius: 5px;
     width: 95%;
@@ -136,13 +136,13 @@ h3 {
     position: relative;
 }
 
-main section article {
+main .main-section article {
     margin-bottom: 10px;
     position: relative;
     box-shadow: 0px 0px 11px 1px #000407;
 }
 
-main section article i {
+main .main-section article i {
     background-color: #F5F7F7;
     color: #39b54a;
     width: 30px;
@@ -295,7 +295,7 @@ footer {
         height: 300px;
     }
 
-    main section article i {
+    main .main-section article i {
     left: 80%;
     }
 
