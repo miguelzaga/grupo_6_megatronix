@@ -7,8 +7,6 @@ hr {
     padding: 20px;
 }
 
-
-
 .data-ingress div {
     display: flex;
     flex-direction: column;
@@ -40,14 +38,6 @@ hr {
     text-align: center;
     margin-top: 20px;
 }
-
-#login{
-    color: #79031D;
-    padding-top: 20px;
-    margin-bottom: 20px;
-    margin-left: 20px;
-}
-
 
 .data-ingress img{
     display: block;

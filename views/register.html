@@ -18,7 +18,8 @@
 <body>
     <header>
         <div class="headerMain">
-            <img src="/images/logoTopMegatronix.png" width="200" alt="Logo Megatronix" class="logotipo">
+            <a href="./"><img src="/images/logoTopMegatronix.png" width="200" alt="Logo Megatronix"
+                    class="logotipo"></a>
             <div class="busqueda">
                 <div class="cuadroBuscar">
                     Buscar productos, marcas y más
@@ -28,7 +29,7 @@
                 </div>
             </div>
             <div class="sesion">
-                <div class="carrito"><i class="fas fa-shopping-cart"></i></div>
+                <div class="carrito"><a href="./productCart"><i class="fas fa-shopping-cart"></i></a></div>
                 <ul>
                     <li><a href="./register">Registrarse</a></li>
                     <li><a href="./login">Iniciar Sesión</a></li>
@@ -40,7 +41,7 @@
         </a>
         <nav class="barraNavegacion">
             <ul>
-                <li class="inicial"><a href="#"><i class="far fa-id-card"></i>INICIO</a></li>
+                <li class="inicial"><a href="./"><i class="far fa-id-card"></i>INICIO</a></li>
                 <li><a href="#"><i class="fas fa-home"></i>PRODUCTOS</a></li>
                 <li><a href="#"><i class="fas fa-money-check-alt"></i>¿CÓMO COMPRAR?</a></li>
                 <li class="final"><a href="#"><i class="fas fa-id-card"></i>CONTÁCTENOS</a></li>
@@ -79,7 +80,12 @@
                         placeholder="Confirmar contraseña">
                 </div>
             </section>
-            <button id="send-register" type="submit">Registrarse</button>
+            <div class="olvidar">
+                <button id="send-register" type="submit">Registrarse</button>
+            </div>
+            <div class="olvidar">
+                <a id="olvidar" href="./login">Ya tienes una cuenta?</a>
+            </div>
         </form>
     </main>
     <footer>
@@ -98,7 +104,7 @@
             <p>INFORMACIÓN</p>
             <ul>
                 <li><a href="#">QUIENES SOMOS</a></li>
-                <li><a href="#">¿CÓMO COMPRAR?</a></li>
+                <li><a href="#">CÓMO COMPRAR</a></li>
                 <li><a href="#">ENVÍOS Y DEVOLUCIONES</a></li>
                 <li><a href="#">TÉRMINOS Y CONDICIONES</a></li>
             </ul>

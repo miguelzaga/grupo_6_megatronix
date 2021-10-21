@@ -27,5 +27,15 @@ hr {
     border-radius: 5px;
     padding: 5px 10px;
     background-color: #F5F7F7;
-    align-self: flex-end;
+
+}
+
+.olvidar{
+    text-align: center;
+    margin-top: 20px;
+}
+
+.olvidar a {
+    text-decoration: none;
+    color:blue ;    
 }
