@@ -20,5 +20,9 @@
   "homepage": "https://github.com/miguezaga/grupo_6_megatronix#readme",
   "dependencies": {
     "express": "^4.17.1"
+  },
+  "engines": {
+    "node": "v14.17.5",
+    "npm": "6.14.11"
   }
 }
