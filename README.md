@@ -29,3 +29,6 @@ Ofrecemos *dispositivos y componentes electrónicos* para *profesionales y afici
 **Harol Preciado** - Ingeniero Mecatrónico de profesión, aficionado por la tecnología y la educación.
 
 **Javier Zapata** - Ingeniero Mecatrónico de profesión, apasionado por la física, el deporte y la tecnologia.
+
+## Link heroku
+    - https://cryptic-plains-32508.herokuapp.com/productDetail
