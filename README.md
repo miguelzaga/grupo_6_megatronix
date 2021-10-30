@@ -18,10 +18,11 @@ Ofrecemos *dispositivos y componentes electrónicos* para *profesionales y afici
     En esta pagina utilizan un diseño atractivo, con imagenes en movimiento en la página de inicio y mantiene el header superpuesto mientras se desplaza la pantalla de fondo.
 
 ## Links
+- Heroku: https://cryptic-plains-32508.herokuapp.com/
 - GitHub: https://github.com/miguezaga/grupo_6_megatronix
 - Trello: 
 	- Sprint 1: https://trello.com/b/jYJd8F6o/sprint-1
-	- Sprint 2: https://trello.com/b/cBNLkg02/sprint-2
+	- Sprints: https://trello.com/b/cBNLkg02/sprints-megatronix
 
 ## Integrantes del equipo
 **Miguel Zapata** - Economista apasionado por el deporte y los números.
@@ -29,6 +30,3 @@ Ofrecemos *dispositivos y componentes electrónicos* para *profesionales y afici
 **Harol Preciado** - Ingeniero Mecatrónico de profesión, aficionado por la tecnología y la educación.
 
 **Javier Zapata** - Ingeniero Mecatrónico de profesión, apasionado por la física, el deporte y la tecnologia.
-
-## Link heroku
-    https://cryptic-plains-32508.herokuapp.com/
