@@ -6,8 +6,6 @@ const port =process.env.PORT || 3000
 
 app.use(express.static(path.resolve(__dirname, './public')));
 
-app.set('views engine', 'ejs');
-
 app.use('/', routes);
 
 app.listen(port, () =>{
