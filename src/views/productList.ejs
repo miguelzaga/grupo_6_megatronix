@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('./partials/head') %>
+    </head>
+
+    <body>
+        <%- include('./partials/header') %>
+            <main>
+                <section id="izquierda">
+                    <h2>CATEGORÍAS</h2>
+                    <ul class="categorias">
+                        <li class="itemCat"><a href="#">Sensores</a></li>
+                        <li class="itemCat"><a href="#">Sistemas Embebidos</a></li>
+                        <li class="itemCat"><a href="#">Audio y Sonido</a></li>
+                        <li class="itemCat"><a href="#">Conectores</a></li>
+                        <li class="itemCat"><a href="#">Baterías y Fuentes de Poder</a></li>
+                        <li class="itemCat"><a href="#">Conectores</a></li>
+                        <li class="itemCat"><a href="#">Prototipado</a></li>
+                        <li class="itemCat"><a href="#">Comunicaciones</a></li>
+                        <li class="itemCat"><a href="#">Módulos</a></li>
+                        <li class="itemCat"><a href="#">Accesorios</a></li>
+                    </ul>
+                </section>
+                <section id="derecha">
+                    <h3>PRODUCTOS</h3>
+                    <div class="articulos">
+                        <article>
+                            <img src="./images/arduinoUno.jpg" class="productImg">
+                            <i class="fas fa-shopping-cart"></i>
+                            <p class="nombre">ARDUINO UNO</p>
+                            <p class="precio">$ 37.000</p>
+                        </article>
+                        <article>
+                            <img src="./images/displayOled.jpg" class="productImg">
+                            <i class="fas fa-shopping-cart"></i>
+                            <p class="nombre">Display Oled</p>
+                            <p class="precio">$ 15.000</p>
+                        </article>
+                        <article>
+                            <a href="./productDetail"><img src="./images/sensorUltrasonico.jpg" class="productImg"></a>
+                            <i class="fas fa-shopping-cart"></i>
+                            <p class="nombre">SENSOR ULTRASONICO</p>
+                            <p class="precio">$ 12.000</p>
+                        </article>
+                        <article>
+                            <img src="./images/servomotor.jpg" class="productImg">
+                            <i class="fas fa-shopping-cart"></i>
+                            <p class="nombre">SERVOMOTOR</p>
+                            <p class="precio">$ 25.000</p>
+                        </article>
+                    </div>
+                </section>
+            </main>
+            <%- include('./partials/footer') %>
+    </body>
+
+</html>
