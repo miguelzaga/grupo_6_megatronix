@@ -1,21 +1,44 @@
-# Retrospectiva #
+# Retrospectivas #
 
-## More of ##
+## Sprint 1 ##
+### More of ###
 - Retroalimentación
 - Seguir consejos de los profesores
 
-## Start doing ##
+### Start doing ###
 - Testing
 - Definir fechas internas
 
-## Keep doing ##
+### Keep doing ###
 - Entregar a tiempo
 - Sugerir ideas
 - Tener iniciativa
 - Delegación de responsabilidades
 
-## Stop doing ##
+### Stop doing ###
 - No saludar antes de empezar las reuniones
 
-## Less of ##
+### Less of ###
+- Errores de comunicación
+
+## Sprint 2 ##
+### More of ###
+- Testing
+- Definir Fechas
+- Organizar la Sprint Board
+
+### Start doing ###
+- Aclarar requerimientos con los profes
+
+### Keep doing ###
+- Entregar a tiempo
+- Sugerir ideas
+- Tener iniciativa
+- Delegación de responsabilidades
+- Retroalimentación
+
+### Stop doing ###
+- Seguir las guías textualmente
+
+### Less of ###
 - Errores de comunicación
