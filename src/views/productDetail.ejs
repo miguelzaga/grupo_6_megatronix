@@ -1,174 +1,111 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MEGATRONIX - Login</title>
-    <link rel="stylesheet" href="/css/index.css">
+<%- include('./partials/head') %>
     <link rel="stylesheet" href="/css/productDetail.css">
-    <link rel="shortcut icon" href="/images/icono.ico">
-    <script src="https://kit.fontawesome.com/8f0026c7cf.js" crossorigin="anonymous"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400&display=swap" rel="stylesheet">
     <link
         href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto:ital,wght@0,300;1,100&display=swap"
         rel="stylesheet">
-</head>
+    </head>
 
-<body>
-    <header>
-        <div class="headerMain">
-            <img src="/images/logoTopMegatronix.png" width="200" alt="Logo Megatronix" class="logotipo">
-            <div class="busqueda">
-                <div class="cuadroBuscar">
-                    Buscar productos, marcas y más
-                </div>
-                <div class="iconoBuscar">
-                    <i class="fa fa-search"></i>
-                </div>
-            </div>
-            <div class="sesion">
-                <div class="carrito"><i class="fas fa-shopping-cart"></i></div>
-                <ul>
-                    <li><a href="./register">Registrarse</a></li>
-                    <li><a href="./login">Iniciar Sesión</a></li>
-                </ul>
-            </div>
-        </div>
-        <a href="#" class="iconoHamburguesa">
-            <i class="fas fa-bars"></i>
-        </a>
-        <nav class="barraNavegacion">
-            <ul>
-                <li class="inicial"><a href="/"><i class="far fa-id-card"></i>INICIO</a></li>
-                <li><a href="#"><i class="fas fa-home"></i>PRODUCTOS</a></li>
-                <li><a href="#"><i class="fas fa-money-check-alt"></i>¿CÓMO COMPRAR?</a></li>
-                <li class="final"><a href="#"><i class="fas fa-id-card"></i>CONTÁCTENOS</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
+    <body>
+        <%- include('./partials/header') %>
+            <main>
 
-        <section id="detail-produc">
-            <p>
-            <h3>Detalles del Producto</h3>
-            </p>
-        </section>
-        <section class="detail">
-            <div id="detail-img">
-                <img src="./images/sensorUltrasonico.jpg">
-            </div>
-            <div id="detail-description">
-                <p id="detail-tittle">SENSOR ULTRASONICO </p>
-                <p class="text-description">El HC-SR04 es un sensor de distancias por ultrasonidos capaz de detectar
-                    objetos y calcular la distancia a la que se encuentra en un rango de 2 a 450 cm. El sensor funciona
-                    por ultrasonidos y contiene toda la electrónica encargada de hacer la medición. </p>
-                <p id="detail-precio">
-                    $ 12.000
-                </p>
-                </p>
+                <section id="detail-produc">
+                    <p>
+                    <h3>Detalles del Producto</h3>
+                    </p>
+                </section>
+                <section class="detail">
+                    <div id="detail-img">
+                        <img src="./images/sensorUltrasonico.jpg">
+                    </div>
+                    <div id="detail-description">
+                        <p id="detail-tittle">SENSOR ULTRASONICO </p>
+                        <p class="text-description">El HC-SR04 es un sensor de distancias por ultrasonidos capaz de
+                            detectar
+                            objetos y calcular la distancia a la que se encuentra en un rango de 2 a 450 cm. El sensor
+                            funciona
+                            por ultrasonidos y contiene toda la electrónica encargada de hacer la medición. </p>
+                        <p id="detail-precio">
+                            $ 12.000
+                        </p>
+                        </p>
 
-                <p> <label for="number">Cantidad
-                        <input required type="number" name="number" id="number" placeholder="1">
-                    </label>
-                <p id="car">
-                    <a href="./productCart">Añadir al carrito</a>
-                </p>
+                        <p> <label for="number">Cantidad
+                                <input required type="number" name="number" id="number" placeholder="1">
+                            </label>
+                        <p id="car">
+                            <a href="./productCart">Añadir al carrito</a>
+                        </p>
 
-            </div>
-        </section>
-        <section>
-            <a href="#" class="iconoHamburguesa2" >
-                <i class="fas fa-bars"></i>
-            </a>
-            <nav class="menu-produc">
-                <ul>
-                    <li><a href="#">Descripción</a></li>
-                    <li><a href="#">Destalles</a></li>
-                    <li><a href="#">Comentarios</a></li>
-                </ul>
-            </nav>
-        </section>
-        <section id="section-description">
-            <p class="text-description">
-                El sensor HC-SR04 posee dos transductores: un emisor y un receptor piezoeléctricos, además de la
-                electrónica necesaria para su operación. El funcionamiento del sensor es el siguiente: el emisor
-                piezoeléctrico emite 8 pulsos de ultrasonido(40KHz) luego de recibir la orden en el pin TRIG, las ondas
-                de sonido viajan en el aire y rebotan al encontrar un objeto, el sonido de rebote es detectado por el
-                receptor piezoeléctrico, luego el pin ECHO cambia a Alto (5V) por un tiempo igual al que demoró la onda
-                desde que fue emitida hasta que fue detectada, el tiempo del pulso ECO es medido por el microcontrolador
-                y asi se puede calcular la distancia al objeto. El funcionamiento del sensor no se ve afectado por la
-                luz solar o material de color negro (aunque los materiales blandos acusticamente como tela o lana pueden
-                llegar a ser difíciles de detectar).
-            </p>
-        </section>
+                    </div>
+                </section>
+                <section>
+                    <a href="#" class="iconoHamburguesa2">
+                        <i class="fas fa-bars"></i>
+                    </a>
+                    <nav class="menu-produc">
+                        <ul>
+                            <li><a href="#">Descripción</a></li>
+                            <li><a href="#">Destalles</a></li>
+                            <li><a href="#">Comentarios</a></li>
+                        </ul>
+                    </nav>
+                </section>
+                <section id="section-description">
+                    <p class="text-description">
+                        El sensor HC-SR04 posee dos transductores: un emisor y un receptor piezoeléctricos, además de la
+                        electrónica necesaria para su operación. El funcionamiento del sensor es el siguiente: el emisor
+                        piezoeléctrico emite 8 pulsos de ultrasonido(40KHz) luego de recibir la orden en el pin TRIG,
+                        las ondas
+                        de sonido viajan en el aire y rebotan al encontrar un objeto, el sonido de rebote es detectado
+                        por el
+                        receptor piezoeléctrico, luego el pin ECHO cambia a Alto (5V) por un tiempo igual al que demoró
+                        la onda
+                        desde que fue emitida hasta que fue detectada, el tiempo del pulso ECO es medido por el
+                        microcontrolador
+                        y asi se puede calcular la distancia al objeto. El funcionamiento del sensor no se ve afectado
+                        por la
+                        luz solar o material de color negro (aunque los materiales blandos acusticamente como tela o
+                        lana pueden
+                        llegar a ser difíciles de detectar).
+                    </p>
+                </section>
 
 
-        <section id="destacados" class="main-section">
-            <h3>PRODUCTOS DESTACADOS</h3>
-            <div class="articulos">
-                <article>
-                    <img src="./images/arduinoUno.jpg" class="productImg">
-                    <i class="fas fa-shopping-cart"></i>
-                    <p class="nombre">ARDUINO UNO</p>
-                    <p class="precio">$ 37.000</p>
-                </article>
-                <article>
-                    <img src="./images/displayOled.jpg" class="productImg">
-                    <i class="fas fa-shopping-cart"></i>
-                    <p class="nombre">Display Oled</p>
-                    <p class="precio">$ 15.000</p>
-                </article>
-                <article>
-                    <img src="./images/sensorUltrasonico.jpg" class="productImg">
-                    <i class="fas fa-shopping-cart"></i>
-                    <p class="nombre">SENSOR ULTRASONICO</p>
-                    <p class="precio">$ 12.000</p>
-                </article>
-                <article>
-                    <img src="./images/servomotor.jpg" class="productImg">
-                    <i class="fas fa-shopping-cart"></i>
-                    <p class="nombre">SERVOMOTOR</p>
-                    <p class="precio">$ 25.000</p>
-                </article>
-            </div>
-        </section>
-    </main>
-    <footer>
-        <section id="centro">
-            <section>
-                <img src="images/logoBottomMegatronix.png" width="200" alt="Logo Megatronix" class="logotipoFooter">
-            </section>
-
-            <section id="redes">
-                <i class="fab fa-facebook-square"></i>
-                <i class="fab fa-whatsapp"></i>
-                <i class="fab fa-youtube"></i>
-            </section>
-        </section>
-        <section id="informacion">
-            <p>INFORMACIÓN</p>
-            <ul>
-                <li><a href="#">QUIENES SOMOS</a></li>
-                <li><a href="#">¿CÓMO COMPRAR?</a></li>
-                <li><a href="#">ENVÍOS Y DEVOLUCIONES</a></li>
-                <li><a href="#">TÉRMINOS Y CONDICIONES</a></li>
-            </ul>
-        </section>
-        <section id="contacto">
-            <p>CONTÁCTENOS</p>
-            <ul>
-                <li><a href="#">DIRECCIÓN</a></li>
-                <li><a href="#">CIUDAD, PAÍS</a></li>
-                <li><a href="#">EMAIL</a></li>
-                <li><a href="#">TELÉFONO</a></li>
-            </ul>
-        </section>
-
-    </footer>
-</body>
+                <section id="destacados" class="main-section">
+                    <h3>PRODUCTOS DESTACADOS</h3>
+                    <div class="articulos">
+                        <article>
+                            <img src="./images/arduinoUno.jpg" class="productImg">
+                            <i class="fas fa-shopping-cart"></i>
+                            <p class="nombre">ARDUINO UNO</p>
+                            <p class="precio">$ 37.000</p>
+                        </article>
+                        <article>
+                            <img src="./images/displayOled.jpg" class="productImg">
+                            <i class="fas fa-shopping-cart"></i>
+                            <p class="nombre">Display Oled</p>
+                            <p class="precio">$ 15.000</p>
+                        </article>
+                        <article>
+                            <img src="./images/sensorUltrasonico.jpg" class="productImg">
+                            <i class="fas fa-shopping-cart"></i>
+                            <p class="nombre">SENSOR ULTRASONICO</p>
+                            <p class="precio">$ 12.000</p>
+                        </article>
+                        <article>
+                            <img src="./images/servomotor.jpg" class="productImg">
+                            <i class="fas fa-shopping-cart"></i>
+                            <p class="nombre">SERVOMOTOR</p>
+                            <p class="precio">$ 25.000</p>
+                        </article>
+                    </div>
+                </section>
+            </main>
+            <%- include('./partials/footer') %>
+    </body>
 
 </html>
