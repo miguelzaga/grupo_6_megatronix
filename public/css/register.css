@@ -23,11 +23,20 @@ hr {
     margin: 50px;
 }
 
-#send-register {
-    border-radius: 5px;
-    padding: 5px 10px;
-    background-color: #F5F7F7;
+#send-register{
+    width: 90%;
+    height: 40px;
+    background-color: rgb(53, 53, 53);
+    color: #F5F7F7;
+    font-size: 20px;
+    margin: 20px 5% 20px 5%;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
 
+#send-register:hover{
+    background-color: rgb(32, 32, 32);
 }
 
 .olvidar{

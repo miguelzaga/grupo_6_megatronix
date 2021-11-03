@@ -11,12 +11,14 @@ body main .compras section{
 .productosCarrito{
     box-shadow: 0px 0px 11px 1px #000407;
     padding-top: 5px;
+    padding-left: 2px;
 }
 
 body main section section article{
     display: flex;
     width: 100%;
     justify-content: space-around;
+    position: relative;
 }
 
 .productImg{
@@ -57,7 +59,7 @@ article .numeroCantidad{
 }
 
 
-button{
+.botComprar{
     width: 90%;
     height: 50px;
     background-color: rgb(53, 53, 53);
@@ -65,6 +67,12 @@ button{
     font-size: 25px;
     margin: 20px 5% 20px 5%;
     border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.botComprar:hover{
+    background-color: rgb(32, 32, 32);
 }
 
 #total h2 p{
@@ -78,6 +86,22 @@ button{
 
 #total h2 .precioTotal{
     font-size: 25px;
+}
+
+.botEliminar{
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    background-color: transparent;
+    font-size: 15px;
+    padding: 0;
+    border: none;
+    cursor: pointer;
+    color: rgb(53, 53, 53);
+}
+
+.botEliminar:hover{
+    color: rgb(187, 0, 0);
 }
 
 /* ---> VERSIÓN 768px */
@@ -167,7 +191,8 @@ button{
     article .precio{
         text-align: end;
         font-size: 25px;
-        width: 17vw;
+        width: 15vw;
         height: min-content;
+        padding-right: 3px;
     } 
 }
