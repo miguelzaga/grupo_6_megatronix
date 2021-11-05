@@ -18,6 +18,12 @@ const controller = {
     },
     productList: (req, res) => {
         res.render('productList');
+    },
+    createProduct:(req, res) => {
+        res.render('createProduct');
+    },
+    editProduct:(req, res) =>{
+        res.render('editProduct');
     }
 }
 
