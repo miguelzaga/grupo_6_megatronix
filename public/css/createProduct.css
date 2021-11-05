@@ -1,0 +1,60 @@
+
+/*Formulario*/
+#section div input{
+    width: 80%;
+    max-width:  700px;  
+}
+#section{
+    width: 90%;
+    max-width: 700px;    
+}
+
+ #section div {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#section p{
+    justify-content: center;
+    padding-left: 11%;
+    padding-bottom: 20px;
+}
+
+/*Titulo Añadir objeto*/
+h2{
+    color: #000407;
+    padding: 10px;
+    text-align: left;
+}
+
+/*Botones*/
+#c-bottom{
+    display: flex;
+    padding-left: 11%;
+}
+
+#c-register, #c-volver{
+    background-color: rgb(53, 53, 53);
+    color: #F5F7F7;
+    font-size: 15px;
+    padding: 5%;
+    margin: 20px 5% 20px 5%;
+    border-radius: 10px;
+    transition: all 0.3s;
+}
+
+#c-register:hover{
+    background-color: rgb(32, 32, 32);
+}
+
+#c-volver:hover{
+    background-color: rgb(138, 40, 40);
+}
+
+
+
+
+
