@@ -1,0 +1,60 @@
+/*Formulario*/
+#section div input{
+    width: 80%;
+    max-width:  700px;  
+}
+#section{
+    width: 90%;
+    max-width: 700px;    
+}
+
+ #section div {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#section p{
+    justify-content: center;
+    padding-left: 11%;
+    padding-bottom: 20px;
+}
+
+/*Titulo Añadir objeto*/
+h2{
+    color: #000407;
+    padding: 10px;
+    text-align: left;
+}
+
+/* Botones*/
+#e-bottom{
+    display: flex;
+    padding-left: 11%;
+}
+
+#edit-Update, #e-volver{
+    background-color: rgb(53, 53, 53);
+    color: #F5F7F7;
+    font-size: 15px;
+    padding: 5%;
+    margin: 20px 5% 20px 5%;
+    border-radius: 10px;
+    transition: all 0.3s;
+}
+
+#edit-Update:hover{
+    background-color: rgb(32, 32, 32);
+}
+
+#e-volver:hover{
+    background-color: rgb(138, 40, 40);
+}
+
+img{
+    width: 50%;
+    max-width: 500px;
+    min-width: 120px;
+}

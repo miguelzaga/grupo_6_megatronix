@@ -3,13 +3,68 @@
 
 <%- include('./partials/head') %>
     <link rel="stylesheet" href="/css/productCart.css">
+    <link rel="stylesheet" href="/css/editProduct.css">
     </head>
 
     <body>
         <%- include('./partials/header') %>
+
+
             <main>
-                
+                <form class="main-section" action="" method="get" id="section">
+                    <h2>Actualizar un Producto</h2>
+                    <hr>
+                    <section" class="field-group">
+
+                        <div>
+                            <a>Nombre del producto</a>
+                            <input required type="text" name="nameProduct" id="nameProduct"
+                                placeholder="SENSOR ULTRASONICO">
+                        </div>
+                        <div>
+                            <a>Breve descripcion</a>
+                            <input required type="text" name="descripcionB" id="descripcionB"
+                                placeholder="EL HC-SR04 ES UN SENSOR DE DISTANCIAS POR ULTRASONIDOS CAPAZ DE DETECTAR OBJETOS Y CALCULAR LA DISTANCIA A LA QUE SE ENCUENTRA EN UN RANGO DE 2 A 450 CM. EL SENSOR FUNCIONA POR ULTRASONIDOS Y CONTIENE TODA LA ELECTRÓNICA ENCARGADA DE HACER LA MEDICIÓN.">
+                        </div>
+                        <div>
+                            <a>Descripcion completa</a>
+                            <input required type="text" name="descripcionC" id="descripcionC"
+                                placeholder="EL SENSOR HC-SR04 POSEE DOS TRANSDUCTORES: UN EMISOR Y UN RECEPTOR PIEZOELÉCTRICOS, ADEMÁS DE LA ELECTRÓNICA NECESARIA PARA SU OPERACIÓN. EL FUNCIONAMIENTO DEL SENSOR ES EL SIGUIENTE:">
+                        </div>
+                        <div>
+                            <a>Valor</a>
+                            <input required type="number" name="precio" id="precio" placeholder="$ 12000">
+                        </div>
+                        <div>
+                            <img src="./images/sensorUltrasonico.jpg">
+                            <input type="file" name="avatar" accept=".jpg" multiple>
+                        </div>
+
+                        <p>
+                            <select name="descuento" id="descuento">
+                                <option selected value="0"> Elige un decuento </option>
+                                <option value="0">Sin descuento</option>
+                                <option value="10">10 %</option>
+                                <option value="15">15 %</option>
+                                <option value="20">20 %</option>
+                                <option value="25">25 %</option>
+                                <option value="30">30 %</option>
+                                <option value="35">35 %</option>
+                            </select>
+                        </p>
+                        </section>
+                        <section id="e-bottom">
+                            <div>
+                                <button id="edit-Update" type="submit">Actualizar</button>
+                            </div>
+                            <div>
+                                <button id="e-volver" type="submit" onclick="location.href='/'">volver</button>
+                            </div>
+                        </section>
+                </form>
             </main>
+
             <%- include('./partials/footer') %>
     </body>
+
 </html>
