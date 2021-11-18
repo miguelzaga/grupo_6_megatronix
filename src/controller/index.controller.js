@@ -45,6 +45,11 @@ const controller = {
         // lógica para editar
         res.send(req.body);// test, pero no esta saliendo nada en el req.body
         // res.redirect('/');
+    },
+    destroy:(req, res) =>{
+        let id = req.params.id
+        // lógica para borrar producto
+        res.redirect('/')
     }
 }
 
