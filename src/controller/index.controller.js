@@ -26,7 +26,8 @@ const controller = {
     // Creación de un nuevo producto
     storeProduct:(req, res) => {
         // lógica de creado
-        res.redirect('/');
+        res.send(req.body);// test, pero no esta saliendo nada en el req.body
+        // res.redirect('/');
     },
     // Vista detalle de un producto particular
     productDetail: (req, res) => {
