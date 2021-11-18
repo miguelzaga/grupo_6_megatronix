@@ -26,6 +26,7 @@ const controller = {
     // Creación de un nuevo producto
     store:(req, res) => {
         // lógica de creado
+        console.log(req.body)
         res.send(req.body);// test, pero no esta saliendo nada en el req.body
         // res.redirect('/');
     },
