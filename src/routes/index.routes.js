@@ -11,12 +11,12 @@ router.get('/productCart', controller.productCart);
 // Lista de productos
 router.get('/products', controller.products);
 
-// Detalle de producto 
-router.get('/products/:id', controller.productDetail);
-
 // Formulario de creación de productos
 router.get('/products/create', controller.create);
 router.post('/products', controller.store);
+
+// Detalle de producto 
+router.get('/products/:id', controller.productDetail);
 
 // Formulario de edición de productos
 router.get('/products/:id/edit', controller.edit);
