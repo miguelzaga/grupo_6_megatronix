@@ -19,18 +19,12 @@
                 </section>
                 <section class="detail">
                     <div id="detail-img">
-                        <img src="./images/sensorUltrasonico.jpg">
+                        <img src="<%= product.image  %>">
                     </div>
                     <div id="detail-description">
-                        <p id="detail-tittle">SENSOR ULTRASONICO </p>
-                        <p class="text-description">El HC-SR04 es un sensor de distancias por ultrasonidos capaz de
-                            detectar
-                            objetos y calcular la distancia a la que se encuentra en un rango de 2 a 450 cm. El sensor
-                            funciona
-                            por ultrasonidos y contiene toda la electrónica encargada de hacer la medición. </p>
-                        <p id="detail-precio">
-                            $ 12.000
-                        </p>
+                        <p id="detail-tittle"><%= product.name  %> </p>
+                        <p class="text-description"> <%= product.description_short  %> </p>
+                        <p id="detail-precio">$ <%= product.price  %></p>
                         </p>
 
                         <p> <label for="number">Cantidad
@@ -49,29 +43,13 @@
                     <nav class="menu-produc">
                         <ul>
                             <li><a href="#">Descripción</a></li>
-                            <li><a href="#">Destalles</a></li>
+                            <li><a href="#">Detalles</a></li>
                             <li><a href="#">Comentarios</a></li>
                         </ul>
                     </nav>
                 </section>
                 <section id="section-description">
-                    <p class="text-description">
-                        El sensor HC-SR04 posee dos transductores: un emisor y un receptor piezoeléctricos, además de la
-                        electrónica necesaria para su operación. El funcionamiento del sensor es el siguiente: el emisor
-                        piezoeléctrico emite 8 pulsos de ultrasonido(40KHz) luego de recibir la orden en el pin TRIG,
-                        las ondas
-                        de sonido viajan en el aire y rebotan al encontrar un objeto, el sonido de rebote es detectado
-                        por el
-                        receptor piezoeléctrico, luego el pin ECHO cambia a Alto (5V) por un tiempo igual al que demoró
-                        la onda
-                        desde que fue emitida hasta que fue detectada, el tiempo del pulso ECO es medido por el
-                        microcontrolador
-                        y asi se puede calcular la distancia al objeto. El funcionamiento del sensor no se ve afectado
-                        por la
-                        luz solar o material de color negro (aunque los materiales blandos acusticamente como tela o
-                        lana pueden
-                        llegar a ser difíciles de detectar).
-                    </p>
+                    <p class="text-description"><%= product.description_long  %></p>
                 </section>
                 <%- include('./partials/destacados') %>                
             </main>

@@ -1,4 +1,6 @@
 const path = require('path');
+const productsdb = require('../model/products.json')
+const usersdb = require('../model/users.json')
 
 const controller = {
     index: (req, res) => {
@@ -10,14 +12,17 @@ const controller = {
     productCart: (req, res) => {
         res.render('productCart');
     },
-    productDetail: (req, res) => {
-        res.render('productDetail');
-    },
     register: (req, res) => {
         res.render('register');
     },
-    productList: (req, res) => {
-        res.render('productList');
+    // Vista listado de productos
+    products: (req, res) => {
+        res.render('products', {products : productsdb});
+    },
+    productDetail: (req, res) => {
+        let id = req.params.id
+        let product = productsdb.find(product => product.id == id)
+        res.render('productDetail', {product: product});
     },
     createProduct:(req, res) => {
         res.render('createProduct');

@@ -15,6 +15,19 @@
                     <section class="main-section" id="derecha">
                         <h3>PRODUCTOS</h3>
                         <div class="articulos">
+                            <% locals.products.forEach(product => { %>
+                                <article>
+                                    <a href="/products/<%= product.id %>">
+                                        <img src="<%= product.image %>" class="productImg">
+                                    </a>
+                                    <i class="fas fa-shopping-cart"></i>
+                                    <p class="nombre"><%= product.name %></p>
+                                    <p class="precio">$ <%= product.price %></p>
+                                </article>
+                                <%}); %>
+                                
+                        <!-- Articulos hechos a mano  -->
+                        <!-- <div> 
                             <article>
                                 <img src="./images/arduinoUno.jpg" class="productImg">
                                 <i class="fas fa-shopping-cart"></i>
@@ -77,6 +90,9 @@
                                 <p class="nombre">Display Oled</p>
                                 <p class="precio">$ 15.000</p>
                             </article>
+
+                        </div> -->
+
                         </div>
                     </section>
                 </div>
