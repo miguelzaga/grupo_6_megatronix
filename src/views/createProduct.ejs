@@ -9,29 +9,29 @@
     <body>
         <%- include('./partials/header') %>
             <main>
-                <form class="main-section" action="" method="get" id="section">
+                <form class="main-section" action="/products" method="post" id="section">
                     <h2>Agregar un Producto</h2>
                     <hr>
-                    <section" class="field-group">
+                    <section class="field-group">
 
                         <div>
-                            <input required type="text" name="nameProduct" id="nameProduct"
+                            <input required type="text" name="name" id="name"
                                 placeholder="Nombre del Producto">
                         </div>
                         <div>
-                            <input required type="text" name="descripcion" id="descripcion" placeholder="Breve descripcion">
+                            <input required type="text" name="description_short" id="description_short" placeholder="Breve descripcion">
                         </div>
                         <div>
-                            <input required type="text" name="descripcion" id="descripcion" placeholder="Descripcion Completa">
+                            <input required type="text" name="description_long" id="description_long" placeholder="Descripcion Completa">
+                        </div>  
+                        <div>
+                            <input required type="number" name="price" id="price" placeholder="Precio">
                         </div>
                         <div>
-                            <input required type="number" name="precio" id="precio" placeholder="Precio">
-                        </div>
-                        <div>
-                            <input type="file" name="avatar" accept=".jpg" multiple>
+                            <input type="file" name="image" id="image" accept=".jpg" multiple>
                         </div>
 
-                        <p>
+                        <!-- <p>
                             <select name="descuento" id="descuento">
                                 <option selected value="0"> Elige un decuento </option>
                                 <option value="0">Sin descuento</option>
@@ -42,14 +42,14 @@
                                 <option value="30">30 %</option>
                                 <option value="35">35 %</option>
                             </select>
-                        </p>
+                        </p> -->
                         </section>
                         <section id="c-bottom">
                             <div>
                                 <button id="c-register" type="submit">Registrar</button>
                             </div>
                             <div>
-                                <button id="c-volver" type="submit" onclick="location.href='/'" >volver</button>
+                                <button id="c-volver" onclick="location.href='/'" >volver</button>
                             </div>
                         </section>
                 </form>
