@@ -20,11 +20,11 @@ const controller = {
         res.render('products', {products : productsdb});
     },
     // Vista formulario de creación de productos
-    createProduct:(req, res) => {
+    create:(req, res) => {
         res.render('createProduct');
     },
     // Creación de un nuevo producto
-    storeProduct:(req, res) => {
+    store:(req, res) => {
         // lógica de creado
         res.send(req.body);// test, pero no esta saliendo nada en el req.body
         // res.redirect('/');
@@ -35,8 +35,16 @@ const controller = {
         let product = productsdb.find(product => product.id == id)
         res.render('productDetail', {product: product});
     },
-    editProduct:(req, res) =>{
-        res.render('editProduct');
+    edit:(req, res) =>{
+        let id = req.params.id
+        let product = productsdb.find(product => product.id == id)
+        res.render('editProduct', {product: product});
+    },
+    update:(req, res) =>{
+        let id = req.params.id
+        // lógica para editar
+        res.send(req.body);// test, pero no esta saliendo nada en el req.body
+        // res.redirect('/');
     }
 }
 

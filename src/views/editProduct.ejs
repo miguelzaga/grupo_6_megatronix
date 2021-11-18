@@ -11,36 +11,33 @@
 
 
             <main>
-                <form class="main-section" action="" method="get" id="section">
-                    <h2>Actualizar un Producto</h2>
+                <form class="main-section" action="/products/<%= product.id  %> ?_method=PUT" method="post" id="section">
+                    <h2>Actualizando <%= product.name  %> </h2>
                     <hr>
                     <section" class="field-group">
 
                         <div>
                             <a>Nombre del producto</a>
-                            <input required type="text" name="nameProduct" id="nameProduct"
-                                placeholder="SENSOR ULTRASONICO">
+                            <input required type="text" name="nameProduct" id="nameProduct" value="<%= product.name  %>">
                         </div>
                         <div>
                             <a>Breve descripcion</a>
-                            <input required type="text" name="descripcionB" id="descripcionB"
-                                placeholder="EL HC-SR04 ES UN SENSOR DE DISTANCIAS POR ULTRASONIDOS CAPAZ DE DETECTAR OBJETOS Y CALCULAR LA DISTANCIA A LA QUE SE ENCUENTRA EN UN RANGO DE 2 A 450 CM. EL SENSOR FUNCIONA POR ULTRASONIDOS Y CONTIENE TODA LA ELECTRÓNICA ENCARGADA DE HACER LA MEDICIÓN.">
+                            <input required type="text" name="description_short" id="description_short" value="<%= product.description_short  %>">
                         </div>
                         <div>
                             <a>Descripcion completa</a>
-                            <input required type="text" name="descripcionC" id="descripcionC"
-                                placeholder="EL SENSOR HC-SR04 POSEE DOS TRANSDUCTORES: UN EMISOR Y UN RECEPTOR PIEZOELÉCTRICOS, ADEMÁS DE LA ELECTRÓNICA NECESARIA PARA SU OPERACIÓN. EL FUNCIONAMIENTO DEL SENSOR ES EL SIGUIENTE:">
+                            <input required type="text" name="description_long" id="description_long" value="<%= product.description_short  %>">
                         </div>
                         <div>
                             <a>Valor</a>
-                            <input required type="number" name="precio" id="precio" placeholder="$ 12000">
+                            <input required type="number" name="precio" id="precio" value="<%= product.price  %>">
                         </div>
                         <div>
-                            <img src="./images/sensorUltrasonico.jpg">
+                            <img src="<% product.image %> ">
                             <input type="file" name="avatar" accept=".jpg" multiple>
                         </div>
 
-                        <p>
+                        <!-- <p>
                             <select name="descuento" id="descuento">
                                 <option selected value="0"> Elige un decuento </option>
                                 <option value="0">Sin descuento</option>
@@ -51,14 +48,14 @@
                                 <option value="30">30 %</option>
                                 <option value="35">35 %</option>
                             </select>
-                        </p>
+                        </p> -->
                         </section>
                         <section id="e-bottom">
                             <div>
                                 <button id="edit-Update" type="submit">Actualizar</button>
                             </div>
                             <div>
-                                <button id="e-volver" type="submit" onclick="location.href='/'">volver</button>
+                                <button id="e-volver" onclick="location.href='/'">volver</button>
                             </div>
                         </section>
                 </form>
