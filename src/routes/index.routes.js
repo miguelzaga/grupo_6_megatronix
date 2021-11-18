@@ -11,6 +11,7 @@ router.get('/login', controller.login);
 router.get('/products', controller.products);
 // Formulario de creación de productos
 router.get('/products/create', controller.createProduct);
+router.post('/products', controller.storeProduct);
 // Detalle de producto 
 router.get('/products/:id', controller.productDetail);
 router.get('/productCart', controller.productCart);

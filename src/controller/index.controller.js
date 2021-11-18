@@ -19,13 +19,20 @@ const controller = {
     products: (req, res) => {
         res.render('products', {products : productsdb});
     },
+    // Vista formulario de creación de productos
+    createProduct:(req, res) => {
+        res.render('createProduct');
+    },
+    // Creación de un nuevo producto
+    storeProduct:(req, res) => {
+        // lógica de creado
+        res.redirect('/');
+    },
+    // Vista detalle de un producto particular
     productDetail: (req, res) => {
         let id = req.params.id
         let product = productsdb.find(product => product.id == id)
         res.render('productDetail', {product: product});
-    },
-    createProduct:(req, res) => {
-        res.render('createProduct');
     },
     editProduct:(req, res) =>{
         res.render('editProduct');
