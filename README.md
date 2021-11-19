@@ -23,6 +23,7 @@ Ofrecemos *dispositivos y componentes electrónicos* para *profesionales y afici
 - Trello: 
 	- Sprint 1: https://trello.com/b/jYJd8F6o/sprint-1
 	- Sprints: https://trello.com/b/cBNLkg02/sprints-megatronix
+- Retrospectiva: https://miro.com/app/board/o9J_lroZMWA=/
 
 ## Integrantes del equipo
 **Miguel Zapata** - Economista apasionado por el deporte y los números.
