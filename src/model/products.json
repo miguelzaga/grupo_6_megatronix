@@ -498,5 +498,35 @@
         "category_sales": "oferta",
         "price": 68,
         "image": "http://dummyimage.com/126x100.png/5fa2dd/ffffff"
+    },
+    {
+        "id": 51,
+        "name": "Canicas",
+        "description_short": "Divertidas",
+        "description_long": "Las mejores canicas de la historia de las canicas",
+        "category": "baterias",
+        "category_sales": "destacado",
+        "price": "5",
+        "image": ""
+    },
+    {
+        "id": 52,
+        "name": "Canicas",
+        "description_short": "Divertidas",
+        "description_long": "Las mejores canicas de la historia de las canicas",
+        "category": "baterias",
+        "category_sales": "destacado",
+        "price": "5",
+        "image": ""
+    },
+    {
+        "id": 53,
+        "name": "Canicas",
+        "description_short": "Divertidas",
+        "description_long": "Las mejores canicas de la historia de las canicas",
+        "category": "baterias",
+        "category_sales": "destacado",
+        "price": "5",
+        "image": ""
     }
 ]

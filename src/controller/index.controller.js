@@ -1,7 +1,22 @@
+const fs = require('fs');
 const path = require('path');
-const productsdb = require('../model/products.json')
-const usersdb = require('../model/users.json')
+
+const productsPath = path.resolve(__dirname, '../model/products.json')
+const products = require(productsPath)
+
+const users = require('../model/users.json')
 const productsCategories = require('../model/categorias.json')
+
+const newId = () => {
+    let greater = 0;
+    products.forEach(product => {
+        if(greater < product.id){
+            greater = product.id;
+        }
+    });
+    greater ++;
+    return greater
+}
 
 const controller = {
     index: (req, res) => {
@@ -18,31 +33,34 @@ const controller = {
     },
     // Vista listado de productos
     products: (req, res) => {
-        res.render('products',
-            {
-                products: productsdb,
-                categories: productsCategories
-            });
+        res.render('products', { products: products, categories: productsCategories });
     },
     // Vista formulario de creación de productos
     create: (req, res) => {
-        res.render('createProduct');
+        res.render('createProduct', { categories: productsCategories });
     },
     // Creación de un nuevo producto
     store: (req, res) => {
         // lógica de creado
-        res.send(req.body);
-        // res.redirect('/');
+        let id = newId();
+        let newProduct = {
+            id: id,
+            ...req.body
+        }
+        products.push(newProduct);
+        let modifiedProducts = JSON.stringify(products, null, 4);
+        fs.writeFileSync(productsPath, modifiedProducts)
+        res.redirect('/products/' + id);
     },
     // Vista detalle de un producto particular
     productDetail: (req, res) => {
         let id = req.params.id
-        let product = productsdb.find(product => product.id == id)
+        let product = products.find(product => product.id == id)
         res.render('productDetail', { product: product });
     },
     edit: (req, res) => {
         let id = req.params.id
-        let product = productsdb.find(product => product.id == id)
+        let product = products.find(product => product.id == id)
         res.render('editProduct', { product: product });
     },
     update: (req, res) => {
