@@ -55,13 +55,11 @@
 - Entregar a tiempo
 - Sugerir ideas
 - Tener iniciativa
-- Retroalimentación
-- Aclarar requerimientos con los profes
 - Organizar la Sprint Board
 - Definir Fechas
 
 ### Stop doing ###
-- Seguir las guías textualmente
+- Llegar a la entrega con crasheo
 
 ### Less of ###
-- Errores de comunicación
+- Inconsistencias en CSS
