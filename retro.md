@@ -42,3 +42,26 @@
 
 ### Less of ###
 - Errores de comunicación
+
+## Sprint 3 ##
+### More of ###
+- Testing
+- Delegación de responsabilidades
+
+### Start doing ###
+- Implementar la weekly.md
+
+### Keep doing ###
+- Entregar a tiempo
+- Sugerir ideas
+- Tener iniciativa
+- Retroalimentación
+- Aclarar requerimientos con los profes
+- Organizar la Sprint Board
+- Definir Fechas
+
+### Stop doing ###
+- Seguir las guías textualmente
+
+### Less of ###
+- Errores de comunicación
