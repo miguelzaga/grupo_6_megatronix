@@ -10,7 +10,11 @@
                 <div id="mainProduct">
                     <section id="izquierda">
                         <h2>CATEGORÍAS</h2>
-                        <%- include('./partials/categorias') %>
+                        <ul class="categorias">
+                            <% locals.categories.forEach(category => { %>
+                                <li class="itemCat"><a href="#"><%= category  %> </li></a>
+                            <% }); %> 
+                        </ul>
                     </section>
                     <section class="main-section" id="derecha">
                         <h3>PRODUCTOS</h3>
