@@ -43,10 +43,27 @@ const controller = {
     store: (req, res) => {
         // lógica de creado
         let id = newId();
-        let newProduct = {
-            id: id,
-            ...req.body
+        let file = req.file;
+        let newProduct = {};
+
+        if(!file){
+            newProduct = {
+                id: id,
+                ...req.body,
+                image: 'default-image.png'
+            }
+        } else {
+            newProduct = {
+                id: id,
+                ...req.body,
+                image: file.filename
+            }
         }
+
+        console.log(req)
+
+        return res.send({newProduct});
+
         products.push(newProduct);
         let modifiedProducts = JSON.stringify(products, null, 4);
         fs.writeFileSync(productsPath, modifiedProducts)
