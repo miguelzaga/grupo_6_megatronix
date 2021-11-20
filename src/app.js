@@ -2,7 +2,6 @@ const express = require('express');
 const path = require('path');
 const routes = require('./routes/index.routes')
 const methodOverride = require('method-override');
-const { urlencoded } = require('express');
 const app = express();
 const port = process.env.PORT || 3000
 

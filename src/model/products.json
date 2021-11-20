@@ -1,12 +1,12 @@
 [
     {
         "id": 1,
-        "name": "Firebird",
-        "description_short": "Quisque ut erat. Curabitur gravida nisi at nibh.",
-        "description_long": "Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus. Phasellus in felis. Donec semper sapien a libero. Nam dui. Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius. Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.",
+        "name": "Firebird ",
+        "description_short": "Quisque ut erat. Curabitur gravida nisi at nibh. ",
+        "description_long": "XD",
         "category": "conectores",
-        "category_sales": "oferta",
-        "price": 150,
+        "category_sales": "none",
+        "price": "150",
         "image": "default-image.png"
     },
     {
@@ -257,6 +257,62 @@
         "category": "baterias",
         "category_sales": "destacado",
         "price": "50",
+        "image": "default-image.png"
+    },
+    {
+        "id": 27,
+        "name": "Firebird ",
+        "description_short": "Quisque ut erat. Curabitur gravida nisi at nibh. ",
+        "description_long": "Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus. Phasellus in felis. Donec semper sapien a libero. Nam dui. Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius. Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.\r\n                        ",
+        "category_sales": "none",
+        "price": "150",
+        "image": "default-image.png"
+    },
+    {
+        "id": 28,
+        "name": "Firebird ",
+        "description_short": "Quisque ut erat. Curabitur gravida nisi at nibh. ",
+        "description_long": "Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus. Phasellus in felis. Donec semper sapien a libero. Nam dui. Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius. Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.\r\n                        ",
+        "category_sales": "none",
+        "price": "150",
+        "image": "default-image.png"
+    },
+    {
+        "id": 29,
+        "name": "Firebird ",
+        "description_short": "Quisque ut erat. Curabitur gravida nisi at nibh. ",
+        "description_long": "Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus. Phasellus in felis. Donec semper sapien a libero. Nam dui. Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius. Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.\r\n                        ",
+        "category_sales": "none",
+        "price": "150",
+        "image": "default-image.png"
+    },
+    {
+        "id": 30,
+        "name": "Firebird ",
+        "description_short": "Quisque ut erat. Curabitur gravida nisi at nibh. ",
+        "description_long": "Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus. Phasellus in felis. Donec semper sapien a libero. Nam dui. Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius. Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.\r\n                        ",
+        "category_sales": "none",
+        "price": "150",
+        "image": "default-image.png"
+    },
+    {
+        "id": 1,
+        "name": "Firebird ",
+        "description_short": "Quisque ut erat. Curabitur gravida nisi at nibh. ",
+        "description_long": "Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus. Phasellus in felis. Donec semper sapien a libero. Nam dui. Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius. Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.",
+        "category": "conectores",
+        "category_sales": "none",
+        "price": "150",
+        "image": "default-image.png"
+    },
+    {
+        "id": 1,
+        "name": "Firebird ",
+        "description_short": "Quisque ut erat. Curabitur gravida nisi at nibh. ",
+        "description_long": "XD",
+        "category": "conectores",
+        "category_sales": "none",
+        "price": "150",
         "image": "default-image.png"
     }
 ]

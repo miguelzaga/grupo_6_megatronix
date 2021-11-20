@@ -5,16 +5,17 @@ const productsPath = path.resolve(__dirname, '../model/products.json')
 const products = require(productsPath)
 
 const users = require('../model/users.json')
-const productsCategories = require('../model/categorias.json')
+const productsCategories = require('../model/categorias.json');
+const { runInNewContext } = require('vm');
 
 const newId = () => {
     let greater = 0;
     products.forEach(product => {
-        if(greater < product.id){
+        if (greater < product.id) {
             greater = product.id;
         }
     });
-    greater ++;
+    greater++;
     return greater
 }
 
@@ -39,30 +40,25 @@ const controller = {
     create: (req, res) => {
         res.render('createProduct', { categories: productsCategories });
     },
-    // Creación de un nuevo producto
+    // Creación de producto
     store: (req, res) => {
         // lógica de creado
         let id = newId();
         let file = req.file;
-        let newProduct = {};
+        let newProduct = {
+            id: id,
+            ...req.body
+        };
 
-        if(!file){
-            newProduct = {
-                id: id,
-                ...req.body,
-                image: 'default-image.png'
-            }
+        if (!file) {
+            newProduct.image = 'default-image.png'
         } else {
-            newProduct = {
-                id: id,
-                ...req.body,
-                image: file.filename
-            }
+            newProduct.image = file.filename
         }
 
-        console.log(req)
-
-        return res.send({newProduct});
+        // tests
+        // console.log(req.file)
+        // return res.send({newProduct});
 
         products.push(newProduct);
         let modifiedProducts = JSON.stringify(products, null, 4);
@@ -75,16 +71,36 @@ const controller = {
         let product = products.find(product => product.id == id)
         res.render('productDetail', { product: product });
     },
+    // Vista formulario de edición de productos
     edit: (req, res) => {
         let id = req.params.id
         let product = products.find(product => product.id == id)
-        res.render('editProduct', { product: product });
+        res.render('editProduct', {
+            product: product, categories: productsCategories
+        });
     },
+    // Edición de producto
     update: (req, res) => {
         let id = req.params.id
         // lógica para editar
-        res.send(req.body);
-        // res.redirect('/');
+        let file = req.file;
+        let editedProduct = products.find(product => product.id == id);
+
+        Object.keys(req.body).forEach(key => editedProduct[key] = req.body[key])
+
+        if (file) {
+            editedProduct.image = file.filename
+        }
+
+        // tests
+        // console.log(req.file)
+        // return res.send({editedProduct});
+
+        products.push(editedProduct);
+        let modifiedProducts = JSON.stringify(products, null, 4);
+        fs.writeFileSync(productsPath, modifiedProducts)
+        res.redirect('/products/' + id);
+
     },
     destroy: (req, res) => {
         let id = req.params.id
