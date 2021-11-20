@@ -33,6 +33,13 @@
                         <p id="car">
                             <a href="./productCart">Añadir al carrito</a>
                         </p>
+                    
+                        <form action="/products/<%= locals.product.id  %>?_method=delete" method="post">
+                            <div class="olvidar">
+                                <button id="send-register" type="submit">Eliminar</button>
+                            </div>
+                        </form>
+                        <a href="/products/<%=product.id%>/edit">Editar</a>
 
                     </div>
                 </section>

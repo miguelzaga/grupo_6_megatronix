@@ -100,11 +100,17 @@ const controller = {
         let modifiedProducts = JSON.stringify(products, null, 4);
         fs.writeFileSync(productsPath, modifiedProducts)
         res.redirect('/products/' + id);
-
+        
     },
     destroy: (req, res) => {
         let id = req.params.id
         // lógica para borrar producto
+        let filteredProducts = products.filter(product => product.id != id);
+
+        // return res.send({ filteredProducts})
+        
+        let modifiedProducts = JSON.stringify(filteredProducts, null, 4);
+        fs.writeFileSync(productsPath, modifiedProducts)
         res.redirect('/')
     }
 }
