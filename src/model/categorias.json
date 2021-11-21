@@ -1,0 +1,38 @@
+[
+    {
+        "key": "sensores",
+        "text": "Sensores"
+    },
+    {
+        "key": "sistemas",
+        "text": "Sistemas Embebidos"
+    },
+    {
+        "key": "audio",
+        "text": "Audio y Sonido"
+    },
+    {
+        "key": "conectores",
+        "text": "Conectores"
+    },
+    {
+        "key": "baterias",
+        "text": "Baterías y Fuentes de Poder"
+    },
+    {
+        "key": "prototipado",
+        "text": "Prototipado"
+    },
+    {
+        "key": "comunicaciones",
+        "text": "Comunicaciones"
+    },
+    {
+        "key": "modulos",
+        "text": "Módulos"
+    },
+    {
+        "key": "accesorio",
+        "text": "Accesorios"
+    }
+]

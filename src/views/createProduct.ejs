@@ -2,56 +2,61 @@
 <html lang="es">
 
 <%- include('./partials/head') %>
-    <link rel="stylesheet" href="/css/productCart.css">
-    <link rel="stylesheet" href="/css/createProduct.css">
+<link rel="stylesheet" href="/css/register.css">
+
     </head>
 
     <body>
         <%- include('./partials/header') %>
             <main>
-                <form class="main-section" action="/products" method="post" id="section">
-                    <h2>Agregar un Producto</h2>
+                <form class="main-section" id="register-form" action="/products" method="post" enctype="multipart/form-data">
+                    <h2>Agregar un producto</h2>
                     <hr>
-                    <section class="field-group">
-
+                    <section id="product-data" class="field-group">
                         <div>
-                            <input required type="text" name="name" id="name"
-                                placeholder="Nombre del Producto">
+                            <label for="name">Nombre del producto</label>
+                            <input required type="text" name="name" id="name" placeholder="">
                         </div>
                         <div>
-                            <input required type="text" name="description_short" id="description_short" placeholder="Breve descripcion">
+                            <label for="description_short">Descripción breve</label>
+                            <input type="text" name="description_short" id="description_short" placeholder="">
                         </div>
                         <div>
-                            <input required type="text" name="description_long" id="description_long" placeholder="Descripcion Completa">
-                        </div>  
-                        <div>
-                            <input required type="number" name="price" id="price" placeholder="Precio">
+                            <label for="description_long">Descripción completa</label>
+                            <textarea name="description_long" id="description_long" cols="30" rows="10"></textarea>
                         </div>
                         <div>
-                            <input type="file" name="image" id="image" accept=".jpg" multiple>
-                        </div>
-
-                        <!-- <p>
-                            <select name="descuento" id="descuento">
-                                <option selected value="0"> Elige un decuento </option>
-                                <option value="0">Sin descuento</option>
-                                <option value="10">10 %</option>
-                                <option value="15">15 %</option>
-                                <option value="20">20 %</option>
-                                <option value="25">25 %</option>
-                                <option value="30">30 %</option>
-                                <option value="35">35 %</option>
+                            <label for="category">Categoría</label>
+                            <select name="category" id="category">
+                                <% locals.categories.forEach(category => { %>
+                                    <option value="<%= category.key %>"> <%= category.text %> </option>
+                                <% }); %> 
                             </select>
-                        </p> -->
-                        </section>
-                        <section id="c-bottom">
-                            <div>
-                                <button id="c-register" type="submit">Registrar</button>
-                            </div>
-                            <div>
-                                <button id="c-volver" onclick="location.href='/'" >volver</button>
-                            </div>
-                        </section>
+                        </div>
+                        <div>
+                            <label for="category_sales">Promoción</label>
+                            <select name="category_sales" id="category_sales">
+                                    <option value="none"> Ninguna </option>
+                                    <option value="destacado"> Destacado </option>
+                                    <option value="oferta"> En Oferta </option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="price">Precio</label>
+                            <input required type="number" name="price" id="price" placeholder="100" min="0">
+                        </div>
+                        <div>
+                            <label for="image">Imagen</label>
+                            <input type="file" name="image" id="image">
+                        </div>
+
+
+                    </section>
+
+                    <div class="olvidar">
+                        <button id="send-register" type="submit">Crear</button>
+                    </div>
+
                 </form>
             </main>
             <%- include('./partials/footer') %>

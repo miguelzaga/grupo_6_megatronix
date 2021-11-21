@@ -42,3 +42,24 @@
 
 ### Less of ###
 - Errores de comunicación
+
+## Sprint 3 ##
+### More of ###
+- Testing
+- Delegación de responsabilidades
+
+### Start doing ###
+- Implementar la weekly.md
+
+### Keep doing ###
+- Entregar a tiempo
+- Sugerir ideas
+- Tener iniciativa
+- Organizar la Sprint Board
+- Definir Fechas
+
+### Stop doing ###
+- Llegar a la entrega con crasheo
+
+### Less of ###
+- Inconsistencias en CSS

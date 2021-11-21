@@ -2,62 +2,78 @@
 <html lang="es">
 
 <%- include('./partials/head') %>
-    <link rel="stylesheet" href="/css/productCart.css">
-    <link rel="stylesheet" href="/css/editProduct.css">
+    <link rel="stylesheet" href="/css/register.css">
     </head>
 
     <body>
         <%- include('./partials/header') %>
 
-
-            <main>
-                <form class="main-section" action="/products/<%= product.id  %> ?_method=PUT" method="post" id="section">
-                    <h2>Actualizando <%= product.name  %> </h2>
+            <main class="main-section" id="register-form">
+                <form  action="/products/<%= locals.product.id  %>?_method=put"
+                    method="post" enctype="multipart/form-data">
+                    <h2>Editando el producto: <%= locals.product.name %>
+                    </h2>
                     <hr>
-                    <section" class="field-group">
-
+                    <section id="product-data" class="field-group">
                         <div>
-                            <a>Nombre del producto</a>
-                            <input required type="text" name="nameProduct" id="nameProduct" value="<%= product.name  %>">
+                            <label for="name">Nombre del producto</label>
+                            <input required type="text" value="<%= locals.product.name  %> " name="name" id="name"
+                                placeholder="">
                         </div>
                         <div>
-                            <a>Breve descripcion</a>
-                            <input required type="text" name="description_short" id="description_short" value="<%= product.description_short  %>">
+                            <label for="description_short">Descripción breve</label>
+                            <input type="text" value="<%= locals.product.description_short  %> "
+                                name="description_short" id="description_short" placeholder="">
                         </div>
                         <div>
-                            <a>Descripcion completa</a>
-                            <input required type="text" name="description_long" id="description_long" value="<%= product.description_short  %>">
+                            <label for="description_long">Descripción completa</label>
+                            <textarea name="description_long" id="description_long" cols="30"
+                                rows="10"><%= locals.product.description_long  %></textarea>
                         </div>
                         <div>
-                            <a>Valor</a>
-                            <input required type="number" name="precio" id="precio" value="<%= product.price  %>">
-                        </div>
-                        <div>
-                            <img src="<% product.image %> ">
-                            <input type="file" name="avatar" accept=".jpg" multiple>
-                        </div>
-
-                        <!-- <p>
-                            <select name="descuento" id="descuento">
-                                <option selected value="0"> Elige un decuento </option>
-                                <option value="0">Sin descuento</option>
-                                <option value="10">10 %</option>
-                                <option value="15">15 %</option>
-                                <option value="20">20 %</option>
-                                <option value="25">25 %</option>
-                                <option value="30">30 %</option>
-                                <option value="35">35 %</option>
+                            <label for="category">Categoría</label>
+                            <select value="<%= locals.product.category  %> " name="category" id="category">
+                                <option value="" selected disabled hidden>Escoja una categoría</option>
+                                <% locals.categories.forEach(category=> { %>
+                                    <option value="<%= category.key %>">
+                                        <%= category.text %>
+                                    </option>
+                                    <% }); %>
                             </select>
-                        </p> -->
-                        </section>
-                        <section id="e-bottom">
-                            <div>
-                                <button id="edit-Update" type="submit">Actualizar</button>
-                            </div>
-                            <div>
-                                <button id="e-volver" onclick="location.href='/'">volver</button>
-                            </div>
-                        </section>
+                        </div>
+                        <div>
+                            <label for="category_sales">Promoción</label>
+                            <select value="<%= locals.product.category_sales  %>" name="category_sales"
+                                id="category_sales">
+                                <option value="none"> Ninguna </option>
+                                <option value="destacado"> Destacado </option>
+                                <option value="oferta"> En Oferta </option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="price">Precio</label>
+                            <input required type="number" value="<%= parseInt(locals.product.price) %>" name="price"
+                                id="price" min="0">
+                        </div>
+                        <div>
+                            <img src="/images/products/<%= locals.product.image  %>" alt="">
+                        </div>
+                        <div>
+                            <label for="image">Imagen</label>
+                            <input type="file" name="image" id="image">
+                        </div>
+
+
+                    </section>
+
+                    <div class="olvidar">
+                        <button id="send-register" type="submit">Editar</button>
+                    </div>                    
+                </form>
+                <form action="/products/<%= locals.product.id  %>?_method=delete" method="post">
+                    <div class="olvidar">
+                        <button id="send-register" type="submit">Eliminar</button>
+                    </div>
                 </form>
             </main>
 

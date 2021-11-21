@@ -1,6 +1,23 @@
+const fs = require('fs');
 const path = require('path');
-const productsdb = require('../model/products.json')
-const usersdb = require('../model/users.json')
+
+const productsPath = path.resolve(__dirname, '../model/products.json')
+const products = require(productsPath)
+
+const users = require('../model/users.json')
+const productsCategories = require('../model/categorias.json');
+const { runInNewContext } = require('vm');
+
+const newId = () => {
+    let greater = 0;
+    products.forEach(product => {
+        if (greater < product.id) {
+            greater = product.id;
+        }
+    });
+    greater++;
+    return greater
+}
 
 const controller = {
     index: (req, res) => {
@@ -17,39 +34,83 @@ const controller = {
     },
     // Vista listado de productos
     products: (req, res) => {
-        res.render('products', {products : productsdb});
+        res.render('products', { products: products, categories: productsCategories });
     },
     // Vista formulario de creación de productos
-    create:(req, res) => {
-        res.render('createProduct');
+    create: (req, res) => {
+        res.render('createProduct', { categories: productsCategories });
     },
-    // Creación de un nuevo producto
-    store:(req, res) => {
+    // Creación de producto
+    store: (req, res) => {
         // lógica de creado
-        console.log(req.body)
-        res.send(req.body);// test, pero no esta saliendo nada en el req.body
-        // res.redirect('/');
+        let id = newId();
+        let file = req.file;
+        let newProduct = {
+            id: id,
+            ...req.body
+        };
+
+        if (!file) {
+            newProduct.image = 'default-image.png'
+        } else {
+            newProduct.image = file.filename
+        }
+
+        // tests
+        // console.log(req.file)
+        // return res.send({newProduct});
+
+        products.push(newProduct);
+        let modifiedProducts = JSON.stringify(products, null, 4);
+        fs.writeFileSync(productsPath, modifiedProducts)
+        res.redirect('/products/' + id);
     },
     // Vista detalle de un producto particular
     productDetail: (req, res) => {
         let id = req.params.id
-        let product = productsdb.find(product => product.id == id)
-        res.render('productDetail', {product: product});
+        let product = products.find(product => product.id == id)
+        res.render('productDetail', { product: product });
     },
-    edit:(req, res) =>{
+    // Vista formulario de edición de productos
+    edit: (req, res) => {
         let id = req.params.id
-        let product = productsdb.find(product => product.id == id)
-        res.render('editProduct', {product: product});
+        let product = products.find(product => product.id == id)
+        res.render('editProduct', {
+            product: product, categories: productsCategories
+        });
     },
-    update:(req, res) =>{
+    // Edición de producto
+    update: (req, res) => {
         let id = req.params.id
         // lógica para editar
-        res.send(req.body);// test, pero no esta saliendo nada en el req.body
-        // res.redirect('/');
+        let file = req.file;
+        let editedProduct = products.find(product => product.id == id);
+
+        Object.keys(req.body).forEach(key => editedProduct[key] = req.body[key])
+
+        if (file) {
+            editedProduct.image = file.filename
+        }
+
+        // tests
+        // console.log(req.file)
+        // return res.send({editedProduct});
+
+        products.push(editedProduct);
+        let modifiedProducts = JSON.stringify(products, null, 4);
+        fs.writeFileSync(productsPath, modifiedProducts)
+        res.redirect('/products/' + id);
+        
     },
-    destroy:(req, res) =>{
+    destroy: (req, res) => {
         let id = req.params.id
         // lógica para borrar producto
+        let filteredProducts = products.filter(product => product.id != id);
+
+        // return res.send({ filteredProducts})
+        
+        let modifiedProducts = JSON.stringify(filteredProducts, null, 4);
+        fs.writeFileSync(productsPath, modifiedProducts)
         res.redirect('/')
     }
 }
