@@ -80,9 +80,8 @@ header {
 
 /*  ->TRANSICIÓN DE IMAGENES<-  */
 
-main {
+body {
     background-color: #79031D;
-    padding-bottom: 20px;
 }
 
 .banner {
@@ -92,13 +91,16 @@ main {
 
 /*  ->PRODUCTOS <- */
 
+main {
+    padding: 10px;
+}
 .main-section, .compras {
     background-color: #EDB518;
     border-radius: 5px;
-    width: 95%;
+    width: 100%;
     margin: auto;
-    margin-bottom: 10px;
     padding-bottom: 5px;
+
 }
 
 #ofertas{
