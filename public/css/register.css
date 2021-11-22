@@ -53,3 +53,26 @@ hr {
     text-decoration: none;
     color:blue ;    
 }
+
+input{
+    height: 30px;
+    border-radius: 8px;
+}
+input[placeholder]{
+    padding-left: 5px;
+}
+
+@media (min-width: 768px) {
+    h2{
+        font-size: 28px;
+    }
+    main{
+        max-width: 600px;
+        margin: auto;
+        margin-bottom: 10px;
+    }
+    #register-form {
+        font-size:18px
+    }
+
+}
