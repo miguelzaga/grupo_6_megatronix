@@ -40,6 +40,9 @@ form .atribut{
     justify-content: space-evenly;
     margin-bottom: 10px;
 }
+#bottoms a, #bottoms form{
+    width: 40%;
+}
 #bottoms a button, #bottoms form button{
     width: 70px;
     height:100%;
@@ -71,6 +74,6 @@ form .atribut{
     }
     #bottoms a button, #bottoms form button{
         font-size: 18px;
-        width: 100px;
+        width: 100%;
     }
 }
