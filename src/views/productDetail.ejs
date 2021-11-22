@@ -11,37 +11,43 @@
     <body>
         <%- include('./partials/header') %>
             <main>
-
-                <section id="detail-produc">
-                    <p>
-                    <h3>Detalles del Producto</h3>
-                    </p>
-                </section>
-                <section class="detail">
-                    <div id="detail-img">
-                        <img src="/images/products/<%= product.image  %>">
+                <section class="main-section">
+                    <div class="container">
+                        <h2>Detalles del Producto</h2>
+                        <hr>
                     </div>
-                    <div id="detail-description">
-                        <p id="detail-tittle"><%= product.name  %> </p>
-                        <p class="text-description"> <%= product.description_short  %> </p>
-                        <p id="detail-precio">$ <%= product.price  %></p>
-                        </p>
-
-                        <p> <label for="number">Cantidad
-                                <input required type="number" name="number" id="number" placeholder="1">
-                            </label>
-                        <p id="car">
-                            <a href="./productCart">Añadir al carrito</a>
-                        </p>
-                    
-                        <form action="/products/<%= locals.product.id  %>?_method=delete" method="post">
-                            <div class="olvidar">
-                                <button id="send-register" type="submit">Eliminar</button>
-                            </div>
-                        </form>
-                        <a href="/products/<%=product.id%>/edit">Editar</a>
-
+                    <section class="product-section">
+                        <div class="detail-img">
+                            <img src="/images/products/<%= product.image  %>">
+                        </div>
+                        <div class="right">
+                        <div id="detail-description">
+                            <p id="detail-tittle">
+                                <%= product.name %>
+                            </p>
+                            <p id="text-description">
+                                <%= product.description_short %>
+                            </p>
+                            <p id="detail-precio">$ <%= product.price %>
+                            </p>
+                            <p id="cantidad"> <label for="number">Cantidad
+                                    <input required type="number" name="number" id="number" placeholder="1">
+                                </label>
+                            </p>
+                        </div>
+                        <div id="bottoms">
+                            <a href="./productCart">
+                                <button id="addCar">Añadir al carrito</button>
+                            </a>
+                            <a href="/products/<%=product.id%>/edit">
+                                <button id="edit">Editar</button>
+                            </a>
+                            <form action="/products/<%= locals.product.id  %>?_method=delete" method="post">
+                                <button id="delete" type="submit">Eliminar</button>
+                            </form>
+                        </div>
                     </div>
+                    </section>
                 </section>
                 <section>
                     <a href="#" class="iconoHamburguesa2">
@@ -56,9 +62,12 @@
                     </nav>
                 </section>
                 <section id="section-description">
-                    <p class="text-description"><%= product.description_long  %></p>
+                    <h4>Descripción</h4>
+                    <p class="text-description">
+                        <%= product.description_long %>
+                    </p>
                 </section>
-                <%- include('./partials/destacados') %>                
+                <%- include('./partials/destacados') %>
             </main>
             <%- include('./partials/footer') %>
     </body>
