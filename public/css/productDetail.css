@@ -21,6 +21,12 @@ hr {
     padding: 25px 20px 20px 20px;
     text-align: justify;
 }
+#detail-tittle{
+    font-size: 20px;
+}
+#detail-precio, #cantidad{
+    font-size: 18px;
+}
 #text-description{
     font-family: 'Open Sans', sans-serif;
 }
@@ -131,6 +137,7 @@ hr {
     #bottoms a button, #bottoms form button{
         height: 35px;
         width: 100%;
+        font-size:16px;
     }
     #bottoms a, #bottoms form{
         width: 30%;
