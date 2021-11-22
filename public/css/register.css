@@ -1,5 +1,9 @@
 /* Formulario de registro */
-
+.container{
+    width: 95%;
+    margin: auto;
+    padding-top: 10px;
+}
 hr {
     border: #000407 thin solid;
 }
@@ -7,6 +11,7 @@ hr {
 #register-form {
     max-width: 600px;
     padding: 20px;
+    margin: auto;
 }
 
 #register-form .field-group {
