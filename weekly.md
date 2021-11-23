@@ -1,16 +1,38 @@
-Weekly sprint 3
----
+Weekly sprint 4
+----------------
+----------------
 
-**Miguel**
+Harol
+--------
+*¿Qué hice esta semana?*
+- CSS todas las páginas
+- EJS todas las páginas
 
-*Qué hice esta semana?*
-- Organizar tablero
-- Organizar carpetas del git
-- Implementar EJS
+*¿Qué impedimentos encontré?*
+- Las inconsistencias entre los views
 
-*Qué impedimentos?*
-- Difícil ajustar el router y el controller
-- app.set y res.render
+*¿Qué voy a hacer esta semana?*
+- Nada, ya todo listo
 
-*Qué voy a hacer esta semana?*
-- Revisar los detalles de la página
+Javier
+------
+*¿Qué hice esta semana?*
+- Revisión de la app
+- Subir a heroku
+
+*¿Qué impedimentos encontré?*
+- Ninguno
+
+*¿Qué voy a hacer esta semana?*
+- Revisar Multer 
+
+Miguel
+------
+*¿Qué hice esta semana?*
+- Implementar CRUD
+
+*¿Qué impedimentos encontré?*
+- Multer
+
+*¿Qué voy a hacer esta semana?*
+- Nada
