@@ -2,62 +2,64 @@
 <html lang="es">
 
 <%- include('./partials/head') %>
-<link rel="stylesheet" href="/css/register.css">
+    <link rel="stylesheet" href="/css/createProduct.css">
 
     </head>
 
     <body>
         <%- include('./partials/header') %>
             <main>
-                <form class="main-section" id="register-form" action="/products" method="post" enctype="multipart/form-data">
-                    <h2>Agregar un producto</h2>
-                    <hr>
-                    <section id="product-data" class="field-group">
-                        <div>
+                <section class="main-section">
+                    <div class="container">
+                        <h2>Agregar un producto</h2>
+                        <hr>
+                    </div>
+                    <form id="registerForm" action="/products" method="post" enctype="multipart/form-data">
+                        <div class="atribut">
                             <label for="name">Nombre del producto</label>
                             <input required type="text" name="name" id="name" placeholder="">
                         </div>
-                        <div>
+                        <div class="atribut">
                             <label for="description_short">Descripción breve</label>
                             <input type="text" name="description_short" id="description_short" placeholder="">
                         </div>
-                        <div>
+                        <div class="atribut"> 
                             <label for="description_long">Descripción completa</label>
                             <textarea name="description_long" id="description_long" cols="30" rows="10"></textarea>
                         </div>
-                        <div>
+                        <div class="atribut">
                             <label for="category">Categoría</label>
                             <select name="category" id="category">
-                                <% locals.categories.forEach(category => { %>
-                                    <option value="<%= category.key %>"> <%= category.text %> </option>
-                                <% }); %> 
+                                <% locals.categories.forEach(category=> { %>
+                                    <option value="<%= category.key %>">
+                                        <%= category.text %>
+                                    </option>
+                                    <% }); %>
                             </select>
                         </div>
-                        <div>
+                        <div class="atribut">
                             <label for="category_sales">Promoción</label>
                             <select name="category_sales" id="category_sales">
-                                    <option value="none"> Ninguna </option>
-                                    <option value="destacado"> Destacado </option>
-                                    <option value="oferta"> En Oferta </option>
+                                <option value="none"> Ninguna </option>
+                                <option value="destacado"> Destacado </option>
+                                <option value="oferta"> En Oferta </option>
                             </select>
                         </div>
-                        <div>
+                        <div class="atribut">
                             <label for="price">Precio</label>
                             <input required type="number" name="price" id="price" placeholder="100" min="0">
                         </div>
-                        <div>
+                        <div class="atribut">
                             <label for="image">Imagen</label>
                             <input type="file" name="image" id="image">
                         </div>
-
-
-                    </section>
-
-                    <div class="olvidar">
-                        <button id="send-register" type="submit">Crear</button>
+                    </form>
+                    <div id="bottoms">
+                        <a href="/products">
+                            <button id="create">Crear</button>
+                        </a>
                     </div>
-
-                </form>
+                </section>
             </main>
             <%- include('./partials/footer') %>
     </body>

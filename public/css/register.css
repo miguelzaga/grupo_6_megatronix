@@ -1,5 +1,9 @@
 /* Formulario de registro */
-
+.container{
+    width: 95%;
+    margin: auto;
+    padding-top: 10px;
+}
 hr {
     border: #000407 thin solid;
 }
@@ -7,6 +11,7 @@ hr {
 #register-form {
     max-width: 600px;
     padding: 20px;
+    margin: auto;
 }
 
 #register-form .field-group {
@@ -47,4 +52,27 @@ hr {
 .olvidar a {
     text-decoration: none;
     color:blue ;    
+}
+
+input{
+    height: 30px;
+    border-radius: 8px;
+}
+input[placeholder]{
+    padding-left: 5px;
+}
+
+@media (min-width: 768px) {
+    h2{
+        font-size: 28px;
+    }
+    main{
+        max-width: 600px;
+        margin: auto;
+        margin-bottom: 10px;
+    }
+    #register-form {
+        font-size:18px
+    }
+
 }
