@@ -26,14 +26,14 @@ router.get('/products', controller.products);
 
 // Formulario de creación de productos
 router.get('/products/create', controller.create);
-router.post('/products', uploadFile.any('image'), controller.store);
+router.post('/products', uploadFile.single('image'), controller.store);
 
 // Detalle de producto 
 router.get('/products/:id', controller.productDetail);
 
 // Formulario de edición de productos
 router.get('/products/:id/edit', controller.edit);
-router.put('/products/:id', uploadFile.any('image'), controller.update);
+router.put('/products/:id', uploadFile.single('image'), controller.update);
 
 // Acción de borrado
 router.delete('/products/:id', controller.destroy)
