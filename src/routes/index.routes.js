@@ -6,14 +6,16 @@ const controller = require('../controller/index.controller')
 
 const storage = multer.diskStorage({
     destination : function(req, file, cb) {
-        cb(null, path.resolve(__dirname, '../../public/images/products'))
+        cb(null, path.join(__dirname, '../../public/images/products'))
     },
     filename: function(req, file, cb) {
-        cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))
+        console.log(file)
+        const newFile =file.fieldname + '-' + Date.now() + path.extname(file.originalname);
+        cb(null,newFile )
     }
 })
 
-const uploadFile = multer({ storage: storage });
+const uploadFile = multer({ storage });
 
 router.get('/', controller.index);
 router.get('/register', controller.register);

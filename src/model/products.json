@@ -98,5 +98,15 @@
         "category_sales": "none",
         "price": 71,
         "image": "default-image.png"
+    },
+    {
+        "id": 20,
+        "name": "sdasd",
+        "description_short": "asdas",
+        "description_long": "assdas",
+        "category": "sensores",
+        "category_sales": "destacado",
+        "price": "414",
+        "image": "default-image.png"
     }
 ]

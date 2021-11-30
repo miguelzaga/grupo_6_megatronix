@@ -1,12 +1,15 @@
 const fs = require('fs');
 const path = require('path');
+const { render, map } = require('../app');
 
-const productsPath = path.resolve(__dirname, '../model/products.json')
-const products = require(productsPath)
+const productsPath = path.join(__dirname, '../model/products.json')
+const products = JSON.parse(fs.readFileSync(productsPath, 'utf-8'));
 
 const users = require('../model/users.json')
 const productsCategories = require('../model/categorias.json');
 const { runInNewContext } = require('vm');
+
+const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 const newId = () => {
     let greater = 0;
@@ -45,15 +48,20 @@ const controller = {
         // lógica de creado
         let id = newId();
         let file = req.file;
-        let newProduct = {
-            id: id,
-            ...req.body
-        };
+        let newProduct = {};
 
         if (!file) {
-            newProduct.image = 'default-image.png'
-        } else {
-            newProduct.image = file.filename
+            newProduct ={
+            id: id,
+            ...req.body,
+            image : 'default-image.png'
+        }
+        }
+        else {
+            newProduct ={
+            id: id,
+            ...req.body,
+            image : req.file.filename}
         }
 
         // tests
