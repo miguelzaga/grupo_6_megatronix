@@ -12,7 +12,7 @@
                         <h2>Registrar Cuenta</h2>
                         <hr>
                     </div>
-                    <form id="register-form" action="" method="get">
+                    <form id="register-form" action="user/register" method="post" enctype="multipart/form-data">
                         <section id="personal-data" class="field-group">
                             <h3>Datos personales</h3>
                             <div>
@@ -40,6 +40,10 @@
                                 <input minlength="5" required type="password" name="confirm-password"
                                     id="confirm-password" placeholder="Confirmar contraseña">
                             </div>
+                            <div >
+                                <label for="image">Imagen</label>
+                                <input type="file" name="img_perfil" id="image">
+                            </div>
                         </section>
                         <div class="olvidar">
                             <button id="send-register" type="submit">Registrarse</button>
@@ -47,6 +51,7 @@
                         <div class="olvidar">
                             <a id="olvidar" href="./login">Ya tienes una cuenta?</a>
                         </div>
+                     
                     </form>
                 </section>
             </main>

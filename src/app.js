@@ -16,6 +16,10 @@ app.set('view engine', 'ejs')
 
 app.use('/', routes);
 
+//Router Users
+const userRoutes = require('./routes/users');
+app.use('/user', userRoutes);
+
 app.listen(port, () =>{
     console.log(`Servidor corriendo en el puerto ${port}`)
 })
