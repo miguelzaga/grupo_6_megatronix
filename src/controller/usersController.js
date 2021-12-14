@@ -2,10 +2,11 @@ const fs = require('fs');
 const path = require('path');
 const { validationResult } = require('express-validator')
 const { render, map } = require('../app');
-
 const usersPath = path.join(__dirname, '../model/users.json')
 const users = JSON.parse(fs.readFileSync(usersPath, 'utf-8'));
 const { runInNewContext } = require('vm');
+//bcrypt
+const bcrypt=require('bcrypt');
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
@@ -34,13 +35,15 @@ const controller={
 
         let id = newId();
         let file = req.file;
-        let newUser = {};
+        let passEncriptada = bcrypt.hashSync(req.body.password, 10); 
+        let newUser = { }
 
+      
         if (!file) {
             newUser ={
             id: id,
             ...req.body,
-            image : 'default-image.png'
+            image : 'perfil.png'
         }
         }
         else {
@@ -49,12 +52,11 @@ const controller={
             ...req.body,
             image : req.file.filename}
         }
-        console.log(newUser)
+        newUser.password=passEncriptada;
         users.push(newUser);
         let modifiedUsers = JSON.stringify(users, null, 4);
         fs.writeFileSync(usersPath, modifiedUsers)
         res.redirect('/');
-
     },
 
 }

@@ -451,11 +451,38 @@
     },
     {
         "id": 51,
-        "name": "Javier zapata",
-        "telefono": "1234",
+        "name": "Javier",
+        "lastName": "Zapata",
+        "telefono": "54546",
         "email": "javier.alfonso28@hotmail.com",
-        "password": "12345",
-        "confirm-password": "12345",
-        "image": "default-image.png"
+        "password": "$2b$10$4zU6XimthuymLTJEVVBKNeRQ.jKe9AYoZG9P6abN01AsK7vJoltUm",
+        "image": "/perfil.png"
+    },
+    {
+        "id": 52,
+        "name": "Javier",
+        "lastName": "Zapata",
+        "telefono": "7879",
+        "email": "javier.alfonso28@hotmail.com",
+        "password": "$2b$10$y5wsUhsYYNBfaA5yKx9juu613uVClwxMHQuoZYoAFxEHt3MzPkXu2",
+        "image": "perfil.png"
+    },
+    {
+        "id": 53,
+        "name": "Javier",
+        "lastName": "Zapata",
+        "telefono": "7879",
+        "email": "javier.alfonso28@hotmail.com",
+        "password": "$2b$10$LY61dnWErrVetGfelQu4Su0NHkzkHWnEyHyhmPkwLINPX3HKvbDx2",
+        "image": "perfil.png"
+    },
+    {
+        "id": 54,
+        "name": "Javier",
+        "lastName": "Zapata",
+        "telefono": "357951",
+        "email": "javier.alfonso28@hotmail.com",
+        "password": "$2b$10$pK3foz.h1C2YJDEvyWaPkOZr1qrhs.IaN/ATKTLTOUCXRN3dvQuZ2",
+        "image": "perfil.png"
     }
 ]
