@@ -1,6 +1,5 @@
 const fs = require('fs');
 const path = require('path');
-const { render, map } = require('../app');
 
 const productsPath = path.join(__dirname, '../model/products.json')
 const products = JSON.parse(fs.readFileSync(productsPath, 'utf-8'));
