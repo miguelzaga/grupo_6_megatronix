@@ -4,7 +4,9 @@
 
     <% for (let j = 0; j < 4; j++) { %>
         <article>
-            <img src="/images/products/<%= destacados[j].image %>" class="productImg">
+            <a href="/products/<%= destacados[j].id %>">
+                <img src="/images/products/<%= destacados[j].image %>" class="productImg">
+            </a>
             <i class="fas fa-shopping-cart"></i>
             <p class="nombre"><%= destacados[j].name %></p>
             <p class="precio">$ <%= destacados[j].price %></p>

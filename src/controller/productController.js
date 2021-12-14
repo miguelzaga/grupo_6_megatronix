@@ -59,7 +59,8 @@ const controller = {
         productDetail: (req, res) => {
             let id = req.params.id
             let product = products.find(product => product.id == id)
-            res.render('products/productDetail', { product: product });
+            let destacados = products.filter(product => product.category_sales == "destacado")
+            res.render('products/productDetail', { product: product, destacados: destacados });
         },
         // Vista formulario de edición de productos
         edit: (req, res) => {
