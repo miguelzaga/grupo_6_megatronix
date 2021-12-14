@@ -448,5 +448,14 @@
         "password": "W7nqreG1q",
         "category": "user",
         "image": "user_50.jpg"
+    },
+    {
+        "id": 51,
+        "name": "Javier zapata",
+        "telefono": "1234",
+        "email": "javier.alfonso28@hotmail.com",
+        "password": "12345",
+        "confirm-password": "12345",
+        "image": "default-image.png"
     }
 ]

@@ -5,7 +5,6 @@ const { render, map } = require('../app');
 const productsPath = path.join(__dirname, '../model/products.json')
 const products = JSON.parse(fs.readFileSync(productsPath, 'utf-8'));
 
-const users = require('../model/users.json')
 const productsCategories = require('../model/categorias.json');
 const { runInNewContext } = require('vm');
 
