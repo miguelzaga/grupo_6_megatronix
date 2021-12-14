@@ -484,5 +484,14 @@
         "email": "javier.alfonso28@hotmail.com",
         "password": "$2b$10$pK3foz.h1C2YJDEvyWaPkOZr1qrhs.IaN/ATKTLTOUCXRN3dvQuZ2",
         "image": "perfil.png"
+    },
+    {
+        "id": 55,
+        "name": "Miguel",
+        "lastName": "Zapata",
+        "telefono": "12345",
+        "email": "miguel@digitalhouse.com",
+        "password": "$2b$10$kV/iXH0nKwj26GJwC6PgUucT6aIuS/2VKPrGDACKJ6BD/TKU611Ym",
+        "image": "perfil.png"
     }
 ]
