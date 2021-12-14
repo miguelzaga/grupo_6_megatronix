@@ -21,6 +21,9 @@ const uploadFile = multer({ storage });
 // Lista de productos
 router.get('/', controller.products);
 
+// Carrito de compras
+router.get('/productCart', controller.productCart);
+
 // Formulario de creación de productos
 router.get('/create', controller.create);
 router.post('/', uploadFile.single('image'), controller.store);

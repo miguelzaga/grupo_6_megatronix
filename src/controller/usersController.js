@@ -17,7 +17,14 @@ const newId = () => {
 }
 
 
-const controller={
+const controller = {
+    login: (req, res) => {
+        res.render('users/login');
+    },
+    register: (req, res) => {
+        res.render('users/register');
+    },
+
     // Captura de datos
     processRegister : (req, res) =>{
         const resultValidation = validationResult(req);

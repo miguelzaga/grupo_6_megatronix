@@ -18,11 +18,15 @@ const newId = () => {
 const controller = {
         // Vista listado de productos
         products: (req, res) => {
-            res.render('products', { products: products, categories: productsCategories });
+            res.render('products/products', { products: products, categories: productsCategories });
+        },
+        // Vista carrito de compras
+        productCart: (req, res) => {
+            res.render('products/productCart');
         },
         // Vista formulario de creación de productos
         create: (req, res) => {
-            res.render('createProduct', { categories: productsCategories });
+            res.render('products/createProduct', { categories: productsCategories });
         },
         // Creación de producto
         store: (req, res) => {
@@ -54,13 +58,13 @@ const controller = {
         productDetail: (req, res) => {
             let id = req.params.id
             let product = products.find(product => product.id == id)
-            res.render('productDetail', { product: product });
+            res.render('products/productDetail', { product: product });
         },
         // Vista formulario de edición de productos
         edit: (req, res) => {
             let id = req.params.id
             let product = products.find(product => product.id == id)
-            res.render('editProduct', {
+            res.render('products/editProduct', {
                 product: product, categories: productsCategories
             });
         },

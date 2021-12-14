@@ -19,7 +19,7 @@ const userRoutes = require('./routes/users.routes');
 const productRoutes = require('./routes/products.routes');
 
 app.use('/', routes);
-app.use('/user', userRoutes);
+app.use('/users', userRoutes);
 app.use('/products', productRoutes);
 
 app.listen(port, () =>{
