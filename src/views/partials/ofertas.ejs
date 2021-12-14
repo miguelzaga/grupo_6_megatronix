@@ -1,13 +1,13 @@
-<section id="destacados" class="main-section">
-    <h3>PRODUCTOS DESTACADOS</h3>
+<section id="ofertas" class="main-section">
+    <h3>PRODUCTOS EN OFERTA</h3>
     <div class="articulos">
 
     <% for (let j = 0; j < 4; j++) { %>
         <article>
-            <img src="/images/products/<%= destacados[j].image %>" class="productImg">
+            <img src="/images/products/<%= ofertas[j].image %>" class="productImg">
             <i class="fas fa-shopping-cart"></i>
-            <p class="nombre"><%= destacados[j].name %></p>
-            <p class="precio">$ <%= destacados[j].price %></p>
+            <p class="nombre"><%= ofertas[j].name %></p>
+            <p class="precio">$ <%= ofertas[j].price %></p>
         </article>
     <% }; %>
 <!--  Articulos hecho a mano         

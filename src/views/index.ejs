@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<%- include('./partials/head') %>
+<%- include('partials/head') %>
     </head>
 
     <body>
-        <%- include('./partials/header') %>
+        <%- include('partials/header') %>
         <section id="cascada">
             <img src="./images/0_banner.jpeg" alt="imagen transición" class="banner">
         </section>
             <main>
+                <%- include('partials/destacados') %>
+<!-- Articulos hechos a mano                
                 <section class="main-section">
                     <h3>PRODUCTOS DESTACADOS</h3>
                     <div class="articulos">
@@ -38,7 +40,9 @@
                             <p class="precio">$ 25.000</p>
                         </article>
                     </div>
-                </section>
+                </section> -->
+                <%- include('partials/ofertas') %>
+<!-- Articulos hechos a mano                
                 <section class="main-section" id="ofertas">
                     <h3>OFERTAS</h3>
                     <div class="articulos">
@@ -67,9 +71,9 @@
                             <p class="precio">$ 25.000</p>
                         </article>
                     </div>
-                </section>
+                </section> -->
             </main>
-            <%- include('./partials/footer') %>
+            <%- include('partials/footer') %>
     </body>
 
 </html>

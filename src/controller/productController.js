@@ -18,7 +18,8 @@ const newId = () => {
 const controller = {
         // Vista listado de productos
         products: (req, res) => {
-            res.render('products/products', { products: products, categories: productsCategories });
+            let destacados = products.filter(product => product.category_sales == "destacado")
+            res.render('products/products', { products: products, destacados: destacados, categories: productsCategories });
         },
         // Vista carrito de compras
         productCart: (req, res) => {
