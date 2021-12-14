@@ -63,11 +63,9 @@
                         <div class="atribut">
                             <img src="/images/products/<%= locals.product.image  %>" alt="">
                         </div>
+                        <button id="edit" type="submit">Editar</button>
                     </form>
                     <div id="bottoms">
-                        <a href="/products/<%=product.id%>/edit">
-                            <button id="edit">Editar</button>
-                        </a>
                         <form action="/products/<%= locals.product.id  %>?_method=delete" method="post">
                             <button id="delete" type="submit">Eliminar</button>
                         </form>

@@ -91,19 +91,17 @@ const controller = {
         let id = req.params.id
         // lógica para editar
         let file = req.file;
-        let editedProduct = products.find(product => product.id == id);
 
-        Object.keys(req.body).forEach(key => editedProduct[key] = req.body[key])
+        products.map(function(product){
+            if(product.id == id){
+                Object.keys(req.body).forEach(key => product[key] = req.body[key])
+                if (file){
+                    product.image = file.filename
+                }
+            }
+            return product
+        })
 
-        if (file) {
-            editedProduct.image = file.filename
-        }
-
-        // tests
-        // console.log(req.file)
-        // return res.send({editedProduct});
-
-        products.push(editedProduct);
         let modifiedProducts = JSON.stringify(products, null, 4);
         fs.writeFileSync(productsPath, modifiedProducts)
         res.redirect('/products/' + id);
