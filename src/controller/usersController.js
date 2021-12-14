@@ -3,11 +3,7 @@ const path = require('path');
 const { validationResult } = require('express-validator')
 const usersPath = path.join(__dirname, '../model/users.json')
 const users = JSON.parse(fs.readFileSync(usersPath, 'utf-8'));
-const { runInNewContext } = require('vm');
-//bcrypt
 const bcrypt=require('bcrypt');
-
-const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 const newId = () => {
     let greater = 0;
