@@ -6,6 +6,11 @@
     text-transform: uppercase;
 }
 
+/* --> MENSAJE DE ERROR <-- */
+.error-message{
+    color: red;
+}
+
 /* --> HEADER <-- */
 
 header {
