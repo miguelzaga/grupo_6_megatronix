@@ -1,0 +1,12 @@
+function userLoggedMid(req, res, next){
+    res.locals.isLogged = false
+    
+    if(req.session.userLogged){
+        res.locals.isLogged = true
+        res.locals.userImage = req.session.userLogged.image
+    }
+    
+    next()
+}
+
+module.exports = userLoggedMid

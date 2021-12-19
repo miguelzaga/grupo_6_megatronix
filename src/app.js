@@ -4,6 +4,7 @@ const path = require('path');
 const methodOverride = require('method-override');
 const session = require('express-session')
 const port = process.env.PORT || 3000;
+const userLoggedMid = require('./middleware/userLoggedMid')
 
 app.use(express.urlencoded({ extended: "false" }));
 app.use(express.json());
@@ -14,6 +15,8 @@ app.use(session({
     resave: false,
     saveUninitialized: false
 }))
+app.use(userLoggedMid)
+
 
 app.set('views', path.resolve(__dirname, './views'))
 app.set('view engine', 'ejs')
