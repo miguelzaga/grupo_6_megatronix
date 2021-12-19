@@ -5,7 +5,7 @@
         "lastName": "Zapata",
         "email": "javier.alfonso28@hotmail.com",
         "password": "$2b$10$4zU6XimthuymLTJEVVBKNeRQ.jKe9AYoZG9P6abN01AsK7vJoltUm",
-        "image": "perfil.png"
+        "image": "default.png"
     },
     {
         "id": 2,
@@ -14,13 +14,5 @@
         "email": "miguel@digitalhouse.com",
         "password": "$2b$10$QKiMQ0h7U3hcfx9.nCKNWeDZS2p2xoLEJdXM11Uyph/obntl9lw5C",
         "image": "1639874718423_img.png"
-    },
-    {
-        "id": 3,
-        "firstName": "miguel",
-        "lastName": "Zapata",
-        "email": "miguel@digitalhouse.com",
-        "password": "$2b$10$9LzlzWSjvL2sKOn.6kdBo.BxcKcawI1uWdd2dQt/uWmMTqEluL7wS",
-        "image": "perfil.png"
     }
 ]

@@ -4,6 +4,7 @@ const { validationResult } = require('express-validator')
 const usersPath = path.join(__dirname, '../model/users.json')
 const users = JSON.parse(fs.readFileSync(usersPath, 'utf-8'));
 const bcrypt = require('bcrypt');
+const { ResultWithContext } = require('express-validator/src/chain');
 
 const newId = () => {
     let greater = 0;
@@ -21,18 +22,30 @@ const controller = {
     login: (req, res) => {
         res.render('users/login');
     },
+    loginProcess: (req, res) => {
+        let errors = validationResult(req)
+        if (errors.isEmpty()){
+            let user = users.find(user => user.email == req.body.email)
+            
+            res.send(user != undefined && bcrypt.compareSync(req.body.password, user.password))
+
+        } else {
+            res.render('users/login', {
+                errors: errors.mapped(),
+                old: req.body
+            })
+        }
+
+    },
     register: (req, res) => {
         res.render('users/register');
     },
-
-    // Captura de datos
-    postRegister: (req, res) => {
+    registerProcess: (req, res) => {
         let errors = validationResult(req);
 
         if (errors.isEmpty()) {
-
             if(users.find(user => user.email == req.body.email) != undefined){
-                res.render('users/register',  {
+                return res.render('users/register',  {
                     errors: {
                         email: {
                             msg: "Este email ya está registrado"
@@ -42,14 +55,13 @@ const controller = {
                 })
             }
 
-
             let id = newId();
             let file = req.file;
             let newUser = {
                     id: id,
                     ...req.body,
                     password: bcrypt.hashSync(req.body.password, 10),
-                    image: 'perfil.png'
+                    image: 'default.png'
                 }
     
             if(file) {
@@ -59,7 +71,7 @@ const controller = {
             users.push(newUser);
             let modifiedUsers = JSON.stringify(users, null, 4);
             fs.writeFileSync(usersPath, modifiedUsers)
-            res.redirect('/');
+            res.redirect('login');
     
         } else {
             return res.render('users/register', {

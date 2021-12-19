@@ -16,22 +16,17 @@ const newId = () => {
 }
 
 const controller = {
-        // Vista listado de productos
         products: (req, res) => {
             let destacados = products.filter(product => product.category_sales == "destacado")
             res.render('products/products', { products: products, destacados: destacados, categories: productsCategories });
         },
-        // Vista carrito de compras
         productCart: (req, res) => {
             res.render('products/productCart');
         },
-        // Vista formulario de creación de productos
         create: (req, res) => {
             res.render('products/createProduct', { categories: productsCategories });
         },
-        // Creación de producto
         store: (req, res) => {
-            // lógica de creado
             let id = newId();
             let file = req.file;
             let newProduct = {};
@@ -40,7 +35,7 @@ const controller = {
                 newProduct ={
                 id: id,
                 ...req.body,
-                image : 'default-image.png'
+                image : 'default.png'
             }
             }
             else {
@@ -55,14 +50,12 @@ const controller = {
             fs.writeFileSync(productsPath, modifiedProducts)
             res.redirect('/products/' + id);
         },
-        // Vista detalle de un producto particular
         productDetail: (req, res) => {
             let id = req.params.id
             let product = products.find(product => product.id == id)
             let destacados = products.filter(product => product.category_sales == "destacado")
             res.render('products/productDetail', { product: product, destacados: destacados });
         },
-        // Vista formulario de edición de productos
         edit: (req, res) => {
             let id = req.params.id
             let product = products.find(product => product.id == id)
@@ -70,10 +63,8 @@ const controller = {
                 product: product, categories: productsCategories
             });
         },
-        // Edición de producto
         update: (req, res) => {
             let id = req.params.id
-            // lógica para editar
             let file = req.file;
     
             products.map(function(product){
@@ -93,7 +84,6 @@ const controller = {
         },
         destroy: (req, res) => {
             let id = req.params.id
-            // lógica para borrar producto
             let filteredProducts = products.filter(product => product.id != id);
                 
             let modifiedProducts = JSON.stringify(filteredProducts, null, 4);
