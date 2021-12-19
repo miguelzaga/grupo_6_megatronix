@@ -3,7 +3,6 @@
         "id": 1,
         "name": "Javier",
         "lastName": "Zapata",
-        "telefono": "54546",
         "email": "javier.alfonso28@hotmail.com",
         "password": "$2b$10$4zU6XimthuymLTJEVVBKNeRQ.jKe9AYoZG9P6abN01AsK7vJoltUm",
         "image": "perfil.png"
@@ -19,11 +18,10 @@
     },
     {
         "id": 3,
-        "name": "Libro",
-        "lastName": "X",
-        "telefono": "12345",
-        "email": "12345@12.com",
-        "password": "$2b$10$XeCna2pCcPjn4fnNGICJ1.fj9VW2d1IUXqzTrnjFhn8DtR/Kcc.Cu",
+        "firstName": "miguel",
+        "lastName": "Zapata",
+        "email": "miguel@digitalhouse.com",
+        "password": "$2b$10$M0WGbYHBbvtExwL9joUSdOPz/gP9iF3Sdier07lElxZe5kIDJokd.",
         "image": "perfil.png"
     }
 ]

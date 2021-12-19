@@ -5,6 +5,7 @@ const multer = require('multer');
 
 const userController = require('../controller/usersController');
 
+const validateRegister = require('../middleware/validateRegisterMid')
 
 const storage = multer.diskStorage({
     destination : function(req, file, cb) {
@@ -20,6 +21,6 @@ const uploadFile = multer({ storage })
 
 router.get('/login', userController.login);
 router.get('/register', userController.register);
-router.post('/register',uploadFile.single('img_perfil'),userController.processRegister);
+router.post('/register',uploadFile.single('img_perfil'), validateRegister, userController.postRegister);
 
 module.exports = router;

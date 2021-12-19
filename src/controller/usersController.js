@@ -26,37 +26,35 @@ const controller = {
     },
 
     // Captura de datos
-    processRegister: (req, res) => {
-        const resultValidation = validationResult(req);
+    postRegister: (req, res) => {
+        let errors = validationResult(req);
 
-        if (resultValidation.errors.length > 0) {
-            return res.render('users/register', {
-                errors: resultValidation.mapped(),
-                oldData: req.body
-            });
-        };
-
-        let id = newId();
-        let file = req.file;
-        let passEncriptada = bcrypt.hashSync(req.body.password, 10);
-        let newUser = {
-                id: id,
-                ...req.body,
-                image: 'perfil.png'
+        if (errors.isEmpty()) {
+            let id = newId();
+            let file = req.file;
+            let newUser = {
+                    id: id,
+                    ...req.body,
+                    password: bcrypt.hashSync(req.body.password, 10),
+                    image: 'perfil.png'
+                }
+    
+            if(file) {
+                newUser.image =  req.file.filename
             }
-
-        newUser.password = passEncriptada;
-
-        if(file) {
-            newUser.image =  req.file.filename
+            
+            users.push(newUser);
+            let modifiedUsers = JSON.stringify(users, null, 4);
+            fs.writeFileSync(usersPath, modifiedUsers)
+            res.redirect('/');
+    
+        } else {
+            return res.render('users/register', {
+                errors: errors.mapped(),
+                old: req.body
+            })
         }
-        
-        users.push(newUser);
-        let modifiedUsers = JSON.stringify(users, null, 4);
-        fs.writeFileSync(usersPath, modifiedUsers)
-        res.redirect('/');
     },
-
 }
 
 module.exports = controller;
