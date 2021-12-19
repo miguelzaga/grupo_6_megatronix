@@ -30,6 +30,11 @@ const controller = {
                 // logueado correcto
                 delete userToLogin.password
                 req.session.userLogged = userToLogin
+
+                if(req.body.remember_user){
+                    res.cookie('userEmail', req.body.email, {maxAge: 1000})
+                }
+
                 res.redirect('/users/profile')
             } else {
                 res.render('users/login', {
@@ -94,6 +99,7 @@ const controller = {
         }
     },
     profile: (req, res) => {
+        console.log(req.cookies.userEmail);
         res.render('users/profile')
     }
     // , 
