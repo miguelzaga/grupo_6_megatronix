@@ -1,7 +1,7 @@
 [
     {
         "id": 1,
-        "name": "Javier",
+        "firstName": "Javier",
         "lastName": "Zapata",
         "email": "javier.alfonso28@hotmail.com",
         "password": "$2b$10$4zU6XimthuymLTJEVVBKNeRQ.jKe9AYoZG9P6abN01AsK7vJoltUm",
@@ -9,10 +9,18 @@
     },
     {
         "id": 2,
-        "name": "Miguel",
+        "firstName": "miguel",
         "lastName": "Zapata",
         "email": "miguel@digitalhouse.com",
-        "password": "$2b$10$QKiMQ0h7U3hcfx9.nCKNWeDZS2p2xoLEJdXM11Uyph/obntl9lw5C",
-        "image": "1639874718423_img.png"
+        "password": "$2b$10$iSG5j6DOx6hvxnpcV2A5wOFWNVjl5wKuvLkQi6MktvZp5V1YJDEte",
+        "image": "1639929524553_img.png"
+    },
+    {
+        "id": 3,
+        "firstName": "andres",
+        "lastName": "garcia",
+        "email": "andres@digitalhouse.com",
+        "password": "$2b$10$lKx924TejfDsYUKwT/B3GOJyV2RTjLuoF5CSIyCJdO588JI7ufw9u",
+        "image": "1639929553263_img.png"
     }
 ]

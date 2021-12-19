@@ -4,7 +4,6 @@ const { validationResult } = require('express-validator')
 const usersPath = path.join(__dirname, '../model/users.json')
 const users = JSON.parse(fs.readFileSync(usersPath, 'utf-8'));
 const bcrypt = require('bcrypt');
-const { ResultWithContext } = require('express-validator/src/chain');
 
 const newId = () => {
     let greater = 0;
@@ -25,9 +24,23 @@ const controller = {
     loginProcess: (req, res) => {
         let errors = validationResult(req)
         if (errors.isEmpty()){
-            let user = users.find(user => user.email == req.body.email)
+            let userToLogin = users.find(user => user.email == req.body.email)
             
-            res.send(user != undefined && bcrypt.compareSync(req.body.password, user.password))
+            if(userToLogin != undefined && bcrypt.compareSync(req.body.password, userToLogin.password)){
+                // logueado correcto
+                delete userToLogin.password
+                req.session.userLogged = userToLogin
+                res.redirect('/users/profile')
+            } else {
+                res.render('users/login', {
+                    errors: {
+                        password: {
+                            msg: "Correo o contraseña inválidos"
+                        }
+                    },
+                    old: req.body
+                })
+            }
 
         } else {
             res.render('users/login', {
@@ -80,6 +93,9 @@ const controller = {
             })
         }
     },
+    profile: (req, res) => {
+        res.render('users/profile', {user: req.session.userLogged})
+    }
 }
 
 module.exports = controller;

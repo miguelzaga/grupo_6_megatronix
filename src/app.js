@@ -12,7 +12,7 @@ app.use(methodOverride('_method'))
 app.use(session({
     secret: "el mensaje secreto de Megatronix",
     resave: false,
-    saveUninitialized: true
+    saveUninitialized: false
 }))
 
 app.set('views', path.resolve(__dirname, './views'))
