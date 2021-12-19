@@ -34,16 +34,21 @@ form .atribut{
     flex-direction: column;
     align-items:center;
 }
-#bottoms{
+
+.atribut img {
+    margin-bottom: 20px
+}
+
+.bottoms, .bottoms form{
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     margin-bottom: 10px;
+    width: 40 rem;
+    margin: auto;
 }
-#bottoms a, #bottoms form{
-    width: 40%;
-}
-#bottoms a button, #bottoms form button{
+
+.bottoms button, .bottoms form button{
     width: 70px;
     height:100%;
     background-color: rgb(53, 53, 53);
@@ -53,7 +58,7 @@ form .atribut{
     cursor: pointer;
     transition: all 0.3s;
 }
-#bottoms a button:hover, #bottoms form button:hover{
+.bottoms button:hover{
     background-color: rgb(32, 32, 32);
 }
 @media (min-width: 768px) {
@@ -69,11 +74,11 @@ form .atribut{
         padding-left:90px;
     }
     
-    #bottoms{
+    .bottoms{
         height: 35px;
     }
-    #bottoms a button, #bottoms form button{
+    .bottoms button, .bottoms form, .bottoms form button{
         font-size: 18px;
-        width: 100%;
+        width: 300px;
     }
 }

@@ -10,10 +10,10 @@
             </div>
         </div>
         <div class="sesion">
-            <div class="carrito"><a href="./productCart"><i class="fas fa-shopping-cart"></i></a></div>
+            <div class="carrito"><a href="products/productCart"><i class="fas fa-shopping-cart"></i></a></div>
             <ul>
                 <% if(locals.isLogged) { %>
-                <li><a href="/users/profile"><img src="/images/users/<%= locals.userImage %>" alt=""></a></li>
+                <li><a href="/users/profile"><img id="user-img-header" src="/images/users/<%= locals.userLogged.image %>" alt=""></a></li>
                 <% } else { %> 
                 <li><a href="/users/register">Registrarse</a></li>
                 <li><a href="/users/login">Iniciar Sesión</a></li>

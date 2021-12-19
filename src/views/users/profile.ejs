@@ -12,10 +12,9 @@
                     <div class="container">
                         <h2>Mi cuenta</h2>
                         <hr>
-                        <img src="/images/users/<%= user.image %>" alt="">
-                        <p><%= user.firstName %></p>
-                        <p><%= user.lastName %></p>
-                        <p><%= user.email %></p>
+                        <img src="/images/users/<%= locals.userLogged.image %>" alt="">
+                        <p><%= locals.userLogged.firstName + " " + locals.userLogged.lastName %></p>
+                        <p><%= locals.userLogged.email %></p>
                         <!-- <a href="/users/logout">Cerrar sesión</a> -->
                     </div>
                 </section>

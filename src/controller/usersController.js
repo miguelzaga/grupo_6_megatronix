@@ -94,7 +94,7 @@ const controller = {
         }
     },
     profile: (req, res) => {
-        res.render('users/profile', {user: req.session.userLogged})
+        res.render('users/profile')
     }
     // , 
     // logout: (req, res) => {
