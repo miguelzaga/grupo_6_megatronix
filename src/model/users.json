@@ -22,5 +22,13 @@
         "email": "andres@digitalhouse.com",
         "password": "$2b$10$lKx924TejfDsYUKwT/B3GOJyV2RTjLuoF5CSIyCJdO588JI7ufw9u",
         "image": "1639929553263_img.png"
+    },
+    {
+        "id": 4,
+        "firstName": "Harol",
+        "lastName": "Preciado",
+        "email": "harol.andres1999@gmail.com",
+        "password": "$2b$10$g4.qULSLIfLywIOPOKEtwO7p0h7mH8MXokryFy68s0BNE2KH67I16",
+        "image": "homero.png"
     }
 ]

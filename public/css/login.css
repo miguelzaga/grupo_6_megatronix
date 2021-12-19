@@ -70,6 +70,13 @@ input[placeholder]{
     padding-left: 5px;
 }
 
+.recordar{
+    display:flex;
+}
+.recordar input{
+    display: flex;
+    width: 20px;
+}
 @media (min-width: 768px) {
     h2{
         font-size: 28px;

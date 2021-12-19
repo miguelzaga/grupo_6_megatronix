@@ -19,6 +19,9 @@
                 <li><a href="/users/login">Iniciar Sesión</a></li>
                 <% } %>
             </ul>
+            <% if(locals.isLogged) { %>
+            <div class="carrito"><a href="/users/logout"><i class="fas fa-sign-out-alt"></i></a></div>
+            <% } %>
         </div>
     </div>
     <a href="#" class="iconoHamburguesa">

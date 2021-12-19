@@ -23,19 +23,16 @@ const controller = {
     },
     loginProcess: (req, res) => {
         let errors = validationResult(req)
-        if (errors.isEmpty()){
-            let userToLogin = users.find(user => user.email == req.body.email)
-            
-            if(userToLogin != undefined && bcrypt.compareSync(req.body.password, userToLogin.password)){
-                // logueado correcto
-                delete userToLogin.password
-                req.session.userLogged = userToLogin
+        if (errors.isEmpty()) {
+            let user = users.find(user => user.email == req.body.email)
+            let access = (user != undefined && bcrypt.compareSync(req.body.password, user.password))
+            if (access) {
+                req.session.userLogged = user;
 
-                if(req.body.remember_user){
-                    res.cookie('userEmail', req.body.email, {maxAge: 1000})
+                if (req.body.recordarUser) {
+                    res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 5 }) //Guarda la cookie en el navegador durante 5 minutos
                 }
-
-                res.redirect('/users/profile')
+                return res.redirect('/users/profile')
             } else {
                 res.render('users/login', {
                     errors: {
@@ -46,7 +43,6 @@ const controller = {
                     old: req.body
                 })
             }
-
         } else {
             res.render('users/login', {
                 errors: errors.mapped(),
@@ -99,15 +95,16 @@ const controller = {
         }
     },
     profile: (req, res) => {
-        console.log(req.cookies.userEmail);
-        res.render('users/profile')
+        let user = req.session.userLogged;
+        //console.log(user)
+        return res.render('users/profile', { user });
+    },
+
+    logout: (req, res) => {
+        res.clearCookie('userEmail')
+        req.session.destroy();
+        return res.redirect('/');
     }
-    // , 
-    // logout: (req, res) => {
-    //     delete req.session.userLogged
-    //     console.log(req.session)
-    //     return res.redirect('/')
-    // }
 }
 
 module.exports = controller;

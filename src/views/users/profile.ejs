@@ -2,7 +2,7 @@
 <html lang="es">
 
 <%- include('../partials/head') %>
-    <link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" href="/css/profile.css">
     </head>
 
     <body>
@@ -10,13 +10,10 @@
             <main>
                 <section class="main-section">
                     <div class="container">
-                        <h2>Mi cuenta</h2>
+                        <h2>Bienvenido <%= user.firstName%> </h2>
                         <hr>
-                        <img src="/images/users/<%= locals.userLogged.image %>" alt="">
-                        <p><%= locals.userLogged.firstName + " " + locals.userLogged.lastName %></p>
-                        <p><%= locals.userLogged.email %></p>
-                        <!-- <a href="/users/logout">Cerrar sesión</a> -->
                     </div>
+                    <img src = "../images/users/<%= user.image %> ">
                 </section>
             </main>
             <%- include('../partials/footer') %>

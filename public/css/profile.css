@@ -1,0 +1,27 @@
+.container{
+    width: 95%;
+    margin: auto;
+    padding-top: 10px;
+}
+hr {
+    border: #000407 thin solid;
+}
+
+img{
+    display: block;
+    margin: auto;
+    width: 80%;
+    height: 80%;
+    border-radius: 20px;
+}
+
+@media (min-width: 768px) {
+    h2{
+        font-size: 28px;
+    }
+    main{
+        max-width: 600px;
+        margin: auto;
+        margin-bottom: 10px;
+    }
+}
