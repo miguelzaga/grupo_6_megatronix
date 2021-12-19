@@ -11,7 +11,6 @@
         "id": 2,
         "name": "Miguel",
         "lastName": "Zapata",
-        "telefono": "12345",
         "email": "miguel@digitalhouse.com",
         "password": "$2b$10$QKiMQ0h7U3hcfx9.nCKNWeDZS2p2xoLEJdXM11Uyph/obntl9lw5C",
         "image": "1639874718423_img.png"
@@ -21,7 +20,7 @@
         "firstName": "miguel",
         "lastName": "Zapata",
         "email": "miguel@digitalhouse.com",
-        "password": "$2b$10$M0WGbYHBbvtExwL9joUSdOPz/gP9iF3Sdier07lElxZe5kIDJokd.",
+        "password": "$2b$10$9LzlzWSjvL2sKOn.6kdBo.BxcKcawI1uWdd2dQt/uWmMTqEluL7wS",
         "image": "perfil.png"
     }
 ]

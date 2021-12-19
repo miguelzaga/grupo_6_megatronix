@@ -30,6 +30,19 @@ const controller = {
         let errors = validationResult(req);
 
         if (errors.isEmpty()) {
+
+            if(users.find(user => user.email == req.body.email) != undefined){
+                res.render('users/register',  {
+                    errors: {
+                        email: {
+                            msg: "Este email ya está registrado"
+                        }
+                    },
+                    old: req.body
+                })
+            }
+
+
             let id = newId();
             let file = req.file;
             let newUser = {
