@@ -95,9 +95,7 @@ const controller = {
         }
     },
     profile: (req, res) => {
-        let user = req.session.userLogged;
-        //console.log(user)
-        return res.render('users/profile', { user });
+        return res.render('users/profile');
     },
 
     logout: (req, res) => {

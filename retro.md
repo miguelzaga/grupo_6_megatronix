@@ -63,3 +63,17 @@
 
 ### Less of ###
 - Inconsistencias en CSS
+
+## Sprint 4 ##
+### More of ###
+- Usar el tablero
+
+### Start doing ###
+
+### Keep doing ###
+- Entregar a tiempo
+- Definir Fechas
+
+### Stop doing ###
+
+### Less of ###

@@ -10,10 +10,10 @@
             <main>
                 <section class="main-section">
                     <div class="container">
-                        <h2>Bienvenido <%= user.firstName%> </h2>
+                        <h2>Bienvenido <%= locals.userLogged.firstName%> </h2>
                         <hr>
                     </div>
-                    <img src = "../images/users/<%= user.image %> ">
+                    <img src = "../images/users/<%= locals.userLogged.image %> ">
                 </section>
             </main>
             <%- include('../partials/footer') %>

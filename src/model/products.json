@@ -1,33 +1,23 @@
 [
     {
-        "id": 1,
-        "name": "Bronco ",
-        "description_short": "Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque. Quisque porta volutpat erat. ",
-        "description_long": "Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque. Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus. Phasellus in felis. Donec semper sapien a libero. Nam dui. Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius. Integer ac leo. Pellentesque ultrices mattis odio.",
-        "category": "modulos",
-        "category_sales": "none",
-        "price": "22",
-        "image": "4.jpg"
-    },
-    {
         "id": 2,
-        "name": "CR-V",
-        "description_short": "Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti. Nullam porttitor lacus at turpis.",
-        "description_long": "In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus. Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst. Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat. Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem. Integer tincidunt ante vel ipsum.",
-        "category": "audio",
-        "category_sales": "oferta",
-        "price": 101,
-        "image": "5.jpg"
+        "name": "GeForce RTX 3080",
+        "description_short": "ASUS ROG STRIX NVIDIA GeForce RTX 3080 OC Edition Gaming Graphics Card (PCIe 4.0, 10GB GDDR6X, HDMI 2.1, DisplayPort 1.4a, Axial-Tech Fan Design, 2.9-Slot, Super Alloy Power II, GPU Tweak II)",
+        "description_long": "NVIDIA Ampere Streaming Multiprocessors: The building blocks for the world’s fastest, most efficient GPU, the all-new Ampere SM brings 2X the FP32 throughput and improved power efficiency.\r\n2nd Generation RT Cores: Experience 2X the throughput of 1st Gen RT Cores, plus concurrent RT and shading for a whole new level of ray tracing performance.\r\n3rd Generation Tensor Cores: Get up to 2X the throughput with structural sparsity and advanced AI algorithms such as DLSS. Now with support for up to 8K resolution, these cores deliver a massive boost in game performance and all-new AI capabilities.\r\nAxial-Tech Fan Design has been newly tuned with a reversed central fan direction for less turbulence.\r\n2.9-slot design expands cooling surface area compared to last Gen for more thermal headroom than ever before.\r\nSuper Alloy Power II includes premium alloy chokes, solid polymer capacitors, and an array of high-current power stages.\r\nGPU Tweak II provides intuitive performance tweaking, thermal controls, and system monitoring.",
+        "category": "modulos",
+        "category_sales": "destacado",
+        "price": "2000",
+        "image": "image-1640008001224.jpg"
     },
     {
         "id": 3,
-        "name": "RAV4",
-        "description_short": "Nam dui.",
-        "description_long": "Morbi vel lectus in quam fringilla rhoncus. Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero. Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh. In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet. Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.",
-        "category": "modulos",
+        "name": "SanDisk 1TB  ",
+        "description_short": "SanDisk 1TB Extreme Portable SSD - Up to 1050MB/s - USB-C, USB 3.2 Gen 2 - External Solid State Drive - SDSSDE61-1T00-G25  ",
+        "description_long": "Get NVMe solid state performance featuring up to 1050MB/s read and up to 1000MB/s write speeds in a portable, high-capacity drive that’s perfect for creating amazing content or capturing incredible footage. Requires compatible devices capable of reaching such speed. Based on internal testing; Performance may be lower depending on host device, interface, usage conditions and other factors. 1MB=1,000,000 bytes.\r\nUp to 2 meter drop protection and IP55 water and dust resistance (3) mean this tough drive can take a beating\r\nUse the handy Carabiner loop to secure it to your belt loop or backpack for extra peace of mind\r\nHelp keep private content private with the included password protection featuring 256‐bit AES hardware encryption (2)\r\nBack up mobile content quickly and easily thanks to compatibility with a range of USB Type-C smart phones\r\nFrom SanDisk, the brand professional photographers worldwide trust to handle their best shots and footage",
+        "category": "accesorio",
         "category_sales": "oferta",
-        "price": 176,
-        "image": "1.jpg"
+        "price": "199",
+        "image": "image-1640008191489.jpg"
     },
     {
         "id": 4,
