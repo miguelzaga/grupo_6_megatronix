@@ -36,3 +36,21 @@ Miguel
 
 *¿Qué voy a hacer esta semana?*
 - Nada
+
+
+Weekly sprint 5
+----------------
+----------------
+
+Javier
+------
+*¿Qué hice esta semana?*
+- Implementar la entidad de usuarios.
+- Implementar el registro de usuarios.
+
+
+*¿Qué impedimentos encontré?*
+- Dificultad con el regitro de usuario (multer)
+
+*¿Qué voy a hacer esta semana?*
+- Nada, ya todo listo
