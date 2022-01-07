@@ -77,3 +77,23 @@
 ### Stop doing ###
 
 ### Less of ###
+
+## Sprint 5 ##
+### More of ###
+- Revisar el trabajo de los demas
+- Comunicar mejor lo que se va a hacer
+- Definir fechas para actividades
+
+### Start doing ###
+- Embellecer CSS
+
+### Keep doing ###
+- Dejar la pagina funcional
+- Priorizar los requerimientos
+
+### Stop doing ###
+- Hacer la retro al final
+
+### Less of ###
+- Hacer partes de otros compañeros sin avisar
+- Dejar partes incompletas sin avisar
