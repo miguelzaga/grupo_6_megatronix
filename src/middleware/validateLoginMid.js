@@ -1,6 +1,6 @@
 const {check} = require('express-validator')
 
-let validateLogin = [
+let validateLoginMid = [
     check('email')
         .notEmpty().withMessage('Debes incluir un correo').bail()
         .isEmail().withMessage('Ingresa tu correo'),
@@ -8,4 +8,4 @@ let validateLogin = [
         .notEmpty().withMessage('Ingresa tu contraseña')
 ]
 
-module.exports = validateLogin
+module.exports = validateLoginMid;

@@ -1,6 +1,6 @@
 const {check} = require('express-validator')
 
-let validateRegister = [
+let validateRegisterMid = [
     check('firstName')
         .notEmpty().withMessage('Debes completar el nombre'),
     check('lastName')
@@ -13,4 +13,4 @@ let validateRegister = [
         .isLength({ min: 5}).withMessage('La contraseña debe ser de 5 carácteres mínimo')
 ]
 
-module.exports = validateRegister
+module.exports = validateRegisterMid;

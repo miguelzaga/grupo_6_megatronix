@@ -2,10 +2,9 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const methodOverride = require('method-override');
-const session = require('express-session')
-const cookies = require('cookie-parser')
-const port = process.env.PORT || 3000;
-const userLoggedMid = require('./middleware/userLoggedMid')
+const session = require('express-session');
+const cookies = require('cookie-parser');
+const {userLoggedMid} = require('./middleware');
 
 app.use(express.urlencoded({ extended: "false" }));
 app.use(express.json());
@@ -32,6 +31,4 @@ app.use('/', routes);
 app.use('/users', userRoutes);
 app.use('/products', productRoutes);
 
-app.listen(port, () => {
-    console.log(`Servidor corriendo en el puerto ${port}`)
-})
+module.exports = app;

@@ -1,41 +1,31 @@
-const express = require('express')
-const router = express.Router()
-const path = require('path')
-const multer = require('multer');
-const controller = require('../controller/productController')
+const express = require('express');
+const router = express.Router();
 
-// Multer
-const storage = multer.diskStorage({
-    destination : function(req, file, cb) {
-        cb(null, path.join(__dirname, '../../public/images/products'))
-    },
-    filename: function(req, file, cb) {
-        console.log(file)
-        const newFile =file.fieldname + '-' + Date.now() + path.extname(file.originalname);
-        cb(null,newFile )
-    }
-})
+// Middlewares
+const {uploadFileProduct} = require('../middleware');
 
-const uploadFile = multer({ storage });
+// Controlador
+const {productController} = require('../controller');
+
 
 // Lista de productos
-router.get('/', controller.products);
+router.get('/', productController.products);
 
 // Carrito de compras
-router.get('/productCart', controller.productCart);
+router.get('/productCart', productController.productCart);
 
 // Formulario de creación de productos
-router.get('/create', controller.create);
-router.post('/', uploadFile.single('image'), controller.store);
+router.get('/create', productController.create);
+router.post('/', uploadFileProduct.single('image'), productController.store);
 
 // Detalle de producto 
-router.get('/:id', controller.productDetail);
+router.get('/:id', productController.productDetail);
 
 // Formulario de edición de productos
-router.get('/:id/edit', controller.edit);
-router.put('/:id', uploadFile.single('image'), controller.update);
+router.get('/:id/edit', productController.edit);
+router.put('/:id', uploadFileProduct.single('image'), productController.update);
 
 // Acción de borrado
-router.delete('/:id', controller.destroy)
+router.delete('/:id', productController.destroy)
 
-module.exports = router
+module.exports = router;

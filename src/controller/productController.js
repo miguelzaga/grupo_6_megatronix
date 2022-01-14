@@ -15,7 +15,7 @@ const newId = () => {
     return greater
 }
 
-const controller = {
+const productController = {
         products: (req, res) => {
             let destacados = products.filter(product => product.category_sales == "destacado")
             res.render('products/products', { products: products, destacados: destacados, categories: productsCategories });
@@ -93,4 +93,4 @@ const controller = {
 
 }
 
-module.exports = controller
+module.exports = productController;
