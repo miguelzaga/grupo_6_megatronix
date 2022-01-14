@@ -1,4 +1,3 @@
-/*
 const fs = require('fs');
 const path = require('path');
 const productsPath = path.join(__dirname, '../model/products.json')
@@ -93,7 +92,7 @@ const productController = {
         }
 
 }
-*/
+/*
 const { dbProduct, dbCategory, dbDestacados } = require('../model');
 
 const productController = {
@@ -171,6 +170,6 @@ const productController = {
     }
 
 }
-
+*/
 
 module.exports = productController;

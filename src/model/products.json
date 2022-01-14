@@ -1,25 +1,5 @@
 [
     {
-        "id": 2,
-        "name": "GeForce RTX 3080",
-        "description_short": "ASUS ROG STRIX NVIDIA GeForce RTX 3080 OC Edition Gaming Graphics Card (PCIe 4.0, 10GB GDDR6X, HDMI 2.1, DisplayPort 1.4a, Axial-Tech Fan Design, 2.9-Slot, Super Alloy Power II, GPU Tweak II)",
-        "description_long": "NVIDIA Ampere Streaming Multiprocessors: The building blocks for the world’s fastest, most efficient GPU, the all-new Ampere SM brings 2X the FP32 throughput and improved power efficiency.\r\n2nd Generation RT Cores: Experience 2X the throughput of 1st Gen RT Cores, plus concurrent RT and shading for a whole new level of ray tracing performance.\r\n3rd Generation Tensor Cores: Get up to 2X the throughput with structural sparsity and advanced AI algorithms such as DLSS. Now with support for up to 8K resolution, these cores deliver a massive boost in game performance and all-new AI capabilities.\r\nAxial-Tech Fan Design has been newly tuned with a reversed central fan direction for less turbulence.\r\n2.9-slot design expands cooling surface area compared to last Gen for more thermal headroom than ever before.\r\nSuper Alloy Power II includes premium alloy chokes, solid polymer capacitors, and an array of high-current power stages.\r\nGPU Tweak II provides intuitive performance tweaking, thermal controls, and system monitoring.",
-        "category": "modulos",
-        "category_sales": "destacado",
-        "price": "2000",
-        "image": "image-1640008001224.jpg"
-    },
-    {
-        "id": 3,
-        "name": "SanDisk 1TB  ",
-        "description_short": "SanDisk 1TB Extreme Portable SSD - Up to 1050MB/s - USB-C, USB 3.2 Gen 2 - External Solid State Drive - SDSSDE61-1T00-G25  ",
-        "description_long": "Get NVMe solid state performance featuring up to 1050MB/s read and up to 1000MB/s write speeds in a portable, high-capacity drive that’s perfect for creating amazing content or capturing incredible footage. Requires compatible devices capable of reaching such speed. Based on internal testing; Performance may be lower depending on host device, interface, usage conditions and other factors. 1MB=1,000,000 bytes.\r\nUp to 2 meter drop protection and IP55 water and dust resistance (3) mean this tough drive can take a beating\r\nUse the handy Carabiner loop to secure it to your belt loop or backpack for extra peace of mind\r\nHelp keep private content private with the included password protection featuring 256‐bit AES hardware encryption (2)\r\nBack up mobile content quickly and easily thanks to compatibility with a range of USB Type-C smart phones\r\nFrom SanDisk, the brand professional photographers worldwide trust to handle their best shots and footage",
-        "category": "accesorio",
-        "category_sales": "oferta",
-        "price": "199",
-        "image": "image-1640008191489.jpg"
-    },
-    {
         "id": 4,
         "name": "Sedona",
         "description_short": "Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi.",
