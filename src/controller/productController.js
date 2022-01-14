@@ -1,3 +1,4 @@
+/*
 const fs = require('fs');
 const path = require('path');
 const productsPath = path.join(__dirname, '../model/products.json')
@@ -92,5 +93,84 @@ const productController = {
         }
 
 }
+*/
+const { dbProduct, dbCategory, dbDestacados } = require('../model');
+
+const productController = {
+    products: (req, res, next) => {
+        dbProduct
+            .findAll()
+            .then(function (products) {
+                res.render('products/products', { products: products, destacados: dbDestacados, categories: dbCategory });
+            })
+    },
+    productCart: (req, res, next) => {
+        res.render('products/productCart');
+    },
+    create: (req, res, next) => {
+        res.render('products/createProduct', { categories: dbCategory });
+    },
+    store: (req, res, next) => {
+        dbProduct
+            .create({
+                name: req.body.name,
+                description_short = req.body.description_short,
+                description_long = req.body.description_long,
+                category = req.body.category,
+                category_sales = req.body.category_sales,
+                price = req.body.price,
+                image = req.body.image,
+            });
+
+        res.redirect('/products')
+    },
+    productDetail: (req, res, next) => {
+        dbProduct
+            .findByPk(req.params.id, {
+                include: [{ association: "Relaciones" }]
+            })
+            .then((product) => {
+                res.render('products/productDetail', { product: product, destacados: dbDestacados });
+            })
+    },
+    edit: (req, res, next) => {
+        dbProduct
+            .findByPk(req.params.id, {
+                include: [{ association: "Relaciones" }]
+            })
+            .then((product) => {
+                res.render('products/editProduct', { product: product, categories: dbCategory });
+            })
+    },
+    update: (req, res, next) => {
+        dbProduct
+            .update({
+                name: req.body.name,
+                description_short = req.body.description_short,
+                description_long = req.body.description_long,
+                category = req.body.category,
+                category_sales = req.body.category_sales,
+                price = req.body.price,
+                image = req.body.image,
+            }, {
+                where: {
+                    id: req.params.id
+                }
+            });
+
+        res.redirect('/products/' + req.params.id)
+    },
+    destroy: (req, res, next) => {
+        dbProduct
+            .destroy({
+                where: {
+                    id = req.params.id
+                }
+            });
+        res.redirect('/products');
+    }
+
+}
+
 
 module.exports = productController;
