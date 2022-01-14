@@ -4,9 +4,9 @@
   "description": "Ofrecemos *dispositivos y componentes electrónicos* para *profesionales y aficionados* interesados en implementar sus ideas en los campos de electrónica, robótica, hardware o software.",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node src/app.js",
-    "dev": "nodemon src/app.js"
+    "test": "nodemon src/index.js",
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js"
   },
   "repository": {
     "type": "git",
