@@ -21,17 +21,13 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.INTEGER,
             allowNull: false,
         },
-        password: {
-            type: dataTypes.STRING,
-            allowNull: false
-        },
         image: {
             type: dataTypes.STRING
         },
-        ProductCategories_id: {
+        product_categories_id: {
             type: dataTypes.INTEGER
         },
-        ProductPromotions_id: {
+        product_prmotions_id: {
             type: dataTypes.INTEGER
         }
     }
@@ -41,15 +37,15 @@ module.exports = (sequelize, dataTypes) => {
 
     const Product = sequelize.define(alias, cols, config)
 
-    Product.associate = function(models) {
-        Product.belongsToMany(models.User, {
-            as: 'Users',
-            through: 'UsersProducts',
-            foreignKey: 'Users_id',
-            otherKey: 'Products_id',
-            timestamps: false
-        })
-    }
+    // Product.associate = function(models) {
+    //     Product.belongsToMany(models.User, {
+    //         as: 'Users',
+    //         through: 'UsersProducts',
+    //         foreignKey: 'Users_id',
+    //         otherKey: 'Products_id',
+    //         timestamps: false
+    //     })
+    // }
 
     return Product
 }
