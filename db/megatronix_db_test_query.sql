@@ -1,6 +1,10 @@
-select u.first_name nombre, uc.name permiso, p.name producto, pc.name categoria, pp.name oferta  from Users u
-join UsersProducts up on u.id = up.Users_id	
-join Products p on p.id = up.Products_id
-join UserCategories uc on uc.id = u.UserCategories_id
-join ProductCategories pc on pc.id = p.ProductCategories_id
-join ProductPromotions pp on pp.id = p.ProductPromotions_id
+use megatronix_db;
+
+select u.email email, ucat.category user, p.name product, pc.category category, pp.promotion promotion
+from Users u
+join UserCategories ucat on u.user_categories_id = ucat.id 
+join UserCarts uc on u.id = uc.id
+join ProductsInCarts pic on uc.id = pic.user_carts_id
+join Products p on pic.products_id = p.id
+join ProductCategories pc on p.product_categories_id = pc.id
+join ProductPromotions pp on p.product_promotions_id = pp.id;

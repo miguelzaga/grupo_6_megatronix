@@ -26,9 +26,9 @@ DROP TABLE IF EXISTS `ProductCategories`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `ProductCategories` (
   `id` int(11) NOT NULL,
-  `name` varchar(45) NOT NULL,
+  `category` varchar(45) NOT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `name_UNIQUE` (`name`)
+  UNIQUE KEY `name_UNIQUE` (`category`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -41,9 +41,9 @@ DROP TABLE IF EXISTS `ProductPromotions`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `ProductPromotions` (
   `id` int(11) NOT NULL,
-  `name` varchar(45) NOT NULL,
+  `promotion` varchar(45) NOT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `name_UNIQUE` (`name`)
+  UNIQUE KEY `name_UNIQUE` (`promotion`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -61,14 +61,46 @@ CREATE TABLE `Products` (
   `description_long` varchar(1000) DEFAULT NULL,
   `price` int(11) NOT NULL,
   `image` varchar(45) DEFAULT 'default.png',
-  `ProductCategories_id` int(11) NOT NULL,
-  `ProductPromotions_id` int(11) NOT NULL,
-  PRIMARY KEY (`id`,`ProductCategories_id`,`ProductPromotions_id`),
-  KEY `fk_products_categoryProducts1_idx` (`ProductCategories_id`),
-  KEY `fk_products_categorySales1_idx` (`ProductPromotions_id`),
-  CONSTRAINT `fk_products_categoryProducts1` FOREIGN KEY (`ProductCategories_id`) REFERENCES `ProductCategories` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_products_categorySales1` FOREIGN KEY (`ProductPromotions_id`) REFERENCES `ProductPromotions` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  `product_categories_id` int(11) NOT NULL,
+  `product_promotions_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`,`product_categories_id`,`product_promotions_id`),
+  KEY `fk_products_categoryProducts1_idx` (`product_categories_id`),
+  KEY `fk_products_categorySales1_idx` (`product_promotions_id`),
+  CONSTRAINT `fk_products_categoryProducts1` FOREIGN KEY (`product_categories_id`) REFERENCES `ProductCategories` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_products_categorySales1` FOREIGN KEY (`product_promotions_id`) REFERENCES `ProductPromotions` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `ProductsInCarts`
+--
+
+DROP TABLE IF EXISTS `ProductsInCarts`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `ProductsInCarts` (
+  `id` int(11) NOT NULL,
+  `products_id` int(11) NOT NULL,
+  `user_carts_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`,`products_id`,`user_carts_id`),
+  KEY `fk_UsersProducts_Products1_idx` (`products_id`),
+  KEY `fk_ProductsInCarts_UserCarts1_idx` (`user_carts_id`),
+  CONSTRAINT `fk_ProductsInCarts_UserCarts1` FOREIGN KEY (`user_carts_id`) REFERENCES `UserCarts` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_UsersProducts_Products1` FOREIGN KEY (`products_id`) REFERENCES `Products` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `UserCarts`
+--
+
+DROP TABLE IF EXISTS `UserCarts`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `UserCarts` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=101 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -80,9 +112,9 @@ DROP TABLE IF EXISTS `UserCategories`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `UserCategories` (
   `id` int(11) NOT NULL,
-  `name` varchar(45) NOT NULL,
+  `category` varchar(45) NOT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `name_UNIQUE` (`name`)
+  UNIQUE KEY `name_UNIQUE` (`category`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -100,30 +132,15 @@ CREATE TABLE `Users` (
   `email` varchar(45) NOT NULL,
   `password` varchar(45) NOT NULL,
   `image` varchar(45) DEFAULT 'default.png',
-  `UserCategories_id` int(11) NOT NULL,
-  PRIMARY KEY (`id`,`UserCategories_id`),
+  `user_categories_id` int(11) NOT NULL,
+  `user_carts_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`,`user_categories_id`,`user_carts_id`),
   UNIQUE KEY `email_UNIQUE` (`email`),
-  KEY `fk_Users_UserCategories1_idx` (`UserCategories_id`),
-  CONSTRAINT `fk_Users_UserCategories1` FOREIGN KEY (`UserCategories_id`) REFERENCES `UserCategories` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Table structure for table `UsersProducts`
---
-
-DROP TABLE IF EXISTS `UsersProducts`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `UsersProducts` (
-  `id` int(11) NOT NULL,
-  `Users_id` int(11) NOT NULL,
-  `Products_id` int(11) NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `fk_users_has_products_products1_idx` (`Products_id`),
-  KEY `fk_users_has_products_users_idx` (`Users_id`),
-  CONSTRAINT `fk_users_has_products_products1` FOREIGN KEY (`Products_id`) REFERENCES `Products` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_users_has_products_users` FOREIGN KEY (`Users_id`) REFERENCES `Users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  UNIQUE KEY `user_cart_id_UNIQUE` (`user_carts_id`),
+  KEY `fk_Users_UserCategories1_idx` (`user_categories_id`),
+  KEY `fk_Users_ProductCarts1_idx` (`user_carts_id`),
+  CONSTRAINT `fk_Users_ProductCarts1` FOREIGN KEY (`user_carts_id`) REFERENCES `UserCarts` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Users_UserCategories1` FOREIGN KEY (`user_categories_id`) REFERENCES `UserCategories` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -136,4 +153,4 @@ CREATE TABLE `UsersProducts` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-01-17 19:00:07
+-- Dump completed on 2022-01-17 20:36:45

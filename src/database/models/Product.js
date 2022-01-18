@@ -1,22 +1,25 @@
 module.exports = (sequelize, dataTypes) => {
-    let alias = 'User'
+    let alias = 'Product'
     let cols = {
         id: {
             type: dataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true
         },
-        first_name: {
+        name: {
             type: dataTypes.STRING,
             allowNull: false
         },
-        last_name: {
-            type: dataTypes.STRING
+        description_short: {
+            type: dataTypes.STRING(500),
+            allowNull: false
         },
-        email: {
-            type: dataTypes.STRING,
+        description_long: {
+            type: dataTypes.STRING(1000)
+        },
+        price: {
+            type: dataTypes.INTEGER,
             allowNull: false,
-            unique: true
         },
         password: {
             type: dataTypes.STRING,
@@ -25,7 +28,10 @@ module.exports = (sequelize, dataTypes) => {
         image: {
             type: dataTypes.STRING
         },
-        UserCategories_id: {
+        ProductCategories_id: {
+            type: dataTypes.INTEGER
+        },
+        ProductPromotions_id: {
             type: dataTypes.INTEGER
         }
     }
@@ -33,21 +39,17 @@ module.exports = (sequelize, dataTypes) => {
         timestamps: false
     }
 
-    const User = sequelize.define(alias, cols, config)
+    const Product = sequelize.define(alias, cols, config)
 
-    User.associate = function(models){
-        User.belongsTo(models.UserCategory, {
-            as: "UserCategories",
-            foreignKey: "UserCategories_id"
-        })
-        User.belongsToMany(models.Product, {
-            as: 'Products',
+    Product.associate = function(models) {
+        Product.belongsToMany(models.User, {
+            as: 'Users',
             through: 'UsersProducts',
-            foreignKey: 'Products_id',
-            otherKey: 'Users_id',
+            foreignKey: 'Users_id',
+            otherKey: 'Products_id',
             timestamps: false
         })
     }
 
-    return User
-} 
+    return Product
+}
