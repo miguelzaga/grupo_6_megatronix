@@ -6,8 +6,11 @@ const db = require('../database/models');
 
 const indexController = {
     index: (req, res) => {
-        // db.User.findByPk(1)
-        //     .then(result => console.log(result))
+        // db.User.findByPk(1,
+        //     {
+        //         include: ['UserCategories']
+        //     })
+        //     .then(result => console.log(result.dataValues))
         //     .catch(error => console.log(error))
 
 
