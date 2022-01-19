@@ -27,6 +27,9 @@ module.exports = (sequelize, dataTypes) => {
         },
         user_categories_id: {
             type: dataTypes.INTEGER
+        },
+        user_carts_id: {
+            type: dataTypes.INTEGER
         }
     }
     let config = {
@@ -40,13 +43,11 @@ module.exports = (sequelize, dataTypes) => {
             as: "UserCategories",
             foreignKey: "user_categories_id"
         })
-        // User.belongsToMany(models.Product, {
-        //     as: 'Products',
-        //     through: 'UsersProducts',
-        //     foreignKey: 'Products_id',
-        //     otherKey: 'Users_id',
-        //     timestamps: false
-        // })
+
+        User.belongsTo(models.UserCart, {
+            as: 'UserCarts',
+            foreignKey: 'id'
+        })
     }
 
     return User

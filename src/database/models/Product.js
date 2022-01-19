@@ -27,7 +27,7 @@ module.exports = (sequelize, dataTypes) => {
         product_categories_id: {
             type: dataTypes.INTEGER
         },
-        product_prmotions_id: {
+        product_promotions_id: {
             type: dataTypes.INTEGER
         }
     }
@@ -37,15 +37,23 @@ module.exports = (sequelize, dataTypes) => {
 
     const Product = sequelize.define(alias, cols, config)
 
-    // Product.associate = function(models) {
-    //     Product.belongsToMany(models.User, {
-    //         as: 'Users',
-    //         through: 'UsersProducts',
-    //         foreignKey: 'Users_id',
-    //         otherKey: 'Products_id',
-    //         timestamps: false
-    //     })
-    // }
+    Product.associate = function(models) {
+        Product.belongsToMany(models.UserCart, {
+            as: 'UserCarts',
+            through: 'ProductsInCart',
+            foreignKey: 'user_carts_id',
+            otherKey: 'products_id',
+            timestamps: false
+        })
+        Product.belongsTo(models.ProductCategory, {
+            as: 'ProductCategories',
+            foreignKey: 'product_categories_id'
+        })
+        Product.belongsTo(models.ProductPromotion, {
+            as: 'ProductPromotions',
+            foreignKey: 'product_promotions_id'
+        })
+    }
 
     return Product
 }
