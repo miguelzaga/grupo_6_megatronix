@@ -2,7 +2,7 @@
     <h3>PRODUCTOS EN OFERTA</h3>
     <div class="articulos">
 
-    <% for (let j = 0; j < 4; j++) { %>
+    <% for (let j = 0; j < ofertas.length; j++) { %>
         <article>
             <a href="/products/<%= ofertas[j].id %>">
                 <img src="/images/products/<%= ofertas[j].image %>" class="productImg">
@@ -12,30 +12,5 @@
             <p class="precio">$ <%= ofertas[j].price %></p>
         </article>
     <% }; %>
-<!--  Articulos hecho a mano         
-        <article>
-            <img src="../images/arduinoUno.jpg" class="productImg">
-            <i class="fas fa-shopping-cart"></i>
-            <p class="nombre">ARDUINO UNO</p>
-            <p class="precio">$ 37.000</p>
-        </article>
-        <article>
-            <img src="../images/displayOled.jpg" class="productImg">
-            <i class="fas fa-shopping-cart"></i>
-            <p class="nombre">Display Oled</p>
-            <p class="precio">$ 15.000</p>
-        </article>
-        <article>
-            <img src="../images/sensorUltrasonico.jpg" class="productImg">
-            <i class="fas fa-shopping-cart"></i>
-            <p class="nombre">SENSOR ULTRASONICO</p>
-            <p class="precio">$ 12.000</p>
-        </article>
-        <article>
-            <img src="../images/servomotor.jpg" class="productImg">
-            <i class="fas fa-shopping-cart"></i>
-            <p class="nombre">SERVOMOTOR</p>
-            <p class="precio">$ 25.000</p>
-        </article> -->
     </div>
 </section>
