@@ -20,8 +20,9 @@ module.exports = (sequelize, dataTypes) => {
     ProductPromotion.associate = function(models){
         ProductPromotion.hasMany(models.Product, {
             as: 'Products',
-            foreignKey: 'product_promotions_id'
-        })
+            foreignKey: 'product_promotion_id',
+            onDelete: 'cascade',
+            hooks: 'true'})
     }
 
     return ProductPromotion

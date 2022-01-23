@@ -25,10 +25,10 @@ module.exports = (sequelize, dataTypes) => {
         image: {
             type: dataTypes.STRING
         },
-        user_categories_id: {
+        user_category_id: {
             type: dataTypes.INTEGER
         },
-        user_carts_id: {
+        user_cart_id: {
             type: dataTypes.INTEGER
         }
     }
@@ -41,10 +41,10 @@ module.exports = (sequelize, dataTypes) => {
     User.associate = function(models){
         User.belongsTo(models.UserCategory, {
             as: "UserCategories",
-            foreignKey: "user_categories_id"
+            foreignKey: "user_category_id"
         })
 
-        User.belongsTo(models.UserCart, {
+        User.hasOne(models.UserCart, {
             as: 'UserCarts',
             foreignKey: 'id'
         })

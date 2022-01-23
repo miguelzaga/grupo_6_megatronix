@@ -36,7 +36,7 @@
                             <select value="<%= locals.product.category  %> " name="category" id="category">
                                 <option value="" selected disabled hidden>Escoja una categoría</option>
                                 <% locals.categories.forEach(category=> { %>
-                                    <option value="<%= category.category %>">
+                                    <option value="<%= category.id %>">
                                         <%= category.category %>
                                     </option>
                                     <% }); %>
@@ -48,7 +48,7 @@
                                 id="category_sales">
                                 <option value="" selected disabled hidden>Escoja una promoción</option>
                                 <% locals.promotions.forEach(promotion=> { %>
-                                    <option value="<%= promotion.promotion %>">
+                                    <option value="<%= promotion.id %>">
                                         <%= promotion.promotion %>
                                     </option>
                                     <% }); %>
@@ -61,7 +61,7 @@
                         </div>
                         <div class="atribut">
                             <label for="image">Imagen</label>
-                            <input type="file" name="image" id="image">
+                            <input type="file" name="image" id="image" value="<%= locals.product.image  %>">
                         </div>
                         <div class="atribut">
                             <img src="/images/products/<%= locals.product.image  %>" alt="">

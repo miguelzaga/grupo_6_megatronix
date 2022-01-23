@@ -25,11 +25,11 @@ DROP TABLE IF EXISTS `ProductCategories`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `ProductCategories` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `category` varchar(45) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `name_UNIQUE` (`category`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -40,11 +40,11 @@ DROP TABLE IF EXISTS `ProductPromotions`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `ProductPromotions` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `promotion` varchar(45) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `name_UNIQUE` (`promotion`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -55,20 +55,20 @@ DROP TABLE IF EXISTS `Products`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `Products` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(45) NOT NULL,
   `description_short` varchar(500) DEFAULT NULL,
   `description_long` varchar(1000) DEFAULT NULL,
   `price` int(11) NOT NULL,
   `image` varchar(45) DEFAULT 'default.png',
-  `product_categories_id` int(11) NOT NULL,
-  `product_promotions_id` int(11) NOT NULL,
-  PRIMARY KEY (`id`,`product_categories_id`,`product_promotions_id`),
-  KEY `fk_products_categoryProducts1_idx` (`product_categories_id`),
-  KEY `fk_products_categorySales1_idx` (`product_promotions_id`),
-  CONSTRAINT `fk_products_categoryProducts1` FOREIGN KEY (`product_categories_id`) REFERENCES `ProductCategories` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_products_categorySales1` FOREIGN KEY (`product_promotions_id`) REFERENCES `ProductPromotions` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `product_category_id` int(11) NOT NULL,
+  `product_promotion_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`,`product_category_id`,`product_promotion_id`),
+  KEY `fk_products_categoryProducts1_idx` (`product_category_id`),
+  KEY `fk_products_categorySales1_idx` (`product_promotion_id`),
+  CONSTRAINT `fk_products_categoryProducts1` FOREIGN KEY (`product_category_id`) REFERENCES `ProductCategories` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `fk_products_categorySales1` FOREIGN KEY (`product_promotion_id`) REFERENCES `ProductPromotions` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=104 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -79,15 +79,15 @@ DROP TABLE IF EXISTS `ProductsInCarts`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `ProductsInCarts` (
-  `id` int(11) NOT NULL,
-  `products_id` int(11) NOT NULL,
-  `user_carts_id` int(11) NOT NULL,
-  PRIMARY KEY (`id`,`products_id`,`user_carts_id`),
-  KEY `fk_UsersProducts_Products1_idx` (`products_id`),
-  KEY `fk_ProductsInCarts_UserCarts1_idx` (`user_carts_id`),
-  CONSTRAINT `fk_ProductsInCarts_UserCarts1` FOREIGN KEY (`user_carts_id`) REFERENCES `UserCarts` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_UsersProducts_Products1` FOREIGN KEY (`products_id`) REFERENCES `Products` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `product_id` int(11) NOT NULL,
+  `user_cart_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`,`product_id`,`user_cart_id`),
+  KEY `fk_UsersProducts_Products1_idx` (`product_id`),
+  KEY `fk_ProductsInCarts_UserCarts1_idx` (`user_cart_id`),
+  CONSTRAINT `fk_ProductsInCarts_UserCarts1` FOREIGN KEY (`user_cart_id`) REFERENCES `UserCarts` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `fk_UsersProducts_Products1` FOREIGN KEY (`product_id`) REFERENCES `Products` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=1001 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -111,11 +111,11 @@ DROP TABLE IF EXISTS `UserCategories`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `UserCategories` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `category` varchar(45) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `name_UNIQUE` (`category`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -126,22 +126,21 @@ DROP TABLE IF EXISTS `Users`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `Users` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `first_name` varchar(45) NOT NULL,
   `last_name` varchar(45) DEFAULT NULL,
   `email` varchar(45) NOT NULL,
   `password` varchar(45) NOT NULL,
-  `image` varchar(45) DEFAULT 'default.png',
-  `user_categories_id` int(11) NOT NULL,
-  `user_carts_id` int(11) NOT NULL,
-  PRIMARY KEY (`id`,`user_categories_id`,`user_carts_id`),
+  `image` varchar(45) NOT NULL DEFAULT 'default.png',
+  `user_category_id` int(11) NOT NULL,
+  `user_cart_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`,`user_category_id`,`user_cart_id`),
   UNIQUE KEY `email_UNIQUE` (`email`),
-  UNIQUE KEY `user_cart_id_UNIQUE` (`user_carts_id`),
-  KEY `fk_Users_UserCategories1_idx` (`user_categories_id`),
-  KEY `fk_Users_ProductCarts1_idx` (`user_carts_id`),
-  CONSTRAINT `fk_Users_ProductCarts1` FOREIGN KEY (`user_carts_id`) REFERENCES `UserCarts` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Users_UserCategories1` FOREIGN KEY (`user_categories_id`) REFERENCES `UserCategories` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  KEY `fk_Users_UserCategories1_idx` (`user_category_id`),
+  KEY `fk_Users_UserCarts1_idx` (`user_cart_id`),
+  CONSTRAINT `fk_Users_UserCarts1` FOREIGN KEY (`user_cart_id`) REFERENCES `UserCarts` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `fk_Users_UserCategories1` FOREIGN KEY (`user_category_id`) REFERENCES `UserCategories` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=101 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -153,4 +152,4 @@ CREATE TABLE `Users` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-01-17 20:36:45
+-- Dump completed on 2022-01-23 16:31:34

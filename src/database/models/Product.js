@@ -24,10 +24,10 @@ module.exports = (sequelize, dataTypes) => {
         image: {
             type: dataTypes.STRING
         },
-        product_categories_id: {
+        product_category_id: {
             type: dataTypes.INTEGER
         },
-        product_promotions_id: {
+        product_promotion_id: {
             type: dataTypes.INTEGER
         }
     }
@@ -41,17 +41,18 @@ module.exports = (sequelize, dataTypes) => {
         Product.belongsToMany(models.UserCart, {
             as: 'UserCarts',
             through: 'ProductsInCart',
-            foreignKey: 'user_carts_id',
-            otherKey: 'products_id',
+            foreignKey: 'user_cart_id',
+            otherKey: 'product_id',
             timestamps: false
         })
         Product.belongsTo(models.ProductCategory, {
             as: 'ProductCategories',
-            foreignKey: 'product_categories_id'
+            foreignKey: 'product_category_id'
+
         })
         Product.belongsTo(models.ProductPromotion, {
             as: 'ProductPromotions',
-            foreignKey: 'product_promotions_id'
+            foreignKey: 'product_promotion_id'
         })
     }
 

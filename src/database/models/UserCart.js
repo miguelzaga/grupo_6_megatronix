@@ -14,7 +14,7 @@ module.exports = (sequelize, dataTypes) => {
     const UserCart = sequelize.define(alias, cols, config)
 
     UserCart.associate = function(models) {
-        UserCart.belongsTo(models.User, {
+        UserCart.hasOne(models.User, {
             as: 'Users',
             foreignKey: 'id'
         })
@@ -22,8 +22,8 @@ module.exports = (sequelize, dataTypes) => {
         UserCart.belongsToMany(models.Product, {
             as: 'Products',
             through: 'ProductsInCarts',
-            foreignKey: 'products_id',
-            otherKey: 'user_carts_id',
+            foreignKey: 'product_id',
+            otherKey: 'user_cart_id',
             timestamps: false
         })
     }
