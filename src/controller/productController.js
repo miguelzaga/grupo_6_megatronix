@@ -17,6 +17,8 @@ const newId = () => {
     return greater
 }
 
+let promesaCategorias = db.ProductCategory.findAll()
+let promesaPromociones = db.ProductPromotion.findAll()
 let promesaDestacados =
     db.Product.findAll({
         include: {
@@ -32,16 +34,15 @@ let promesaDestacados =
 const productController = {
     products: (req, res, next) => {
         let promesaProductos = db.Product.findAll()
-        let promesaCategorias = db.ProductCategory.findAll()
 
         Promise.all([promesaProductos, promesaCategorias, promesaDestacados])
             .then(function (arr) {
                 console.log(arr[1])
-                res.render('products/products', { 
+                res.render('products/products', {
                     products: arr[0],
                     categories: arr[1],
                     destacados: arr[2]
-                 });
+                });
             })
             .catch(error => console.log(error))
     },
@@ -77,17 +78,20 @@ const productController = {
         res.redirect('/products/' + id);
     },
     productDetail: (req, res) => {
-        let id = req.params.id
-        let product = products.find(product => product.id == id)
-        let destacados = products.filter(product => product.category_sales == "destacado")
-        res.render('products/productDetail', { product: product, destacados: destacados });
+        let promesaProducto = db.Product.findByPk(req.params.id)
+
+        Promise.all([promesaProducto, promesaDestacados])
+            .then(arr => {
+                res.render('products/productDetail', { product: arr[0], destacados: arr[1] });
+            })
     },
     edit: (req, res) => {
-        let id = req.params.id
-        let product = products.find(product => product.id == id)
-        res.render('products/editProduct', {
-            product: product, categories: productsCategories
-        });
+        let promesaProducto = db.Product.findByPk(req.params.id)
+
+        Promise.all([promesaProducto, promesaCategorias, promesaPromociones])
+            .then(arr => {
+                res.render('products/editProduct', { product: arr[0], categories: arr[1], promotions: arr[2] });
+            })
     },
     update: (req, res) => {
         let id = req.params.id

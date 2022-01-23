@@ -36,8 +36,8 @@
                             <select value="<%= locals.product.category  %> " name="category" id="category">
                                 <option value="" selected disabled hidden>Escoja una categoría</option>
                                 <% locals.categories.forEach(category=> { %>
-                                    <option value="<%= category.key %>">
-                                        <%= category.text %>
+                                    <option value="<%= category.category %>">
+                                        <%= category.category %>
                                     </option>
                                     <% }); %>
                             </select>
@@ -46,9 +46,12 @@
                             <label for="category_sales">Promoción</label>
                             <select value="<%= locals.product.category_sales  %>" name="category_sales"
                                 id="category_sales">
-                                <option value="none"> Ninguna </option>
-                                <option value="destacado"> Destacado </option>
-                                <option value="oferta"> En Oferta </option>
+                                <option value="" selected disabled hidden>Escoja una promoción</option>
+                                <% locals.promotions.forEach(promotion=> { %>
+                                    <option value="<%= promotion.promotion %>">
+                                        <%= promotion.promotion %>
+                                    </option>
+                                    <% }); %>
                             </select>
                         </div>
                         <div class="atribut">
