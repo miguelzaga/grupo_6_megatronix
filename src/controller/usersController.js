@@ -1,21 +1,6 @@
-const fs = require('fs');
-const path = require('path');
 const { validationResult } = require('express-validator')
-const usersPath = path.join(__dirname, '../model/users.json')
-const users = JSON.parse(fs.readFileSync(usersPath, 'utf-8'));
 const bcrypt = require('bcrypt');
 const db = require('../database/models')
-
-const newId = () => {
-    let greater = 0;
-    users.forEach(user => {
-        if (greater < user.id) {
-            greater = user.id;
-        }
-    });
-    greater++;
-    return greater
-}
 
 
 const controller = {
@@ -92,7 +77,8 @@ const controller = {
                                 }
                             },
                             old: req.body
-                        })}
+                        })
+                    }
                 }
                 )
         } else {
@@ -110,6 +96,31 @@ const controller = {
         res.clearCookie('userEmail')
         req.session.destroy();
         return res.redirect('/');
+    },
+    update: (req, res) => {
+        db.User
+            .update({ ...req.body }, {
+                where: { id: req.params.id }
+            }
+            )
+            .then(() => { res.redirect('/users/logout') })
+
+    },
+    destroy: (req, res) => {
+        db.User
+        .destroy({
+            where: {
+                id: req.params.id
+            }
+        })
+    res.redirect('/');
+    },
+    list: (req, res) => {
+        db.User.findAll()
+            .then(users => {
+                res.render('users/users', {users})
+            })
+            .catch(err => console.log(err))
     }
 }
 

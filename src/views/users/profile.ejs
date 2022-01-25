@@ -3,6 +3,7 @@
 
 <%- include('../partials/head') %>
     <link rel="stylesheet" href="/css/profile.css">
+    <link rel="stylesheet" href="/css/editProduct.css">
     </head>
 
     <body>
@@ -10,10 +11,41 @@
             <main>
                 <section class="main-section">
                     <div class="container">
-                        <h2>Bienvenido <%= locals.userLogged.firstName%> </h2>
+                        <h2>Bienvenido <%= locals.userLogged.first_name%> </h2>
                         <hr>
                     </div>
-                    <img src = "../images/users/<%= locals.userLogged.image %> ">
+                    <form id="editForm" action="/users/profile/<%= userLogged.id  %>/edit?_method=put" method="post"
+                        enctype="multipart/form-data">
+                        <div class="atribut">
+                            <label for="first_name">Nombre</label>
+                            <input required type="text" value="<%= userLogged.first_name  %> " name="first_name" id="first_name"
+                                placeholder="">
+                        </div>
+                        <div class="atribut">
+                            <label for="last_name">Apellido</label>
+                            <input required type="text" value="<%= userLogged.last_name  %> " name="last_name" id="last_name"
+                                placeholder="">
+                        </div>
+                        <div class="atribut">
+                            <label for="email">Email</label>
+                            <input readonly type="email" value="<%= userLogged.email  %> "name="email" id="email" placeholder="">
+                        </div>
+                        <div class="atribut">
+                            <label for="image">Imagen</label>
+                            <input type="file" name="image" id="image" value="<%= userLogged.image  %>">
+                        </div>
+                        <div class="atribut">
+                            <img src="/images/users/<%= userLogged.image  %>" alt="">
+                        </div>
+                        <div class="bottoms">
+                            <button id="edit" type="submit">Editar</button>
+                        </div>
+                        <div class="bottoms">
+                            <form action="users/profile/<%= locals.userLogged.id  %>/delete?_method=delete" method="post">
+                                <button id="delete" type="submit">Eliminar</button>
+                            </form>
+                        </div>
+                    </form>
                 </section>
             </main>
             <%- include('../partials/footer') %>

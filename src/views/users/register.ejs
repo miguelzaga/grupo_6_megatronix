@@ -18,7 +18,7 @@
                             <h3>Datos personales</h3>
                             <div>
                                 <label for="firstName">Nombre</label>
-                                <input value="<%= locals.old && old.first_name %>" type="text" name="first_name" id="firstName" placeholder="Nombre">
+                                <input value="<%= locals.old && old.first_name %>" type="text" name="first_name" id="first_name" placeholder="Nombre">
                                 <% if (locals.errors && errors.first_name) { %>
                                     <p class="error-message">
                                         <%= errors.first_name.msg %>
@@ -27,7 +27,7 @@
                             </div>
                             <div>
                                 <label for="lastName">Apellido</label>
-                                <input value="<%= locals.old && old.last_name %>" type="text" name="last_name" id="lastName" placeholder="Apellido">
+                                <input value="<%= locals.old && old.last_name %>" type="text" name="last_name" id="last_name" placeholder="Apellido">
                                 <% if (locals.errors && errors.last_name) { %>
                                     <p class="error-message">
                                         <%= errors.last_name.msg %>
