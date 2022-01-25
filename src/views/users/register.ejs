@@ -18,19 +18,19 @@
                             <h3>Datos personales</h3>
                             <div>
                                 <label for="firstName">Nombre</label>
-                                <input value="<%= locals.old && old.firstName %>" type="text" name="firstName" id="firstName" placeholder="Nombre">
-                                <% if (locals.errors && errors.firstName) { %>
+                                <input value="<%= locals.old && old.first_name %>" type="text" name="first_name" id="firstName" placeholder="Nombre">
+                                <% if (locals.errors && errors.first_name) { %>
                                     <p class="error-message">
-                                        <%= errors.firstName.msg %>
+                                        <%= errors.first_name.msg %>
                                     </p>
                                     <% } %>
                             </div>
                             <div>
                                 <label for="lastName">Apellido</label>
-                                <input value="<%= locals.old && old.lastName %>" type="text" name="lastName" id="lastName" placeholder="Apellido">
-                                <% if (locals.errors && errors.lastName) { %>
+                                <input value="<%= locals.old && old.last_name %>" type="text" name="last_name" id="lastName" placeholder="Apellido">
+                                <% if (locals.errors && errors.last_name) { %>
                                     <p class="error-message">
-                                        <%= errors.lastName.msg %>
+                                        <%= errors.last_name.msg %>
                                     </p>
                                     <% } %>
                             </div>

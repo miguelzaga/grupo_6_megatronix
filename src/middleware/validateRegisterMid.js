@@ -1,9 +1,9 @@
 const {check} = require('express-validator')
 
 let validateRegisterMid = [
-    check('firstName')
+    check('first_name')
         .notEmpty().withMessage('Debes completar el nombre'),
-    check('lastName')
+    check('last_name')
         .notEmpty().withMessage('Debes completar el apellido'),
     check('email')
         .notEmpty().withMessage('Debes incluir un correo').bail()

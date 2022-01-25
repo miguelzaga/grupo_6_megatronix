@@ -27,9 +27,6 @@ module.exports = (sequelize, dataTypes) => {
         },
         user_category_id: {
             type: dataTypes.INTEGER
-        },
-        user_cart_id: {
-            type: dataTypes.INTEGER
         }
     }
     let config = {
@@ -43,10 +40,12 @@ module.exports = (sequelize, dataTypes) => {
             as: "UserCategories",
             foreignKey: "user_category_id"
         })
-
-        User.hasOne(models.UserCart, {
-            as: 'UserCarts',
-            foreignKey: 'id'
+        User.belongsToMany(models.Product, {
+            as: 'Products',
+            through: 'ProductsInCarts',
+            foreignKey: 'product_id',
+            otherKey: 'id',
+            timestamps: false
         })
     }
 
