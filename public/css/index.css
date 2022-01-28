@@ -9,7 +9,7 @@
 /* --> HEADER <-- */
 
 header {
-    background-color: #79031D;
+    background-color: #161D6F;
     padding-bottom: 5px;
 }
 
@@ -87,7 +87,7 @@ header {
 /*  ->TRANSICIÓN DE IMAGENES<-  */
 
 body {
-    background-color: #79031D;
+    background-image: url(../images/circuit.jpg);
 }
 
 .banner {

@@ -22,5 +22,21 @@
         "email": "harol.andres1999@gmail.com",
         "password": "$2b$10$g4.qULSLIfLywIOPOKEtwO7p0h7mH8MXokryFy68s0BNE2KH67I16",
         "image": "homero.png"
+    },
+    {
+        "id": 4,
+        "firstName": "aNDRES",
+        "lastName": "pRECIADO",
+        "email": "HANDRESPRECIADOR@ITC.EDU.CO",
+        "password": "$2b$10$iZsJP3znlEN1AndN8UTkpOa9jt43s0svkAKzJX8M6kp34DPTGLe8i",
+        "image": "1642984785890_img.png"
+    },
+    {
+        "id": 5,
+        "firstName": "andres",
+        "lastName": "preciado",
+        "email": "harol@gmail.com",
+        "password": "$2b$10$t6tnX/3T1/33gewjHPZg0.C8xOznTqjFBK68fGJaRG6aYvowr/VuC",
+        "image": "1642984984024_img.png"
     }
 ]
