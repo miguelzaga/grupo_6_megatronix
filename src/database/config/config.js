@@ -1,11 +1,14 @@
+require("dotenv").config()
+const env = process.env
+
 module.exports = {
   "development": {
-    "username": "root",
-    "password": "1234",
-    "database": "megatronix_db",
-    "host": "127.0.0.1",
+    "username": "env.USER",
+    "password": "env,DATABASE_PASSWORD",
+    "database": "env.DATABASE_NAME",
+    "host": "env.DATABASE_HOST",
     "dialect": "mysql",
-    "port": "3307"
+    "port": "env.DATABASE_PORT"
   },
   "test": {
     "username": "root",
@@ -15,10 +18,10 @@ module.exports = {
     "dialect": "mysql"
   },
   "production": {
-    "username": "root",
-    "password": null,
-    "database": "database_production",
-    "host": "127.0.0.1",
+    "username": "env.USER",
+    "password": "env,DATABASE_PASSWORD",
+    "database": "env.DATABASE_NAME",
+    "host": "env.DATABASE_HOST",
     "dialect": "mysql"
   }
 }
