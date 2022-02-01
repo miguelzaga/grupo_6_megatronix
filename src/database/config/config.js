@@ -27,6 +27,6 @@ module.exports = {
     "password": DATABASE_PASSWORD,
     "database": DATABASE_NAME,
     "host": DATABASE_HOST,
-    "dialect": mysql
+    "dialect": "mysql"
   }
 }
