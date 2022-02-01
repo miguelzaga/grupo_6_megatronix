@@ -23,10 +23,10 @@ module.exports = {
     "dialect": "mysql"
   },
   "production": {
-    "username": "env.USER",
-    "password": "env.DATABASE_PASSWORD",
-    "database": "env.DATABASE_NAME",
-    "host": "env.DATABASE_HOST",
-    "dialect": "mysql"
+    "username": USER,
+    "password": DATABASE_PASSWORD,
+    "database": DATABASE_NAME,
+    "host": DATABASE_HOST,
+    "dialect": mysql
   }
 }
