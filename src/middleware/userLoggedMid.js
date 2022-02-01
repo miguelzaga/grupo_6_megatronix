@@ -1,16 +1,26 @@
-const users=require('../model/users.json')
+const db = require('../database/models');
 
-function userLoggedMid(req, res, next){
+function userLoggedMid(req, res, next) {
     res.locals.isLogged = false;
 
     let emailCookie = req.cookies.userEmail;
-    let userCookie = users.find(user => user.email == emailCookie);
+    let userCookie = () => {
+        try {
+            db.User.findAll({
+                where: {
+                    email: emailCookie
+                }
+            })
+        } catch (error) {
+            console.log(error);
+        }
+    }
 
-    if(userCookie){
+    if (userCookie) {
         req.session.userLogged = userCookie;
     }
 
-    if(req.session.userLogged){
+    if (req.session.userLogged) {
         res.locals.isLogged = true;
         res.locals.userLogged = req.session.userLogged;
     }
