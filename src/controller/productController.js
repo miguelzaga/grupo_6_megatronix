@@ -1,89 +1,101 @@
-const db = require('../database/models')
-
-let promesaCategorias = db.ProductCategory.findAll()
-let promesaPromociones = db.ProductPromotion.findAll()
-let promesaDestacados =
-    db.Product.findAll({
-        include: {
-            model: db.ProductPromotion,
-            as: "ProductPromotions",
-            where: {
-                promotion: "destacado"
-            }
-        },
-        limit: 4
-    })
+const { dbProduct, dbCategory, dbDestacados } = require('../model')
 
 const productController = {
-    products: (req, res) => {
-        let promesaProductos = db.Product.findAll()
-
-        Promise.all([promesaProductos, promesaCategorias, promesaDestacados])
-            .then(function (arr) {
-                res.render('products/products', {
-                    products: arr[0],
-                    categories: arr[1],
-                    destacados: arr[2]
-                });
-            })
+    products: async (req, res) => {
+        try {
+            let products = await dbProduct.findAll();
+            let category = await dbCategory.findAll();
+            let destacados = await dbDestacados.findAll(1); // 1 Ninguna - 2 Destacado - 3 Oferta
+            res.render('products/products', {
+                products: products,
+                categories: category,
+                destacados: destacados
+            });
+        } catch (error) {
+            res.render('error');
+        }
     },
     productCart: (req, res) => {
         res.render('products/productCart');
     },
-    create: (req, res) => {
-        Promise.all([promesaCategorias, promesaPromociones])
-            .then(arr => res.render('products/createProduct', { categories: arr[0], promotions: arr[1] }))
+    create: async (req, res) => {
+        try {
+            let products = await dbProduct.findAll();
+            let category = await dbCategory.findAll();
+            let destacados = await dbDestacados.findAll();
+            res.render('products/createProduct', {
+                products: products,
+                categories: category,
+                promotions: destacados
+            });
+        } catch (error) {
+            res.render('error');
+        }
     },
-    store: (req, res) => {
-        let image;
-        if (!req.file) {
-            image = 'default.png'
-        } else {
-            image = req.file.filename
+    store: async (req, res) => {
+        try {
+            let image;
+            if (!req.file) {
+                image = 'default.png'
+            } else {
+                image = req.file.filename
+            }
+            let { name, description_short, description_long, price } = req.body;
+            dbProduct.create(name, description_short, description_long, price, image);
+            res.redirect('/products')
+        } catch (error) {
+            res.render('error');
         }
 
-        db.Product
-            .create({
-                ...req.body,
-                image: image,
-            })
-            .then(result => {
-                console.log(`El id del nuevo producto es ${result.id}`)
-                res.redirect('/products')
-            })
     },
-    productDetail: (req, res) => {
-        let promesaProducto = db.Product.findByPk(req.params.id)
-
-        Promise.all([promesaProducto, promesaDestacados])
-            .then(arr => {
-                res.render('products/productDetail', { product: arr[0], destacados: arr[1] });
-            })
+    productDetail: async (req, res) => {
+        try {
+            let destacados = await dbDestacados.findAll(1); // 1 Ninguna - 2 Destacado - 3 Oferta
+            let productDetail = await dbProduct.findByPk(req.params.id);
+            res.render('products/productDetail', { product: productDetail, destacados: destacados });
+        } catch (error) {
+            console.log(error);
+        }
     },
-    edit: (req, res) => {
-        let promesaProducto = db.Product.findByPk(req.params.id)
-
-        Promise.all([promesaProducto, promesaCategorias, promesaPromociones])
-            .then(arr => {
-                res.render('products/editProduct', { product: arr[0], categories: arr[1], promotions: arr[2] });
-            })
+    edit: async (req, res) => {
+        try {
+            let products = await dbProduct.findByPk(req.params.id);
+            let category = await dbCategory.findAll();
+            let destacados = await dbDestacados.findAll();
+            res.render('products/editProduct', {
+                product: products,
+                categories: category,
+                promotions: destacados
+            });
+        } catch (error) {
+            res.render('error');
+        }
     },
-    update: (req, res) => {
-        db.Product
-            .update({ ...req.body}, {
-                where: { id: req.params.id}
+    update: async (req, res) => {
+        try {
+            let image;
+            if (!req.file) {
+                image = 'default.png'
+            } else {
+                image = req.file.filename
             }
-                )
-            .then(() => {res.redirect('/products')})
+            let { name, description_short, description_long, price } = req.body;
+            let id = req.params.id;
+            dbProduct.update(name, description_short, description_long, price, image, id);
+            res.redirect('/products')
+        } catch (error) {
+            res.render('error');
+        }
+
     },
-    destroy: (req, res) => {
-        db.Product
-            .destroy({
-                where: {
-                    id: req.params.id
-                }
-            })
-        res.redirect('/products');
+    destroy: async (req, res) => {
+        try {
+            let id = req.params.id
+            dbProduct.delete(id);
+            res.redirect('/products');
+        } catch (error) {
+            res.render('error');
+        }
     }
 }
 
