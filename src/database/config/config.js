@@ -1,8 +1,8 @@
-const DATABASE_HOST     = process.env.DBHOST         || '127.0.0.1';
-const DATABASE_NAME     = process.env.DBNAME         || 'megatronix_db';
-const USER              = process.env.DBUSER         || 'root';
-const DATABASE_PASSWORD = process.env.DBPASS         || '1234';
-const DATABASE_PORT     = process.env.PORT           || '3307';
+const DBHOST = process.env.DBHOST         || '127.0.0.1';
+const DBNAME = process.env.DBNAME         || 'megatronix_db';
+const DBUSER = process.env.DBUSER         || 'root';
+const DBPASS = process.env.DBPASS         || '1234';
+const PORT   = process.env.PORT           || '3307';
 
 module.exports = {
   "development": {
@@ -21,10 +21,10 @@ module.exports = {
     "dialect": "mysql"
   },
   "production": {
-    "username": USER,
-    "password": DATABASE_PASSWORD,
-    "database": DATABASE_NAME,
-    "host": DATABASE_HOST,
+    "username": DBUSER,
+    "password": DBPASS,
+    "database": DBNAME,
+    "host": DBHOST,
     "dialect": "mysql"
   }
 }
