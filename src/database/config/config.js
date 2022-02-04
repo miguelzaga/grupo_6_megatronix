@@ -1,10 +1,8 @@
-const dotenv =require("dotenv").config()
-
-const DATABASE_HOST     = process.env.DATABASE_HOST       || '127.0.0.1';
-const DATABASE_NAME     = process.env.DATABASE_NAME       || 'megatronix_db';
-const USER              = process.env.USER                || 'root';
-const DATABASE_PASSWORD = process.env.DATABASE_PASSWORD   || '1234';
-const DATABASE_PORT     = process.env.DATABASE_PORT       || '3307';
+const DATABASE_HOST     = process.env.DBHOST         || '127.0.0.1';
+const DATABASE_NAME     = process.env.DBNAME         || 'megatronix_db';
+const USER              = process.env.DBUSER         || 'root';
+const DATABASE_PASSWORD = process.env.DBPASS         || '1234';
+const DATABASE_PORT     = process.env.PORT           || '3307';
 
 module.exports = {
   "development": {
