@@ -97,3 +97,26 @@
 ### Less of ###
 - Hacer partes de otros compañeros sin avisar
 - Dejar partes incompletas sin avisar
+
+## Sprint 6 ##
+### More of ###
+- Compromiso con las actividades
+- Comunicar mejor lo que se va a hacer
+- Mejorar la comunicación
+- Dedicar tiempo al proyecto y equipo
+- Preguntar si tengo una duda
+- Embellecer CSS
+
+### Start doing ###
+- Embellecer CSS
+
+### Keep doing ###
+- Dejar la pagina funcional
+- Priorizar los requerimientos
+
+### Stop doing ###
+- Hacer la retro al final
+
+### Less of ###
+- Esperar hasta último momento
+
