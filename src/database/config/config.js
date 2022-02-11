@@ -1,4 +1,4 @@
-const dotenv =require("dotenv").config()
+require("dotenv").config()
 
 const DATABASE_HOST     = process.env.DATABASE_HOST       || '127.0.0.1';
 const DATABASE_NAME     = process.env.DATABASE_NAME       || 'megatronix_db';
