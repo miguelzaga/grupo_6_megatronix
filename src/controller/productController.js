@@ -1,11 +1,11 @@
 const { dbProduct, dbCategory, dbDestacados } = require('../model')
 
 const productController = {
-    products: async (req, res) => {
+    products: async function (req, res){
         try {
-            let products = await dbProduct.findAll();
-            let category = await dbCategory.findAll();
-            let destacados = await dbDestacados.findAll(1); // 1 Ninguna - 2 Destacado - 3 Oferta
+            let products = await dbProduct.getAll();
+            let category = await dbCategory.getAll();
+            let destacados = await dbDestacados.getAll(1); // 1 Ninguna - 2 Destacado - 3 Oferta
             res.render('products/products', {
                 products: products,
                 categories: category,
@@ -18,11 +18,11 @@ const productController = {
     productCart: (req, res) => {
         res.render('products/productCart');
     },
-    create: async (req, res) => {
+    create: async function(req, res){
         try {
-            let products = await dbProduct.findAll();
-            let category = await dbCategory.findAll();
-            let destacados = await dbDestacados.findAll();
+            let products = await dbProduct.getAll();
+            let category = await dbCategory.getAll();
+            let destacados = await dbDestacados.getAll();
             res.render('products/createProduct', {
                 products: products,
                 categories: category,
@@ -35,13 +35,13 @@ const productController = {
     store: async (req, res) => {
         try {
             let image;
-            if (!req.file) {
-                image = 'default.png'
-            } else {
-                image = req.file.filename
-            }
-            let { name, description_short, description_long, price } = req.body;
-            dbProduct.create(name, description_short, description_long, price, image);
+                if (req.file) {
+                    image = req.file.filename
+                } else {
+                    image = 'default.png'
+                }
+            let { name, description_short, description_long, product_category_id, product_promotion_id, price } = req.body;
+            await dbProduct.create(name, description_short, description_long,product_category_id, product_promotion_id,  price, image);
             res.redirect('/products')
         } catch (error) {
             res.render('error');
@@ -50,8 +50,8 @@ const productController = {
     },
     productDetail: async (req, res) => {
         try {
-            let destacados = await dbDestacados.findAll(1); // 1 Ninguna - 2 Destacado - 3 Oferta
-            let productDetail = await dbProduct.findByPk(req.params.id);
+            let destacados = await dbDestacados.getAll(1); // 1 Ninguna - 2 Destacado - 3 Oferta
+            let productDetail = await dbProduct.getByPk(req.params.id);
             res.render('products/productDetail', { product: productDetail, destacados: destacados });
         } catch (error) {
             console.log(error);
@@ -59,9 +59,9 @@ const productController = {
     },
     edit: async (req, res) => {
         try {
-            let products = await dbProduct.findByPk(req.params.id);
-            let category = await dbCategory.findAll();
-            let destacados = await dbDestacados.findAll();
+            let products = await dbProduct.getByPk(req.params.id);
+            let category = await dbCategory.getAll();
+            let destacados = await dbDestacados.getAll();
             res.render('products/editProduct', {
                 product: products,
                 categories: category,
@@ -74,14 +74,12 @@ const productController = {
     update: async (req, res) => {
         try {
             let image;
-            if (!req.file) {
-                image = 'default.png'
-            } else {
+            if (req.file) {
                 image = req.file.filename
             }
-            let { name, description_short, description_long, price } = req.body;
+            let {name, description_short, description_long, product_category_id, product_promotion_id, price } = req.body;
             let id = req.params.id;
-            dbProduct.update(name, description_short, description_long, price, image, id);
+            dbProduct.update(name, description_short, description_long, product_category_id, product_promotion_id, price, image, id);
             res.redirect('/products')
         } catch (error) {
             res.render('error');

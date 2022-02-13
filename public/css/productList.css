@@ -34,15 +34,10 @@
     vertical-align: middle;
 }
 
-.articulos{
+.articulosList{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-}
-
-.articulos article{
-    width: 240px;
-    height: 280px;
 }
 
 @media (min-width: 768px){
@@ -57,10 +52,5 @@
     }
     #derecha{
         width: 78%;
-    }
-    .articulos article{
-        width: 180px;
-        height: 280px;
-        margin: 5px;
     }
 }

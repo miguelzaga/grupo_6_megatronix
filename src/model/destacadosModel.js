@@ -3,7 +3,7 @@ const { Op } = require('sequelize');
 const { sequelize } = require('../database/models')
 
 const destacadosModel = {
-    findAll: async (filter) => {
+    getAll: async (filter) => {
         if (filter) {
             try {
                 return await db.Product.findAll({

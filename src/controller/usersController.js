@@ -1,92 +1,72 @@
 const { validationResult } = require('express-validator')
+const { dbUser } = require('../model');
 const bcrypt = require('bcrypt');
-const db = require('../database/models')
 
-
-const controller = {
+const userController = {
     login: (req, res) => {
         res.render('users/login');
     },
-    loginProcess: (req, res) => {
-        db.User.findOne({ where: { email: req.body.email } })
-            .then(user => {
-                let errors = validationResult(req)
-                if (errors.isEmpty()) {
-                    let access = (user != undefined && bcrypt.compareSync(req.body.password, user.password))
-                    if (access) {
-                        req.session.userLogged = user;
+    loginProcess: async function (req, res){
+        try {
+            let user = await dbUser.confirmed(req.body.email)
+            let errors = validationResult(req)
+            console.log(errors)
+            if (errors.isEmpty()) {
+                let access = ((user != undefined) && (bcrypt.compareSync(req.body.password, user.password)))
+                if (access) {
+                    req.session.userLogged = user;
 
-                        if (req.body.recordarUser) {
-                            res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 5 }) //Guarda la cookie en el navegador durante 5 minutos
-                        }
-                        return res.redirect('/users/profile')
-                    } else {
-                        res.render('users/login', {
-                            errors: {
-                                password: {
-                                    msg: "Correo o contraseña inválidos"
-                                }
-                            },
-                            old: req.body
-                        })
+                    if (req.body.recordarUser) {
+                        res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 5 }) //Guarda la cookie en el navegador durante 5 minutos
                     }
+                    return res.redirect('/users/profile')
                 } else {
                     res.render('users/login', {
-                        errors: errors.mapped(),
+                        errors: {
+                            password: {
+                                msg: "Correo o contraseña inválidos"
+                            }
+                        },
                         old: req.body
                     })
                 }
-            })
-            .catch(err => console.log(err))
-
+            } else {
+                res.render('users/login', {
+                    errors: errors.mapped(),
+                    old: req.body
+                })
+            }
+        } catch (error) {
+            res.render('error');
+        }
     },
     register: (req, res) => {
         res.render('users/register');
     },
-    registerProcess: (req, res) => {
-        let errors = validationResult(req);
-        console.log(errors)
-
-        if (errors.isEmpty()) {
-
-            let image;
-            if (!req.file) {
-                image = 'default.png'
-            } else {
-                image = req.file.filename
-            }
-
-            db.User.create({
-                ...req.body,
-                user_category_id: 2, // user
-                password: bcrypt.hashSync(req.body.password, 10),
-                image: image
-            })
-
-                .then(result => {
-                    console.log(`Usuario creado con id ${result.id}`)
-                    res.redirect('login');
-                })
-                .catch(err => {
-                    console.log(err)
-                    if (err.code = 'ER_DUP_ENTRY') {  // si el correo ya existe en la db
-                        return res.render('users/register', {
-                            errors: {
-                                email: {
-                                    msg: "Este email ya está registrado"
-                                }
-                            },
-                            old: req.body
-                        })
-                    }
+    registerProcess: async function (req, res){
+        try {
+            let errors = validationResult(req);
+            if (errors.isEmpty()) {
+                let image;
+                if (req.file) {
+                    image = req.file.filename
+                } else {
+                    image = 'default.png'
                 }
-                )
-        } else {
-            return res.render('users/register', {
-                errors: errors.mapped(),
-                old: req.body
-            })
+                let user_category_id = 2;
+                let {first_name, last_name, email, password} = req.body
+                dbUser.create(first_name, last_name, email, password, image, user_category_id);
+            
+            } else {
+                return res.render('users/register', {
+                    errors: errors.mapped(),
+                    old: req.body
+                })
+            }
+        } catch (error) {
+            res.render('error');
         }
+         return res.redirect('login');
     },
     profile: (req, res) => {
         return res.render('users/profile');
@@ -97,31 +77,47 @@ const controller = {
         req.session.destroy();
         return res.redirect('/');
     },
-    update: (req, res) => {
-        db.User
-            .update({ ...req.body }, {
-                where: { id: req.params.id }
+    update: async function (req, res){
+        try {
+            let errors = validationResult(req);
+            if (errors.isEmpty()) {
+                let image;
+                if (req.file) {
+                    image = req.file.filename
+                }
+                let id = req.params.id;
+                let {first_name, last_name, email} = req.body;
+                dbUser.update(first_name, last_name, email, image, id);
+            } else {
+                return res.render('users/profile', {
+                    errors: errors.mapped(),
+                })
             }
-            )
-            .then(() => { res.redirect('/users/logout') })
-
+        } catch (error) {
+            res.render('error');
+        }
+         return res.redirect('/');
     },
-    destroy: (req, res) => {
-        db.User
-        .destroy({
-            where: {
-                id: req.params.id
-            }
-        })
-    res.redirect('/');
-    },
-    list: (req, res) => {
-        db.User.findAll()
-            .then(users => {
-                res.render('users/users', {users})
+    destroy: async function(req, res){
+        try{
+            dbUser.delete({
+                where: {
+                    id: req.params.id
+                }
             })
-            .catch(err => console.log(err))
+        res.redirect('/');
+        }catch (error) {
+            res.render('error');
+        }
+    },
+    list: async function (req, res) {
+        try {
+            dbUser.getAll()
+            res.render('users/users', { users })
+        }catch (error) {
+            res.render('error');
+        }
     }
 }
 
-module.exports = controller;
+module.exports = userController;
