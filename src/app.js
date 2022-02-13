@@ -4,7 +4,7 @@ const path = require('path');
 const methodOverride = require('method-override');
 const session = require('express-session');
 const cookies = require('cookie-parser');
-const {userLoggedMid} = require('./middleware');
+const {userLoggedMid, cookieRecordarme} = require('./middleware');
 
 app.use(express.urlencoded({ extended: "false" }));
 app.use(express.json());
@@ -17,6 +17,7 @@ app.use(session({
 }))
 app.use(cookies())
 app.use(userLoggedMid)
+app.use(cookieRecordarme)
 
 
 app.set('views', path.resolve(__dirname, './views'))

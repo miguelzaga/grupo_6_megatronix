@@ -1,10 +1,10 @@
-const {check} = require('express-validator')
+const { body } = require('express-validator');
 
 let validateLoginMid = [
-    check('email')
+    body('email')
         .notEmpty().withMessage('Debes incluir un correo').bail()
-        .isEmail().withMessage('Ingresa tu correo'),
-    check('password')
+        .isEmail().withMessage('Ingresa un correo correcto').bail(),
+    body('password')
         .notEmpty().withMessage('Ingresa tu contraseña')
 ]
 

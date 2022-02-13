@@ -3,7 +3,7 @@ const { Op } = require('sequelize');
 const { sequelize } = require('../database/models')
 
 const productsModel = {
-    findAll: async (filter) => {
+    getAll: async function(filter){
         if (filter) {
             try {
                 return await db.Product.findAll({
@@ -23,7 +23,7 @@ const productsModel = {
             }
         }
     },
-    findByPk: async (id) => {
+    getByPk: async function(id){
         try {
             let pk = await db.Product.findByPk(id);
             return pk;
@@ -31,27 +31,31 @@ const productsModel = {
             console.log(error);
         }
     },
-    create: async (name, description_short, description_long, price, image) => {
+    create: async function (name, description_short, description_long, product_category_id, product_promotion_id, price, image){
         try {
-            db.Product.create({
+            await db.Product.create({
                 name: name,
                 description_short: description_short,
                 description_long: description_long,
                 price: price,
-                image: image.filename
+                product_category_id: product_category_id,
+                product_promotion_id: product_promotion_id,
+                image: image
             })
         } catch (error) {
-            console.log(error);
+            return console.log(error);
         }
     },
-    update: (name, description_short, description_long, price, image,id) => {
+    update: async function(name, description_short, description_long, product_category_id, product_promotion_id, price, image, id){
         try {
             db.Product.update({
                 name: name,
                 description_short: description_short,
                 description_long: description_long,
                 price: price,
-                image: image ? image.filename : ''
+                product_category_id: product_category_id,
+                product_promotion_id: product_promotion_id,
+                image: image
             }, {
                 where: { id: id }
             })
@@ -59,9 +63,9 @@ const productsModel = {
             console.log(error);
         }
     },
-    delete: (id) => {
+    delete: async function(id){
         try {
-            db.Product.destroy({
+            await db.Product.destroy({
                 where: { id: id }
             })
         } catch (error) {
@@ -71,5 +75,3 @@ const productsModel = {
 }
 
 module.exports = productsModel;
-
-//productsModel.create('productoNuevo', 'otro', 'otro', 5000, 'image-1643720179409.png')

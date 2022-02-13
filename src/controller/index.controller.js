@@ -1,37 +1,17 @@
-const db = require('../database/models');
+const {dbDestacados } = require('../model');
 
 const indexController = {
-    index: (req, res) => {
-
-        let promesaDestacados =
-            db.Product.findAll({
-                include: {
-                    model: db.ProductPromotion,
-                    as: "ProductPromotions",
-                    where: {
-                        promotion: "destacado"
-                    }
-                },
-                limit: 4
-            })
-            
-            let promesaOfertas =
-            db.Product.findAll({
-                include: {
-                    model: db.ProductPromotion,
-                    as: "ProductPromotions",
-                    where: {
-                        promotion: "oferta"
-                    }
-                },
-                limit: 4
-            })
-
-        Promise.all([promesaDestacados, promesaOfertas])
-            .then(arr => {
-                res.render('index', { destacados: arr[0], ofertas: arr[1] })
-            })
-            .catch(error => {console.log(error)})
+    index: async function (req, res){
+        try {
+            let destacados = await dbDestacados.getAll(1); // 1 Ninguna - 2 Destacado - 3 Oferta
+            let ofertas = await dbDestacados.getAll(3); // 1 Ninguna - 2 Destacado - 3 Oferta
+            res.render('index', {
+                destacados: destacados,
+                ofertas: ofertas,
+            });
+        } catch (error) {
+            res.render('error');
+        }
     }
 }
 

@@ -5,6 +5,7 @@ const uploadFileUser = require('./multerUsers');
 const authMid = require('./authMid');
 const guestMid = require('./guestMid');
 const userLoggedMid = require('./userLoggedMid');
+const cookieRecordarme = require('./cookieRecordarme')
 
 
 module.exports = {
@@ -14,5 +15,6 @@ module.exports = {
     uploadFileUser,
     authMid,
     guestMid,
-    userLoggedMid
+    userLoggedMid,
+    cookieRecordarme
 }
