@@ -14,6 +14,11 @@
                         <h2>Agregar un producto</h2>
                         <hr>
                     </div>
+
+                    <div class="errores">
+                        <ul></ul>
+                    </div>  
+                    
                     <form id="registerForm" action="/products" method="post" enctype="multipart/form-data">
                         <div class="atribut">
                             <label for="name">Nombre del producto</label>
@@ -74,7 +79,7 @@
                 </section>
             </main>
             <%- include('../partials/footer') %>
-            <script> src="./js/validador.js"</script>
+            <script> src="../../../public/js/validador.js"</script>
     </body>
 
 </html>
