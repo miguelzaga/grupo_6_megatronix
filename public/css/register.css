@@ -8,6 +8,10 @@ hr {
     border: #000407 thin solid;
 }
 
+div .errores{
+    color: red;
+}
+
 #register-form {
     max-width: 600px;
     padding: 20px;

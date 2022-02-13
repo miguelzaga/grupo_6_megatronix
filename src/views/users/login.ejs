@@ -13,11 +13,17 @@
                         <h2>Ingresar a mi cuenta</h2>
                         <hr>
                     </div>
-                    <form id="register-form" action="/users/login" method="post">
+
+                    <div class="errores">
+                        <ul></ul>
+                    </div>   
+
+                    <form id="login-form" action="/users/login" method="post">
                         <section id="data-personal" class="data-ingress">
                             <div>
                                 <label for="email">Correo electrónico</label>
-                                <input value="<%= locals.old && locals.old.email  %> " type="email" name="email" id="email" placeholder="Correo electrónico">
+                                <input value="<%= locals.old && locals.old.email  %> " type="email" name="email"
+                                    id="email" placeholder="Correo electrónico">
                                 <% if(locals.errors && errors.email){ %>
                                     <p class="error-message">
                                         <%= errors.email.msg %>
@@ -35,7 +41,7 @@
                             </div>
                             <div>
                                 <label class="recordar">
-                                    <input type="checkbox" name="recordarUser">  Recordar Usuario
+                                    <input type="checkbox" name="recordarUser"> Recordar Usuario
                                 </label>
                             </div>
                         </section>
@@ -43,11 +49,11 @@
                         <div class="olvidar">
                             <a id="olvidar" href="#">¿Olvidaste tu contraseña?</a>
                         </div>
-
                     </form>
                 </section>
             </main>
             <%- include('../partials/footer') %>
+                <script> src = "./js/validadorLogin.js"</script>
     </body>
 
 </html>

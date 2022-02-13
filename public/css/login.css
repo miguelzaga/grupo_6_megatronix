@@ -6,8 +6,10 @@
 hr {
     border: #000407 thin solid;
 }
-
-#register-form {
+div .errores{
+    color: red;
+}
+#login-form {
     max-width: 600px;
     padding: 20px;
     margin: auto;
@@ -86,7 +88,7 @@ input[placeholder]{
         margin: auto;
         margin-bottom: 10px;
     }
-    #register-form {
+    #login-form {
         font-size:18px
     }
 
