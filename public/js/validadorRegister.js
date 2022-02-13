@@ -1,5 +1,5 @@
 window.addEventListener('load', function(){
-    // declara tus variables aca 
+   
 
 let formulario = document.querySelector('#register-form');
 let expresionEmail= /\w+@\w+\.+[a-z]/;

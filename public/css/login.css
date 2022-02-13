@@ -6,7 +6,9 @@
 hr {
     border: #000407 thin solid;
 }
-
+div .errores{
+    color: red;
+}
 #login-form {
     max-width: 600px;
     padding: 20px;
