@@ -6,8 +6,11 @@
 hr {
     border: #000407 thin solid;
 }
-div .errores{
+.erroresLogin{
     color: red;
+    font-size: 12px;
+    font-style: italic;
+    
 }
 #login-form {
     max-width: 600px;

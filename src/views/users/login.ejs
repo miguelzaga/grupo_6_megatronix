@@ -14,11 +14,12 @@
                         <hr>
                     </div>
 
-                    <div class="errores">
-                        <ul></ul>
-                    </div>   
+                   
 
                     <form id="login-form" action="/users/login" method="post">
+                        <div class="erroresLogin">
+                            <ul></ul>
+                        </div>  
                         <section id="data-personal" class="data-ingress">
                             <div>
                                 <label for="email">Correo electrónico</label>
@@ -53,7 +54,7 @@
                 </section>
             </main>
             <%- include('../partials/footer') %>
-                <script> src = "../../../public/js/validadorLogin.js"</script>
+                <script src = "/js/validadorLogin.js"></script>
     </body>
 
 </html>

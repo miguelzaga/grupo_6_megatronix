@@ -15,11 +15,11 @@
                     </div>
 
                 </div>
-                <div class="errores">
+                <div class="erroresRegister">
                     <ul></ul>
                 </div>
                 
-                    <form id="register-form" action="/users/register" method="post" enctype="multipart/form-data">
+                    <form class=".enviarFormRegister" id="register-form" action="/users/register" method="post" enctype="multipart/form-data">
                         <section id="personal-data" class="field-group">
                             <h3>Datos personales</h3>
                             <div>
@@ -77,7 +77,7 @@
                 </section>
             </main>
             <%- include('../partials/footer') %>
-            <script> src="../../../public/js/validadorRegister.js"</script>
+            <script src="/js/validadorRegister.js"></script>
     </body>
 
 </html>
