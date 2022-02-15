@@ -25,7 +25,7 @@ formulario.addEventListener("submit",function(e){
     }
     if (password.value == "") {
         errores.push("Escribe una contraseña");
-    }else if (password.value.length < 8){
+    }else if (password.value.length < 4){
         errores.push ("La contraseña debe tener al menos 8 caracteres");
     }
 
@@ -36,6 +36,8 @@ formulario.addEventListener("submit",function(e){
             ulErrores.innerHTML += "<li>" + errores[i] + "</i>"
         }
         errores=[];
+    }else{
+        formulario.submit();
     }
 
 })

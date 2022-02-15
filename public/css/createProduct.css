@@ -11,6 +11,18 @@ hr {
     display:block;
     margin: 15px;
 }
+
+.erroresCrPr{
+    color: red;
+    font-size: 12px;
+    font-style: italic;
+}
+
+.erroresCrePro{
+    color: red;
+    font-size: 12px;
+    font-style: italic;
+}
 form div{
     margin-bottom: 10px;
 }

@@ -1,11 +1,7 @@
 window.addEventListener('load', function () {
 
-
-    let formulario = document.querySelector('#registerForm');
-    let expresionEmail = /\w+@\w+\.+[a-z]/;
-    //let expresionPass= [];
-    let extensionImgValida = /(.jpg|.jpeg|.png|.gif)$/i;
-
+    let formulario=document.querySelector("#registerForm")
+ 
     formulario.addEventListener("submit", function (evento) {
         let errores = [];
         let name = document.querySelector('name');
@@ -37,16 +33,21 @@ window.addEventListener('load', function () {
             errores.push("Tiene menos de 3 caracteres estas seguro del valor??");
         }
 
-        if (!extensionImgValida.exec(image.value)) {
-            errores.push("Debe ser un formato con extension valdiad .jpeg/.jpg/.png/.gif");
-        }
-
+        let imageFile = image.value;
+        let extensions = /(.jpg|.jpeg|.png|.gif)$/i;
+        if(!extensions.exec(imageFile) && imageFile.length>0){
+            errores.push('La foto no es válida (solo se permiten archivos con formato JPG, JPEG, PNG o GIF)' );
+            image.value = '';}
+            
         if (errores.length > 0) {
             evento.preventDefault();
-            let ulErrores = document.querySelector("div.errores.ul");
+            let ulErrores = document.querySelector("div.erroresCrPr ul");
             for (let i = 0; i < errores.length; i++) {
                 ulErrores.innerHTML += "<li>" + errores[i] + "</i>"
             }
+        }
+        else{
+            formulario.submit();
         }
     })
 })

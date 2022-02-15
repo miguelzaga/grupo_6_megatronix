@@ -40,11 +40,12 @@
             errores.push("La contraseña debe tener al menos 8 caracteres");
         }
 
+        
         let imageFile = image.value;
         let extensions = /(.jpg|.jpeg|.png|.gif)$/i;
-        if(!extensions.exec(imageFile)){
+        if(!extensions.exec(imageFile) && imageFile.length>0){
             errores.push('La foto no es válida (solo se permiten archivos con formato JPG, JPEG, PNG o GIF)' );
-            image.value = '';} 
+            image.value = '';}
 
         if (errores.length > 0) {
             evento.preventDefault();
@@ -52,6 +53,9 @@
             for (let i = 0; i < errores.length; i++) {
                 ulErrores.innerHTML += "<li>" + errores[i] + "</i>"
             }
+        }
+        else{
+            formularioR.submit();
         }
     })
 
