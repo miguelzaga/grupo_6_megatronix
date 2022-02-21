@@ -17,7 +17,7 @@ const userController = {
                     req.session.userLogged = user;
 
                     if (req.body.recordarUser) {
-                        res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 5 }) //Guarda la cookie en el navegador durante 5 minutos
+                        res.cookie('recordarme', req.body.email, { maxAge: (1000 * 60) * 5 }) //Guarda la cookie en el navegador durante 5 minutos
                     }
                     return res.redirect('/users/profile')
                 } else {
@@ -73,7 +73,7 @@ const userController = {
     },
 
     logout: (req, res) => {
-        res.clearCookie('userEmail')
+        res.clearCookie('recordarme')
         req.session.destroy();
         return res.redirect('/');
     },

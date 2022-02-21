@@ -16,8 +16,9 @@ app.use(session({
     saveUninitialized: false
 }))
 app.use(cookies())
-app.use(userLoggedMid)
 app.use(cookieRecordarme)
+app.use(userLoggedMid)
+
 
 
 app.set('views', path.resolve(__dirname, './views'))
