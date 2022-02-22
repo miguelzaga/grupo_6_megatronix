@@ -36,6 +36,14 @@ const usersModel = {
           return console.log(error);
         }
     },
+    getByPk: async function(id){
+        try {
+            let pk = await db.User.findByPk(id);
+            return pk;
+        } catch (error) {
+            console.log(error);
+        }
+    },
     create: async function(first_name, last_name, email, password, image, user_category_id){
         try {
             await db.User.create({

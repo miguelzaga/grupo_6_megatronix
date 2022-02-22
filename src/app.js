@@ -28,9 +28,11 @@ app.set('view engine', 'ejs')
 const routes = require('./routes/index.routes')
 const userRoutes = require('./routes/users.routes');
 const productRoutes = require('./routes/products.routes');
+const apiRoutes = require('./routes/api.routes');
 
 app.use('/', routes);
 app.use('/users', userRoutes);
 app.use('/products', productRoutes);
+app.use('/api', apiRoutes)
 
 module.exports = app;

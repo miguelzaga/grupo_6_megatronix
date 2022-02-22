@@ -9,7 +9,7 @@ const categoriesModel = {
                 return await db.ProductCategory.findAll({
                     where: {
                         category:
-                            sequelize.where(sequelize.fn('LOWER', sequelize.col("category")), 'LIKE', '%' + filter + '%')
+                            sequelize.where(sequelize.fn('LOWER', sequelize.col("id")), 'LIKE', '%' + filter + '%')
                     }
                 })
             } catch (error) {

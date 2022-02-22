@@ -71,6 +71,31 @@ const productsModel = {
         } catch (error) {
             console.log(error);
         }
+    },
+    getAllCount: async function(idCategory){
+        try {
+            let {count, rows} = await db.Product.findAndCountAll({
+                where: {
+                    product_category_id: idCategory
+                }
+            })
+            return {count: count, data: rows}
+        } catch (error) {
+            console.log(error);
+        }
+    },
+    countByCategory: async function(){
+        try {
+            return await db.Product.findAll({
+                attributes: [
+                    'product_category_id',
+                    [sequelize.fn('COUNT', sequelize.col('product_category_id')), 'Count']
+                ],
+                group: ['product_category_id']
+            })
+        } catch (error) {
+            console.log(error);
+        }
     }
 }
 
