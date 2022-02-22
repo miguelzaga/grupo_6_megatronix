@@ -43,8 +43,10 @@ const usersApi = {
         } catch (error) {
             res.render('error');
         }
+    },
+    error: (req, res) => {
+        res.render('error');
     }
-
 }
 
 module.exports = usersApi;

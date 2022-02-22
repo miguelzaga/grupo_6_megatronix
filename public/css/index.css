@@ -230,6 +230,16 @@ footer {
     display: none;
 }
 
+.errorImg{
+    display:block;
+    margin:auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 81vw;
+    object-fit: fill;
+}
+
+
 /* ---> VERSIÓN 768px */
 
 @media (min-width: 768px) {
