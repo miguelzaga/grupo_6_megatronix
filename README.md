@@ -18,7 +18,7 @@ Ofrecemos *dispositivos y componentes electrónicos* para *profesionales y afici
     En esta pagina utilizan un diseño atractivo, con imagenes en movimiento en la página de inicio y mantiene el header superpuesto mientras se desplaza la pantalla de fondo.
 
 ## Links
-- Heroku: https://cryptic-plains-32508.herokuapp.com/
+- Heroku: https://megatronix-6.herokuapp.com/
 - GitHub: https://github.com/miguezaga/grupo_6_megatronix
 - Trello: 
 	- Sprint 1: https://trello.com/b/jYJd8F6o/sprint-1
