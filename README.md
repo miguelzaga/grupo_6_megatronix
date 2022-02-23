@@ -25,6 +25,10 @@ Ofrecemos *dispositivos y componentes electrónicos* para *profesionales y afici
 	- Sprints: https://trello.com/b/cBNLkg02/sprints-megatronix
 - Retrospectiva: https://miro.com/app/board/o9J_lroZMWA=/
 
+## Dashboard
+- GitHub: https://github.com/harolPreciado/Dashboard-Megatronix
+- Heroku: https://dashboard-megatronix.herokuapp.com/
+
 ## Integrantes del equipo
 **Miguel Zapata** - Economista apasionado por el deporte y los números.
 
