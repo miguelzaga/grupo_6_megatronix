@@ -45,6 +45,7 @@ const usersApi = {
         }
     },
     error: (req, res) => {
+        res.json({msg: 'This is CORS-enabled for all origins!'})
         res.render('error');
     }
 }
