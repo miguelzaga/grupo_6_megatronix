@@ -5,11 +5,11 @@ const cors = require('cors');
 const {usersApi, productsApi} = require('../api');
 
 router.get('/', cors(), usersApi.error)
-router.get('/users', usersApi.list );
-router.get('/users/:id', usersApi.getById );
+router.get('/users', cors(), usersApi.list );
+router.get('/users/:id', cors(), usersApi.getById );
 
-router.get('/products', productsApi.list );
-router.get('/products/:id', productsApi.getById );
+router.get('/products', cors(), productsApi.list );
+router.get('/products/:id', cors(), productsApi.getById );
 
 
 module.exports = router;
