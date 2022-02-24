@@ -20,10 +20,9 @@ const usersApi = {
             let ultimo = dbUsuarios[dbUsuarios.length - 1];
             let latestUser = {
                 id: ultimo.id,
-                name: ultimo.name,
-                description:ultimo.description_short,
-                image: protocol + "://" + host + "/images/products/" + ultimo.image,
-                detail: protocol + "://" + host + "/products/" + ultimo.id
+                name: ultimo.first_name.replace(/\s+/g, '') + " " + ultimo.last_name.replace(/\s+/g, ''),
+                email: ultimo.email,
+                image: protocol + "://" + host + "/images/users/" + ultimo.image
             };
 
             return res.status(200).json({
