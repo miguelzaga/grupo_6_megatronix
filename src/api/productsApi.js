@@ -37,10 +37,19 @@ const productsApi = {
                 productos.push(producto)
             })
 
+            let ultimo = dbProductos[dbProductos.length - 1];
+            let latestProduct = {
+                id: ultimo.id,
+                name: ultimo.name,
+                description:ultimo.description_short,
+                image: protocol + "://" + host + "/images/products/" + ultimo.image,
+                detail: protocol + "://" + host + "/products/" + ultimo.id
+            };
+
             return res.status(200).json({
                 countProducts: dbProductos.length,
                 countCategories: dbCate.length,
-                latest: dbProductos[dbProductos.length - 1],
+                latest: latestProduct,
                 countByCategory: Catego,
                 data: productos,
                 status: 200

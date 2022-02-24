@@ -16,9 +16,19 @@ const usersApi = {
                 }
                 users.push(usuario);
             })
+
+            let ultimo = dbUsuarios[dbUsuarios.length - 1];
+            let latestUser = {
+                id: ultimo.id,
+                name: ultimo.name,
+                description:ultimo.description_short,
+                image: protocol + "://" + host + "/images/products/" + ultimo.image,
+                detail: protocol + "://" + host + "/products/" + ultimo.id
+            };
+
             return res.status(200).json({
                 count: users.length,
-                latest: users[users.length - 1],
+                latest: latestUser,
                 users: users,
                 status: 200
             })
