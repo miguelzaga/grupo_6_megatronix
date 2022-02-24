@@ -40,6 +40,7 @@ const productsApi = {
             return res.status(200).json({
                 countProducts: dbProductos.length,
                 countCategories: dbCate.length,
+                latest: dbProductos[dbProductos.length - 1],
                 countByCategory: Catego,
                 data: productos,
                 status: 200

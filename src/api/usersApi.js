@@ -18,6 +18,7 @@ const usersApi = {
             })
             return res.status(200).json({
                 count: users.length,
+                latest: users[users.length - 1],
                 users: users,
                 status: 200
             })
