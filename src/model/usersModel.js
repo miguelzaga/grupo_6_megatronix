@@ -98,10 +98,9 @@ const usersModel = {
     },
     delete: async function (id){
         try {
-            await db.User.delete({
-                where:{
-                    id: id
-                }
+            await db.User.destroy({
+                where:{id: id},
+                truncate: { cascade: true }
             })
         } catch (error) {
             console.log(error);

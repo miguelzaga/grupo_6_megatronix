@@ -66,7 +66,8 @@ const productsModel = {
     delete: async function(id){
         try {
             await db.Product.destroy({
-                where: { id: id }
+                where: { id: id },
+                truncate: { cascade: true }
             })
         } catch (error) {
             console.log(error);
