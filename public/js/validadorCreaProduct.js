@@ -12,19 +12,19 @@ window.addEventListener('load', function () {
 
         if (name == "") {
             errores.push("El campo de nombre debe estar completo");
-        } else if (name.value.length < 5) {
-            errores.push("El campo nombre debe tener almenos 5 caracteres");
+        } else if (name.value.length < 3) {
+            errores.push("El campo nombre debe tener almenos 3 caracteres");
         }
         if (description_short.value == "") {
             errores.push("Debes agregar una descripcion corta");
-        } else if (description_short.value.length < 20) {
-            errores.push("La descripcion debe tener al menos 20 caracteres");
+        } else if (description_short.value.length < 10) {
+            errores.push("La descripcion debe tener al menos 10 caracteres");
         }
         
         if (description_long.value == "") {
             errores.push("Debes agregar una descripcion");
-        } else if (description_long.value.length < 100) {
-            errores.push("La descripcion debe tener al menos 1000 caracteres");
+        } else if (description_long.value.length < 50) {
+            errores.push("La descripcion debe tener al menos 50 caracteres");
         }
  
         if (price.value == "") {
