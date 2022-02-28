@@ -5,7 +5,7 @@ const productController = {
         try {
             let products = await dbProduct.getAll();
             let category = await dbCategory.getAll();
-            let destacados = await dbDestacados.getAll(1); // 1 Ninguna - 2 Destacado - 3 Oferta
+            let destacados = await dbDestacados.getAll(2); // 1 Ninguna - 2 Destacado - 3 Oferta
             res.render('products/products', {
                 products: products,
                 categories: category,
@@ -50,7 +50,7 @@ const productController = {
     },
     productDetail: async (req, res) => {
         try {
-            let destacados = await dbDestacados.getAll(1); // 1 Ninguna - 2 Destacado - 3 Oferta
+            let destacados = await dbDestacados.getAll(2); // 1 Ninguna - 2 Destacado - 3 Oferta
             let productDetail = await dbProduct.getByPk(req.params.id);
             res.render('products/productDetail', { product: productDetail, destacados: destacados });
         } catch (error) {
