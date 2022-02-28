@@ -8,49 +8,17 @@
     <body>
         <%- include('../partials/header') %>
             <main>
-                <section class="compras">
+                <div class="compras">
                     <h3>CARRITO DE COMPRAS</h3>
-                    <ul id="barraCompras">
-                        <li class="tituloImg">Imagen</li>
-                        <li class="tituloNombre">Nombre</li>
-                        <li class="tituloModelo">Modelo</li>
-                        <li class="tituloCantidad">Cantidad</li>
-                        <li class="tituloPrecio">Precio</li>
-                    </ul>
-                    <section>
-                        <article class="productosCarrito">
-                            <div class="imgCarrito">
-                                <img src="/images/products/1.jpg" class="productImg">
-                            </div>
-                            <div id="descipcionCarrito">
-                                <div class="nombreCarrito">
-                                    <p class="nombre">ARDUINO UNO</p>
-                                    <p class="modelo">Arduino UNO</p>
-                                </div>
-                                <div class="cantidadCarrito">
-                                    <input required type="number" name="number" class="numeroCantidad" placeholder="1">
-                                    <p class="precio">$ 37.000</p>
-                                </div>
-                                <button name= "botonEliminar" class="botEliminar"><i class="fas fa-times-circle"></i></button>
-                            </div>
-                        </article>
-                        <article class="productosCarrito">
-                            <div class="imgCarrito">
-                                <img src="/images/products/2.jpg" class="productImg">
-                            </div>
-                            <div id="descipcionCarrito">
-                                <div class="nombreCarrito">
-                                    <p class="nombre">Display Oled</p>
-                                    <p class="modelo">Display Oled</p>
-                                </div>
-                                <div class="cantidadCarrito">
-                                    <input required type="number" name="number" class="numeroCantidad" placeholder="1">
-                                    <p class="precio">$ 15.000</p>
-                                </div>
-                                <button name= "botonEliminar" class="botEliminar"><i class="fas fa-times-circle"></i></button>
-                            </div>
-                        </article>
-                    </section>
+                    <table class="listaCarrito">
+                          <tr>
+                            <th>Imagen</th>
+                            <th>Nombre</th>
+                            <th>Cantidad</th>
+                            <th>Precio</th>
+                          </tr>
+                    </table>
+                   
                     <section id="total">
                         <h2>
                             <p>Precio total:</p>
@@ -58,7 +26,7 @@
                         </h2>
                     </section>
                     <button name="botonComprar" class="botComprar">Continuar compra</button>
-                </section>
+                </div>
             </main>
             <%- include('../partials/footer') %>
 
