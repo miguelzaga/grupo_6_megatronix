@@ -1,5 +1,3 @@
-const { dbUser } = require('../model');
-
 function userLoggedMid(req, res, next) {
     res.locals.isLogged = false;
 

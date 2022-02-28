@@ -17,7 +17,17 @@
                         </ul>
                     </section>
                     <section class="main-section" id="derecha">
-                        <h3>PRODUCTOS</h3>
+                        <div class="encabezado">
+                            <h3>PRODUCTOS</h3>
+                            <% if(locals.isLogged && locals.userLogged.user_category_id == 1) { %>
+                                <a class="botonAgregarProduct" href="/products/create">
+                                    <i class="fas fa-plus-circle"></i>
+                                    <h4>Agegar producto</h4>
+                                    
+                                </a>
+                            <% } %>
+                        </div>
+                        
                         <div class="articulosList">
                             <% locals.products.forEach(product => { %>
                                 <article>

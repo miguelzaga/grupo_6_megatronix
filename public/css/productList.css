@@ -34,6 +34,27 @@
     vertical-align: middle;
 }
 
+.encabezado{
+    display: flex;
+    justify-content:space-between;
+}
+.botonAgregarProduct {
+    display: flex;
+    flex-direction: row;
+    padding-top: 10px;
+    text-decoration: none;
+    color: black;
+    padding-right: 10px;
+}
+.botonAgregarProduct h4{
+    margin-left: 5px;
+}
+
+.botonAgregarProduct i{
+    margin-top: 3px;
+    font-size: 20px;
+}
+
 .articulosList{
     display: flex;
     flex-wrap: wrap;
