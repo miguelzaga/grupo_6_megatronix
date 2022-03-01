@@ -26,37 +26,6 @@ body main section section article{
     height: 40vw;
 }
 
-#descipcionCarrito{
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-    margin-left: 10px;
-    justify-content: center;
-}
-article .nombre{
-    font-size: 20px;
-}
-article .modelo{
-    color: rgb(59, 59, 59);
-    margin-top: 5px;
-}
-
-article .cantidadCarrito{
-    display: flex;
-    margin-top: 20%;
-    justify-content: space-between;
-}
-
-article .precio{
-    font-size: 25px;
-}
-
-article .numeroCantidad{
-    text-align: center;
-    width: 50px;
-    border: none;
-    border-radius: 10px;
-}
 
 
 .botComprar{
@@ -80,7 +49,7 @@ article .numeroCantidad{
 }
 #total h2{
     display: flex;
-    margin: 20px 5px 0 20%;
+    margin: 20px 30px 0 20%;
     justify-content: space-between;
 }
 
@@ -104,95 +73,61 @@ article .numeroCantidad{
     color: rgb(187, 0, 0);
 }
 
+table {
+    width: 95%;
+    border-collapse: collapse;
+    margin:auto;
+}
+
+thead{
+    height: 50px;
+}
+
+.colImg{
+    width: 20%;
+}
+
+.colName{
+    width: 40%
+}
+
+.colCant{
+    width: 20%;
+}
+
+.colPrice{
+    width: 20%;
+}
+.imgTable{
+    height: 100px;
+    display: block;
+    margin: auto;
+    padding: 5px;
+}
+.itemCarrito{
+    height: max-content;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.5s;
+}
+.itemCarrito:hover{
+    box-shadow: 0px 0px 15px 1px #000407;
+}
+.priceTable{
+    text-align: right;
+    padding-right: 20px;
+}
+.inputTable{
+    text-align: center;
+    width: 50px;
+    border: none;
+    border-radius: 10px;
+    display: block;
+    margin: auto;
+}
+
 /* ---> VERSIÓN 768px */
 
 @media (min-width: 768px){
 
-    #barraCompras{
-        display: flex;
-        justify-content: space-evenly;
-        margin: 10px 10px;
-        padding: 0;
-        list-style: none;
-    }
-    #barraCompras li{
-        text-align: center;  
-        border: 1px solid #000407;
-    }
-    #barraCompras .tituloImg{
-        width: 20%;
-    }
-    #barraCompras .tituloNombre{
-        width: 30%;
-    }
-    #barraCompras .tituloModelo{
-        width: 23%;
-    }
-    #barraCompras .tituloCantidad{
-        width: 10%;
-    }
-    #barraCompras .tituloPrecio{
-        width: 17%;
-    }
-
-    body main section section article{
-        justify-content: flex-start;
-        height: min-content;
-        padding-bottom: 3px;
-    }
-    .productosCarrito{
-        box-shadow: 0px 0px 3px 1px #000407;
-        padding-top: 5px;
-    }
-    .productImg{
-        width: 17vw;
-        height: 17vw;
-        margin-left: 3px;
-    }
-    
-    #descipcionCarrito{
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-end;
-        width: 78.8%;
-        margin-left: 18px;
-        align-items: center;
-    }
-    article .nombre{
-        font-size: 18px;
-        width: 27vw;
-    }
-    .nombreCarrito{
-        display: flex;
-        flex-direction: row;
-        margin-left: 15px;
-        height: min-content;
-    }
-    article .modelo{
-        color: rgb(0, 0, 0);
-        margin-top: 0px;
-        font-size: 18px;
-        width: 22vw;
-        margin-left: 10px;
-    }
-    
-    article .cantidadCarrito{
-        margin-top: 0;
-        width: 27vw;
-        height: min-content;
-        align-items: center;
-    }
-    
-    article .numeroCantidad{
-        width: 6vw;
-        height: 30px;
-    }   
-    
-    article .precio{
-        text-align: end;
-        font-size: 25px;
-        width: 15vw;
-        height: min-content;
-        padding-right: 3px;
-    } 
 }

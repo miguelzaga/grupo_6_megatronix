@@ -11,14 +11,19 @@
                 <div class="compras">
                     <h3>CARRITO DE COMPRAS</h3>
                     <table class="listaCarrito">
-                          <tr>
-                            <th>Imagen</th>
-                            <th>Nombre</th>
-                            <th>Cantidad</th>
-                            <th>Precio</th>
-                          </tr>
+                        <thead>
+                            <tr>
+                                <th class="colImg">Imagen</th>
+                                <th class="colName">Nombre</th>
+                                <th class="colCant">Cantidad</th>
+                                <th class="colPrice">Precio</th>
+                            </tr>
+                        </thead>
+                        <tbody class="tbody">
+
+                        </tbody>
                     </table>
-                   
+
                     <section id="total">
                         <h2>
                             <p>Precio total:</p>
@@ -29,7 +34,7 @@
                 </div>
             </main>
             <%- include('../partials/footer') %>
-
+            <script src = "/js/tablaCarrito.js"></script>
     </body>
 
 </html>
