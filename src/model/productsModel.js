@@ -3,7 +3,7 @@ const { Op } = require('sequelize');
 const { sequelize } = require('../database/models')
 
 const productsModel = {
-    getAll: async function(filter){
+    getAll: async function (filter) {
         if (filter) {
             try {
                 return await db.Product.findAll({
@@ -23,7 +23,7 @@ const productsModel = {
             }
         }
     },
-    getByPk: async function(id){
+    getByPk: async function (id) {
         try {
             let pk = await db.Product.findByPk(id);
             return pk;
@@ -31,7 +31,7 @@ const productsModel = {
             console.log(error);
         }
     },
-    create: async function (name, description_short, description_long, product_category_id, product_promotion_id, price, image){
+    create: async function (name, description_short, description_long, product_category_id, product_promotion_id, price, image) {
         try {
             await db.Product.create({
                 name: name,
@@ -46,7 +46,7 @@ const productsModel = {
             return console.log(error);
         }
     },
-    update: async function(name, description_short, description_long, product_category_id, product_promotion_id, price, image, id){
+    update: async function (name, description_short, description_long, product_category_id, product_promotion_id, price, image, id) {
         try {
             db.Product.update({
                 name: name,
@@ -63,7 +63,7 @@ const productsModel = {
             console.log(error);
         }
     },
-    delete: async function(id){
+    delete: async function (id) {
         try {
             await db.Product.destroy({
                 where: { id: id },
@@ -73,19 +73,19 @@ const productsModel = {
             console.log(error);
         }
     },
-    getAllCount: async function(idCategory){
+    getAllCount: async function (idCategory) {
         try {
-            let {count, rows} = await db.Product.findAndCountAll({
+            let { count, rows } = await db.Product.findAndCountAll({
                 where: {
                     product_category_id: idCategory
                 }
             })
-            return {count: count, data: rows}
+            return { count: count, data: rows }
         } catch (error) {
             console.log(error);
         }
     },
-    countByCategory: async function(){
+    countByCategory: async function () {
         try {
             return await db.Product.findAll({
                 attributes: [
@@ -93,6 +93,18 @@ const productsModel = {
                     [sequelize.fn('COUNT', sequelize.col('product_category_id')), 'Count']
                 ],
                 group: ['product_category_id']
+            })
+        } catch (error) {
+            console.log(error);
+        }
+    },
+    search: async function (filter) {
+        try {
+            return await db.Product.findAll({
+                where: {
+                    name:
+                        sequelize.where(sequelize.fn('LOWER', sequelize.col("name")), 'LIKE', '%' + filter + '%')
+                }
             })
         } catch (error) {
             console.log(error);

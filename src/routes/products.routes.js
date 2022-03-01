@@ -12,5 +12,6 @@ router.get('/:id', productController.productDetail);
 router.get('/:id/edit', authMid, productController.edit);
 router.put('/:id', authMid, uploadFileProduct.single('image'), productController.update);
 router.delete('/:id', authMid, productController.destroy)
+router.post('/search', productController.search)
 
 module.exports = router;

@@ -94,6 +94,23 @@ const productController = {
         } catch (error) {
             res.render('error');
         }
+    },
+    search:async function (req, res){
+        try {
+            let busqueda = req.body.busqueda
+            console.log(busqueda);
+            let products = await dbProduct.search(busqueda);
+            let category = await dbCategory.getAll();
+            let destacados = await dbDestacados.getAll(2); // 1 Ninguna - 2 Destacado - 3 Oferta
+           
+            res.render('products/productSearch', {
+                products: products,
+                categories: category,
+                destacados: destacados
+            });
+        } catch (error) {
+            res.render('error');
+        }
     }
 }
 

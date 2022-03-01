@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('../partials/head') %>
+    <link rel="stylesheet" href="/css/productList.css">
+    </head>
+
+    <body>
+        <%- include('../partials/header') %>
+            <main>
+                <div id="mainProduct">
+                    <section id="izquierda">
+                        <h2>CATEGORÍAS</h2>
+                        <ul class="categorias">
+                            <% locals.categories.forEach(category => { %>
+                                <li class="itemCat"><a href="#"><%= category.category  %> </li></a>
+                            <% }); %> 
+                        </ul>
+                    </section>
+                    <section class="main-section" id="derecha">
+                        <div class="encabezado">
+                            <h3>PRODUCTOS</h3>
+                            <% if(locals.isLogged && locals.userLogged.user_category_id == 1) { %>
+                                <a class="botonAgregarProduct" href="/products/create">
+                                    <i class="fas fa-plus-circle"></i>
+                                    <h4>Agegar producto</h4>
+                                    
+                                </a>
+                            <% } %>
+                        </div>
+                        
+                        <div class="articulosList">
+                            <% if (locals.products.length > 0) { %>
+                                <% locals.products.forEach(product => { %>
+                                    <article>
+                                        <a href="/products/<%= product.id %>">
+                                            <img src="/images/products/<%= product.image %>" class="productImg">
+                                        </a>
+                                        <i id= "addCarrito" class="fas fa-shopping-cart"></i>
+                                        <p class="nombre"><%= product.name %></p>
+                                        <p class="precio">$ <%= product.price %></p>
+                                    </article>
+                                <%}); %>
+                            <% } else { %>
+                                <article>
+                                    <img src="/images/notFound.png" class="productImg">
+                                    <p class="nombre">Producto no encontrado</p>
+                                </article>
+                            <% } %>
+                        </div>
+                    </section>
+                </div>
+                <div id="destacadosProduct">
+                    <%- include('../partials/destacados') %>
+                </div>
+                
+            </main>
+            <%- include('../partials/footer') %>
+    </body>
+
+</html>

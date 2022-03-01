@@ -2,12 +2,12 @@
     <div class="headerMain">
         <a href="/"><img src="/images/logoTopMegatronix.png" width="200" alt="Logo Megatronix" class="logotipo"></a>
         <div class="busqueda">
-            <div class="cuadroBuscar">
-                Buscar productos, marcas y más
-            </div>
-            <div class="iconoBuscar">
-                <i class="fa fa-search"></i>
-            </div>
+            <form action="products/search" method="post" class="busqueda">
+                <input type="text" name="busqueda" class="cuadroBuscar" placeholder="Buscar productos, marcas y más">
+                <button class="iconoBuscar" type="submit"><i class="fa fa-search"></i></button>
+            </form>
+            
+             
         </div>
         <div class="sesion">
             <div class="carrito"><a href="/products/productCart"><i class="fas fa-shopping-cart"></i></a></div>
