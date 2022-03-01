@@ -239,6 +239,21 @@ footer {
     object-fit: fill;
 }
 
+.alert{
+    z-index: 100;
+    position: sticky;
+    top: 0px;
+    background-color: #678fe6c9;
+    height: 60px;
+    color: #4738cc;
+    text-align: center;
+    padding-top: 20px;
+    border-radius: 0px 0px 10px 10px;
+}
+
+.hide{
+    display: none;
+}
 
 /* ---> VERSIÓN 768px */
 

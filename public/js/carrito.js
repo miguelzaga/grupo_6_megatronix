@@ -2,17 +2,23 @@ const clickCarrito = document.querySelectorAll('#addCarrito');
 let carrito = [];
 const local = window.localStorage;
 
-clickCarrito.forEach(boton =>{
+clickCarrito.forEach(boton => {
     boton.addEventListener('click', addToCarritoItem)
 })
 
-function addToCarritoItem(e){
+function addToCarritoItem(e) {
+    const alert = document.querySelector('.alert')
+    setTimeout(function () {
+        alert.classList.add('hide')
+    }, 2000)
+    alert.classList.remove('hide')
+
     const button = e.target
     const item = button.closest("article");
     const itemImg = item.querySelector('.productImg').src;
     const itemTitle = item.querySelector('.nombre').textContent;
     const itemPrice = item.querySelector('.precio').textContent;
-    
+
     const newItem = {
         title: itemTitle,
         price: itemPrice,

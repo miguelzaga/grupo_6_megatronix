@@ -13,15 +13,16 @@
             <div class="carrito"><a href="/products/productCart"><i class="fas fa-shopping-cart"></i></a></div>
             <ul>
                 <% if(locals.isLogged) { %>
-                <li><a href="/users/profile"><img id="user-img-header" src="/images/users/<%= locals.userLogged.image %>" alt=""></a></li>
-                <% } else { %> 
-                <li><a href="/users/register">Registrarse</a></li>
-                <li><a href="/users/login">Iniciar Sesión</a></li>
-                <% } %>
+                    <li><a href="/users/profile"><img id="user-img-header"
+                                src="/images/users/<%= locals.userLogged.image %>" alt=""></a></li>
+                    <% } else { %>
+                        <li><a href="/users/register">Registrarse</a></li>
+                        <li><a href="/users/login">Iniciar Sesión</a></li>
+                        <% } %>
             </ul>
             <% if(locals.isLogged) { %>
-            <div class="carrito"><a href="/users/logout"><i class="fas fa-sign-out-alt"></i></a></div>
-            <% } %>
+                <div class="carrito"><a href="/users/logout"><i class="fas fa-sign-out-alt"></i></a></div>
+                <% } %>
         </div>
     </div>
     <a href="#" class="iconoHamburguesa">
@@ -36,3 +37,6 @@
         </ul>
     </nav>
 </header>
+<div class="alert hide">
+    Producto Añadido al carrito!
+</div>
