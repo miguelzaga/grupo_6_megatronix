@@ -6,7 +6,7 @@ const userController = {
     login: (req, res) => {
         res.render('users/login');
     },
-    loginProcess: async function (req, res){
+    loginProcess: async function (req, res) {
         try {
             let user = await dbUser.confirmed(req.body.email)
             let errors = validationResult(req)
@@ -43,30 +43,42 @@ const userController = {
     register: (req, res) => {
         res.render('users/register');
     },
-    registerProcess: async function (req, res){
+    registerProcess: async function (req, res) {
         try {
-            let errors = validationResult(req);
-            if (errors.isEmpty()) {
-                let image;
-                if (req.file) {
-                    image = req.file.filename
-                } else {
-                    image = 'default.png'
-                }
-                let user_category_id = 2;
-                let {first_name, last_name, email, password} = req.body
-                dbUser.create(first_name, last_name, email, password, image, user_category_id);
-            
-            } else {
+            let userInDB = await dbUser.findByField(req.body.email);
+            if (userInDB) {
                 return res.render('users/register', {
-                    errors: errors.mapped(),
-                    old: req.body
+                    errors: {
+                        email: {
+                            msg: 'El email ya se encuentra registrado'
+                        }
+                    },
+                    oldData: req.body,
                 })
+            } else {
+                let errors = validationResult(req);
+                if (errors.isEmpty()) {
+                    let image;
+                    if (req.file) {
+                        image = req.file.filename
+                    } else {
+                        image = 'default.png'
+                    }
+                    let user_category_id = 2;
+                    let { first_name, last_name, email, password } = req.body
+                    dbUser.create(first_name, last_name, email, password, image, user_category_id);
+
+                } else {
+                    return res.render('users/register', {
+                        errors: errors.mapped(),
+                        old: req.body
+                    })
+                }
             }
         } catch (error) {
             res.render('error');
         }
-         return res.redirect('login');
+        return res.redirect('login');
     },
     profile: (req, res) => {
         return res.render('users/profile');
@@ -77,7 +89,7 @@ const userController = {
         req.session.destroy();
         return res.redirect('/');
     },
-    update: async function (req, res){
+    update: async function (req, res) {
         try {
             let errors = validationResult(req);
             if (errors.isEmpty()) {
@@ -86,7 +98,7 @@ const userController = {
                     image = req.file.filename
                 }
                 let id = req.params.id;
-                let {first_name, last_name, email} = req.body;
+                let { first_name, last_name, email } = req.body;
                 dbUser.update(first_name, last_name, email, image, id);
             } else {
                 return res.render('users/profile', {
@@ -96,17 +108,17 @@ const userController = {
         } catch (error) {
             res.render('error');
         }
-         return res.redirect('/');
+        return res.redirect('/');
     },
-    destroy: async function(req, res){
-        try{
+    destroy: async function (req, res) {
+        try {
             dbUser.delete({
                 where: {
                     id: req.params.id
                 }
             })
-        res.redirect('/');
-        }catch (error) {
+            res.redirect('/');
+        } catch (error) {
             res.render('error');
         }
     },
@@ -114,7 +126,7 @@ const userController = {
         try {
             dbUser.getAll()
             res.render('users/users', { users })
-        }catch (error) {
+        } catch (error) {
             res.render('error');
         }
     }

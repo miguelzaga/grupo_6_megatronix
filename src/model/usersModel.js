@@ -26,17 +26,17 @@ const usersModel = {
     },
     getByEmail: async (email) => {
         try {
-          const result = await db.User.findAll({
-            where: {
-              email: sequelize.where(sequelize.fn('LOWER', sequelize.col("email")), email),
-            },
-          });
-          return result;
+            const result = await db.User.findAll({
+                where: {
+                    email: sequelize.where(sequelize.fn('LOWER', sequelize.col("email")), email),
+                },
+            });
+            return result;
         } catch (error) {
-          return console.log(error);
+            return console.log(error);
         }
     },
-    getByPk: async function(id){
+    getByPk: async function (id) {
         try {
             let pk = await db.User.findByPk(id);
             return pk;
@@ -44,7 +44,7 @@ const usersModel = {
             console.log(error);
         }
     },
-    create: async function(first_name, last_name, email, password, image, user_category_id){
+    create: async function (first_name, last_name, email, password, image, user_category_id) {
         try {
             await db.User.create({
                 first_name: first_name,
@@ -58,7 +58,7 @@ const usersModel = {
             return console.log(error);
         }
     },
-    update: async function(first_name, last_name, email, image, id){
+    update: async function (first_name, last_name, email, image, id) {
         try {
             await db.User.update({
                 first_name: first_name,
@@ -84,10 +84,10 @@ const usersModel = {
             console.log(error);
         }
     },
-    confirmed: async function(email){
+    confirmed: async function (email) {
         try {
-            let user= await db.User.findOne({
-                where:{
+            let user = await db.User.findOne({
+                where: {
                     email: email
                 }
             })
@@ -96,16 +96,26 @@ const usersModel = {
             console.log(error);
         }
     },
-    delete: async function (id){
+    delete: async function (id) {
         try {
             await db.User.destroy({
-                where:{id: id},
+                where: { id: id },
                 truncate: { cascade: true }
             })
         } catch (error) {
             console.log(error);
         }
-    }
+    },
+    findByField: async function (email) {
+        try {
+            let user =  await db.User.findOne({
+                where: { email: email }
+            });
+            return user;
+        } catch (error) {
+            console.log(error);
+        }
+    },
 }
 
 module.exports = usersModel;
