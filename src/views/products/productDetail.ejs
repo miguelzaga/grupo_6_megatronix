@@ -39,9 +39,11 @@
                             <a href="/products/productCart">
                                 <button id="addCar addCarrito">Añadir al carrito</button>
                             </a>
-                            <a href="/products/<%=product.id%>/edit">
-                                <button id="edit">Editar</button>
-                            </a>
+                            <% if(locals.isLogged && locals.userLogged.user_category_id == 1) { %>
+                                <a href="/products/<%=product.id%>/edit">
+                                    <button id="edit">Editar</button>
+                                </a>
+                            <% } %>
                             <form action="/products/<%= locals.product.id  %>?_method=delete" method="post">
                                 <button id="delete" type="submit">Eliminar</button>
                             </form>
