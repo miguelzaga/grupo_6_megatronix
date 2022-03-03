@@ -43,10 +43,10 @@
                                 <a href="/products/<%=product.id%>/edit">
                                     <button id="edit">Editar</button>
                                 </a>
-                            <% } %>
-                            <form action="/products/<%= locals.product.id  %>?_method=delete" method="post">
-                                <button id="delete" type="submit">Eliminar</button>
-                            </form>
+                                <form action="/products/<%= locals.product.id  %>?_method=delete" method="post">
+                                    <button id="delete" type="submit">Eliminar</button>
+                                </form>
+                            <% } %>                            
                         </div>
                     </div>
                     </section>
